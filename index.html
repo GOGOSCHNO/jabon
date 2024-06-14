@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La tienda del jabon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Boutique de Maillots de Bain</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Bienvenido !</h2>
+        <p>Descubren nuestros jabones artesanales</p>
+        <div class="product" data-id="1" data-name="Jabon de Lavanda" data-price="10">
+            <h3>Jabon de Lavanda</h3>
+            <p>Precio: $10</p>
+            <button onclick="addToCart(1, 'Jabon de Lavanda', 10)">Agregar al carrito</button>
+        </div>
+        <div class="product" data-id="2" data-name="Jabon de Miel" data-price="12">
+            <h3>Jabon de Miel</h3>
+            <p>Precio: $12</p>
+            <button onclick="addToCart(2, 'Jabon de Miel', 12)">Agregar al carrito</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Boutique de Maillots de Bain</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

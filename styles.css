@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+    text-align: center;
+}
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 80%;
+    max-width: 300px;
+    background-color: white;
+}
+
+.product h3 {
+    margin: 0 0 1rem 0;
+}
+
+.product p {
+    margin: 0 0 1rem 0;
+}
+
+.product button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.product button:hover {
+    background-color: #45a049;
+}
+
+#cartContents div {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 80%;
+    max-width: 300px;
+    background-color: white;
+}
+
+#cartContents p {
+    margin: 0 0 1rem 0;
+}
+
+#cartContents button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#cartContents button:hover {
+    background-color: #d32f2f;
+}
