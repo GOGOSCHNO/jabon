@@ -50,6 +50,10 @@ function clearCart() {
     displayCart();
 }
 
+function finalizePurchase() {
+    window.location.href = 'finalizar.html';
+}
+
 function handleCheckout(event) {
     event.preventDefault();
     const whatsapp = document.getElementById('whatsapp').value;
