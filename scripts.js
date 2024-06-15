@@ -49,3 +49,36 @@ function clearCart() {
     localStorage.removeItem('cart');
     displayCart();
 }
+
+function handleCheckout(event) {
+    event.preventDefault();
+    const whatsapp = document.getElementById('whatsapp').value;
+    const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
+
+    const order = {
+        whatsapp,
+        nombre,
+        apellido,
+        cart: JSON.parse(localStorage.getItem('cart')) || []
+    };
+
+    // Envoyer les données à MongoDB (exemple d'appel API)
+    fetch('/api/initiate-payment', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(order)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            localStorage.setItem('orderId', data.orderId);
+            window.location.href = 'pagar.html';
+        } else {
+            alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
+        }
+    })
+    .catch(error => console.error('Erreur:', error));
+}
