@@ -67,7 +67,6 @@ function handleCheckout(event) {
         cart: JSON.parse(localStorage.getItem('cart')) || []
     };
 
-    // Envoyer les données à MongoDB (exemple d'appel API)
     fetch('/api/initiate-payment', {
         method: 'POST',
         headers: {
@@ -79,6 +78,7 @@ function handleCheckout(event) {
     .then(data => {
         if (data.success) {
             localStorage.setItem('orderId', data.orderId);
+            localStorage.setItem('qrCode', data.qrCode);
             window.location.href = 'pagar.html';
         } else {
             alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
@@ -86,3 +86,4 @@ function handleCheckout(event) {
     })
     .catch(error => console.error('Erreur:', error));
 }
+
