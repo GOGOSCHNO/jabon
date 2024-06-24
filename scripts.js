@@ -56,9 +56,12 @@ function finalizePurchase() {
 
 function handleCheckout(event) {
     event.preventDefault();
+    console.log("handleCheckout called");
+
     const whatsapp = document.getElementById('whatsapp').value;
     const nombre = document.getElementById('nombre').value;
     const apellido = document.getElementById('apellido').value;
+    console.log("Form data:", { whatsapp, nombre, apellido });
 
     const order = {
         whatsapp,
@@ -66,6 +69,7 @@ function handleCheckout(event) {
         apellido,
         cart: JSON.parse(localStorage.getItem('cart')) || []
     };
+    console.log("Order data:", order);
 
     fetch('/api/initiate-payment', {
         method: 'POST',
@@ -76,6 +80,7 @@ function handleCheckout(event) {
     })
     .then(response => response.json())
     .then(data => {
+        console.log("Response data:", data);
         if (data.success) {
             // Afficher le code QR sur la même page
             const qrCodeContainer = document.getElementById('qrCodeContainer');
