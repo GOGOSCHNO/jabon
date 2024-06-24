@@ -71,7 +71,7 @@ function handleCheckout(event) {
     };
     console.log("Order data:", order);
 
-    fetch('/api/initiate-payment', {
+    fetch('https://nequi-8730a4c30191.herokuapp.com/api/initiate-payment', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
