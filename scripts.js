@@ -77,13 +77,12 @@ function handleCheckout(event) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            localStorage.setItem('orderId', data.orderId);
-            localStorage.setItem('qrCode', data.qrCode);
-            window.location.href = 'pagar.html';
+            // Afficher le code QR sur la même page
+            const qrCodeContainer = document.getElementById('qrCodeContainer');
+            qrCodeContainer.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?data=${data.qrCode}&size=200x200" alt="QR Code">`;
         } else {
             alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
         }
     })
     .catch(error => console.error('Erreur:', error));
 }
-
