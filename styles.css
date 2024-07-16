@@ -54,13 +54,38 @@ footer {
     width: 100%;
 }
 
+/* Conteneur de produits */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Produits */
 .product {
     border: 1px solid #ddd;
     padding: 1rem;
-    margin: 1rem auto;
-    width: 80%;
-    max-width: 300px;
+    margin: 1rem;
+    width: 30%;
     background-color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.product:hover {
+    transform: scale(1.05); /* Effet d'agrandissement */
+}
+
+/* Images des produits */
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px; /* Bords arrondis */
+    transition: transform 0.2s;
+}
+
+.product-image:hover {
+    transform: scale(1.1); /* Effet d'agrandissement sur l'image */
 }
 
 .product h3 {
@@ -78,6 +103,7 @@ footer {
     padding: 0.5rem 1rem;
     cursor: pointer;
     border-radius: 5px;
+    margin: 0.5rem 0;
 }
 
 .product button:hover {
