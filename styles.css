@@ -119,6 +119,19 @@ footer {
     margin-top: 1rem;
 }
 
+.product-bottom button:last-child {
+    background-color: transparent; /* Pas de cadre */
+    color: #fe9dc0; /* Couleur de texte */
+    border: none;
+    text-decoration: underline; /* Texte souligné */
+    font-weight: bold; /* Texte en gras */
+    cursor: pointer;
+}
+
+.product-bottom button:last-child:hover {
+    text-decoration: underline;
+}
+
 .product button {
     background-color: #fe9dc0;
     color: white;
