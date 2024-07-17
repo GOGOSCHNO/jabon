@@ -179,7 +179,7 @@ footer {
 }
 
 .product-left img {
-    width: 80%; /* Ajuster cette valeur si nécessaire */
+    width: 70%; /* Ajuster cette valeur si nécessaire */
     height: auto;
     border-radius: 15px; /* Ajouter des bords arrondis */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajouter une ombre sous l'image */
