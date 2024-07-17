@@ -1,3 +1,4 @@
+/* Styles généraux */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,19 +6,24 @@ body {
     background-color: #f9f9f9;
 }
 
+/* Header */
 header {
     background-color: #fe9dc0;
-    color: white;
     padding: 1rem;
-    text-align: center;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
 }
 
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .header-logo {
-    max-width: 90px;
+    max-width: 200px;
     height: auto;
 }
 
@@ -25,25 +31,27 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    text-align: center;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 10px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 18px; /* Agrandir la police des boutons du header */
 }
 
+/* Main content */
 main {
     padding: 2rem;
     text-align: center;
     margin-top: 100px; /* Pour éviter que le contenu soit caché derrière le header */
 }
 
+/* Footer */
 footer {
     background-color: #fe9dc0;
     color: white;
@@ -68,16 +76,23 @@ footer {
     margin: 1rem;
     width: 30%;
     background-color: white;
-    cursor: pointer;
-    transition: transform 0.2s;
-    border-radius: 15px; /* Bords arrondis */
 }
 
-.product:hover {
+.product-top {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.product-top:hover {
     transform: scale(1.05); /* Effet d'agrandissement */
 }
 
-/* Images des produits */
+.product-tag {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
 .product-image {
     width: 100%;
     height: auto;
@@ -85,16 +100,16 @@ footer {
     transition: transform 0.2s;
 }
 
-.product-image:hover {
+.product-top:hover .product-image {
     transform: scale(1.1); /* Effet d'agrandissement sur l'image */
 }
 
 .product h3 {
-    margin: 0 0 1rem 0;
+    margin: 0.5rem 0;
 }
 
-.product p {
-    margin: 0 0 1rem 0;
+.product-bottom {
+    margin-top: 1rem;
 }
 
 .product button {
@@ -105,12 +120,14 @@ footer {
     cursor: pointer;
     border-radius: 5px;
     margin: 0.5rem 0;
+    font-size: 16px;
 }
 
 .product button:hover {
     background-color: #ebb679;
 }
 
+/* Contenu du panier */
 #cartContents div {
     border: 1px solid #ddd;
     padding: 1rem;
