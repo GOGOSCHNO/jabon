@@ -152,10 +152,11 @@ footer {
     border-radius: 5px;
     margin: 0.5rem 0;
     font-size: 16px;
+    transition: transform 0.2s;
 }
 
 .product button:hover {
-    background-color: #ebb679;
+    transform: scale(1.1);
 }
 
 /* Contenu du panier */
