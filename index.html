@@ -8,29 +8,43 @@
 </head>
 <body>
     <header>
-        <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png" alt="naysa" class="header-logo">
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="carrito.html">Carrito</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png" alt="naysa" class="header-logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <h2>Bienvenido !</h2>
         <p>Descubren nuestros productos capilares naturales</p>
         <div class="product-container">
-            <div class="product" data-id="1" data-name="Multivitamínico Capilar" onclick="location.href='multivitaminico.html'">
-                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/multivitaminico.PNG" alt="Multivitamínico Capilar">
-                <h3>Multivitamínico Capilar</h3>
-                <button onclick="addToCart(1, 'Multivitamínico Capilar', 28000)">250ml | $28.000</button>
-                <button onclick="addToCart(1, 'Multivitamínico Capilar', 48000)">500ml | $48.000</button>
+            <div class="product" data-id="1" data-name="Multivitamínico Capilar" >
+                <div class="product-top" onclick="location.href='multivitaminico.html'">
+                    <span class="product-tag">Nuevo | Edición limitada</span>
+                    <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/multivitaminico.PNG" alt="Multivitamínico Capilar">
+                    <h3>Multivitamínico Capilar</h3>
+                </div>   
+                <div class="product-bottom">
+                    <button onclick="addToCart(1, 'Multivitamínico Capilar', 28000)">250ml | $28.000</button>
+                    <button onclick="addToCart(1, 'Multivitamínico Capilar', 48000)">500ml | $48.000</button>
+                    <button onclick="location.href='multivitaminico.html'">Ver el producto</button>    
+                </div>
             </div>
-            <div class="product" data-id="2" data-name="Repolarizador" onclick="location.href='repolarizador.html'">
-                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/repolarizador.PNG" alt="Repolarizador">
-                <h3>Repolarizador</h3>
-                <button onclick="addToCart(2, 'Repolarizador', 28000)">240ml | $28.000</button>
+            <div class="product" data-id="2" data-name="Repolarizador" >
+                <div class="product-top" onclick="location.href='repolarizador.html'">
+                    <span class="product-tag">Nuevo | Edición limitada</span>
+                    <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/repolarizador.PNG" alt="Repolarizador">
+                    <h3>Repolarizador</h3>
+                </div>
+                <div class="product-bottom">
+                    <button onclick="addToCart(2, 'Repolarizador', 28000)">240ml | $28.000</button>
+                    <button onclick="location.href='repolarizador.html'">Ver el producto</button>
+                </div>
             </div>
         </div>
     </main>
