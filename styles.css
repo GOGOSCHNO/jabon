@@ -101,11 +101,10 @@ footer {
     margin-bottom: 0.5rem;
 }
 
-.product-image {
-    width: 100%;
+.product img {
+    width: 80%; /* Réduire la taille des images */
     height: auto;
-    border-radius: 15px; /* Bords arrondis */
-    transition: transform 0.2s;
+    border-radius: 15px; /* Ajouter des bords arrondis */
 }
 
 .product-top:hover .product-image {
