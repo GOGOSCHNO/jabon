@@ -45,7 +45,7 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px; /* Agrandir la police des boutons du header */
+    font-size: 23px; /* Agrandir la police des boutons du header */
     font-weight: bold; /* Mettre les boutons du header en gras */
 }
 
