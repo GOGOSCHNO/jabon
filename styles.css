@@ -219,6 +219,15 @@ footer {
     text-align: left;/* Agrandir la police des boutons du header */   
 }
 
+.product-ingredients strong,
+.product-usage strong {
+    display: block;
+    color: #000;
+    text-align: center;
+     color: #fe9dc0;/* Couleur du titre */
+
+}
+
 .product-prices {
     display: flex;
     flex-direction: column; /* Aligner les boutons verticalement */
