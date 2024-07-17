@@ -74,16 +74,15 @@ footer {
 .product-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between; /* Espace entre les produits */
+    gap: 20px; /* Espace entre les produits */
 }
 
 /* Produits */
 .product {
-    border: none; /* Éliminer l'encadré */
-    padding: 1rem;
-    margin: 1rem;
-    width: 30%;
-    background-color: transparent; /* Rendre l'arrière-plan transparent */
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+  
 }
 
 .product-top {
@@ -102,7 +101,7 @@ footer {
 }
 
 .product img {
-    width: 50%; /* Réduire la taille des images */
+    width: 80%; /* Réduire la taille des images */
     height: auto;
     border-radius: 15px; /* Ajouter des bords arrondis */
     transition: transform 0.2s;
