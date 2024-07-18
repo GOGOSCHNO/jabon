@@ -146,5 +146,5 @@ function redirectToWhatsApp() {
     message += `%0ADatos personales:%0ANombre: ${nombre}%0AApellido: ${apellido}%0ADireccion: ${direccion}%0ACiudad: ${ciudad}%0A%0A👉🏼Recuerda enviarnos tú comprobante de pago 🧾 para pasarlo al área de despacho✈️`;
 
     const whatsappUrl = `https://wa.me/${whatsapp}?text=${message}`;
-    window.location.href = whatsappUrl;
+    window.open(whatsappUrl, '_blank');
 }
