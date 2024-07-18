@@ -102,12 +102,18 @@ document.addEventListener('DOMContentLoaded', () => {
 function handleCheckout(event) {
     event.preventDefault();
 
-    const whatsapp = document.getElementById('whatsapp').value;
-    const nombre = document.getElementById('nombre').value;
-    const apellido = document.getElementById('apellido').value;
-    const direccion = document.getElementById('direccion').value;
-    const ciudad = document.getElementById('ciudad').value;
+    const whatsapp = document.getElementById('whatsapp').value.trim();
+    const nombre = document.getElementById('nombre').value.trim();
+    const apellido = document.getElementById('apellido').value.trim();
+    const direccion = document.getElementById('direccion').value.trim();
+    const ciudad = document.getElementById('ciudad').value.trim();
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Vérification des champs vides
+    if (!whatsapp || !nombre || !apellido || !direccion || !ciudad) {
+        alert('Por favor complete todos los campos antes de continuar.');
+        return;
+    }
 
     const order = {
         whatsapp,
@@ -115,7 +121,7 @@ function handleCheckout(event) {
         apellido,
         direccion,
         ciudad,
-        cart: JSON.parse(localStorage.getItem('cart')) || []
+        cart
     };
 
     fetch('https://nequi-8730a4c30191.herokuapp.com/api/save-order', {
@@ -137,8 +143,8 @@ function handleCheckout(event) {
 }
 
 function redirectToWhatsApp(order) {
-    const { nombre, apellido, direccion, ciudad, cart } = order;
-    
+    const { whatsapp, nombre, apellido, direccion, ciudad, cart } = order;
+
     let message = "Hola,%0A%0AMi Carrito:%0A";
     cart.forEach(item => {
         message += `Cantidad: ${item.quantity} / Nombre: ${item.name} / Precio: $${(item.price * item.quantity).toLocaleString()}%0A`;
@@ -146,6 +152,6 @@ function redirectToWhatsApp(order) {
 
     message += `%0ADatos personales:%0ANombre: ${nombre}%0AApellido: ${apellido}%0ADireccion: ${direccion}%0ACiudad: ${ciudad}%0A%0A👉🏼Recuerda enviarnos tú comprobante de pago 🧾 para pasarlo al área de despacho✈️`;
 
-    const whatsappUrl = `https://wa.me/3045824976?text=${message}`;
+    const whatsappUrl = `https://wa.me/${whatsapp}?text=${message}`;
     window.location.href = whatsappUrl;
 }
