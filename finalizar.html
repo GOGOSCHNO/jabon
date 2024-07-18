@@ -19,24 +19,36 @@
             </nav>
         </div>
     </header>
-    <main>
-        <h2>Finalizar Compra</h2>
-        <form id="checkoutForm" onsubmit="return handleCheckout(event)">
-            <label for="whatsapp">Numero WhatsApp:</label>
-            <input type="text" id="whatsapp" name="whatsapp" required>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" required>
-            <button type="submit">Pagar</button>
-        </form>
-        <div id="qrCodeContainer" style="margin-top: 20px;">
-            <!-- Le code QR sera affiché ici -->
+    <main class="finalizar-container">
+        <div class="left-section">
+            <h2>Finalizar Compra</h2>
+            <div class="payment-instructions">
+                <h3>Comment procéder au paiement :</h3>
+                <p>Veuillez effectuer le paiement via l'un des moyens suivants :</p>
+            </div>
+            <form id="checkoutForm" onsubmit="return handleCheckout(event)">
+                <label for="whatsapp">Numero WhatsApp:</label>
+                <input type="text" id="whatsapp" name="whatsapp" required>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required>
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad" name="ciudad" required>
+                <button type="submit">Pagar</button>
+            </form>
+        </div>
+        <div class="right-section">
+            <img src="path_to_nequi_image" alt="Nequi">
+            <img src="path_to_bancolombia_image" alt="Bancolombia">
         </div>
     </main>
+    <button onclick="enviarComprobante()">Enviar Comprobante</button>
+    <script src="scripts.js"></script>
     <footer>
         <p>&copy; 2024 Boutique de Maillots de Bain</p>
     </footer>
-    <script src="scripts.js"></script>
 </body>
 </html>
