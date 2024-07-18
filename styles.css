@@ -385,10 +385,12 @@ button {
     background-color: #fe9dc0;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px;
     cursor: pointer;
-    margin: 10px 0;
-    border-radius: 5px;
+    margin: 20px 0;
+    border-radius: 10px;
+    display: block;
+    font-size: 1.2em;
 }
 
 button:hover {
@@ -399,4 +401,7 @@ button:hover {
     margin: 20px auto;
     max-width: 100%;
     height: auto;
+    border-radius: 10px; /* Bord arrondi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+    width: 80%; /* Taille des images */
 }
