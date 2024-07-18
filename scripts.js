@@ -135,22 +135,13 @@ function handleCheckout(event) {
 
 function redirectToWhatsApp(order) {
     const { nombre, apellido, direccion, ciudad, cart } = order;
-    const totalContainerElement = document.getElementById('total-amount');
     
-    if (!totalContainerElement) {
-        console.error('Element with ID "total-amount" not found.');
-        alert('Erreur : Impossible de trouver le total à payer.');
-        return;
-    }
-    
-    const totalContainer = totalContainerElement.innerText;
-
     let message = "Hola,%0A%0AMi Carrito:%0A";
     cart.forEach(item => {
         message += `Cantidad: ${item.quantity} / Nombre: ${item.name} / Precio: $${(item.price * item.quantity).toLocaleString()}%0A`;
     });
 
-    message += `%0ATotal a pagar: ${totalContainer}%0A%0ADatos personales:%0ANombre: ${nombre}%0AApellido: ${apellido}%0ADireccion: ${direccion}%0ACiudad: ${ciudad}%0A%0A👉🏼Recuerda enviarnos tú comprobante de pago 🧾 para pasarlo al área de despacho✈️`;
+    message += `%0ADatos personales:%0ANombre: ${nombre}%0AApellido: ${apellido}%0ADireccion: ${direccion}%0ACiudad: ${ciudad}%0A%0A👉🏼Recuerda enviarnos tú comprobante de pago 🧾 para pasarlo al área de despacho✈️`;
 
     const whatsappUrl = `https://wa.me/3045824976?text=${message}`;
     window.location.href = whatsappUrl;
