@@ -99,11 +99,15 @@ function handleCheckout(event) {
     const whatsapp = document.getElementById('whatsapp').value;
     const nombre = document.getElementById('nombre').value;
     const apellido = document.getElementById('apellido').value;
+    const direccion = document.getElementById('direccion').value;
+    const ciudad = document.getElementById('ciudad').value;
 
     const order = {
         whatsapp,
         nombre,
         apellido,
+        direccion,
+        ciudad,
         cart: JSON.parse(localStorage.getItem('cart')) || []
     };
 
@@ -117,11 +121,14 @@ function handleCheckout(event) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            const qrCodeContainer = document.getElementById('qrCodeContainer');
-            qrCodeContainer.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?data=${data.qrCode}&size=200x200" alt="QR Code">`;
+            alert('Orden registrada con éxito. Proceda a realizar el pago.');
         } else {
             alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
         }
     })
     .catch(error => console.error('Erreur:', error));
+}
+
+function enviarComprobante() {
+    alert('Envoyer le comprobante');
 }
