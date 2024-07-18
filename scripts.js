@@ -93,6 +93,10 @@ function updateQuantity(event) {
     displayCart();
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('button[onclick="handleCheckout(event)"]').addEventListener('click', handleCheckout);
+});
+
 function handleCheckout(event) {
     event.preventDefault();
 
@@ -109,7 +113,7 @@ function handleCheckout(event) {
         cart: JSON.parse(localStorage.getItem('cart')) || []
     };
 
-    fetch('https://nequi-8730a4c30191.herokuapp.com/api/initiate-payment', {
+    fetch('https://nequi-8730a4c30191.herokuapp.com/api/save-order', {  // Adjusted endpoint as per previous guidance
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -119,7 +123,7 @@ function handleCheckout(event) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            alert('Orden registrada con éxito. Proceda a realizar el pago.');
+            redirectToWhatsApp(order);
         } else {
             alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
         }
@@ -127,9 +131,6 @@ function handleCheckout(event) {
     .catch(error => console.error('Erreur:', error));
 }
 
-function enviarComprobante() {
-    alert('Envoyer le comprobante');
-}
 function redirectToWhatsApp(order) {
     const { nombre, apellido, direccion, ciudad, cart } = order;
     const totalContainer = document.querySelector('#total-container p').innerText;
