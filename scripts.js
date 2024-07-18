@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('cartContents')) {
         displayCart();
     }
+    if (document.getElementById('checkoutForm')) {
+        document.getElementById('checkoutForm').addEventListener('submit', handleCheckout);
+    }
 });
 
 function addToCart(id, name, price) {
@@ -45,9 +48,8 @@ function displayCart() {
     });
 
     let total = cart.reduce((sum, product) => sum + (product.price * product.quantity), 0);
-    let totalContainer = document.getElementById('total-container');
-    totalContainer.innerHTML = `<p>Total: $${total.toLocaleString()}</p>`;
-    totalContainer.style.display = 'block';
+    document.getElementById('total-amount').innerText = total.toLocaleString();
+    document.getElementById('total-container').style.display = 'block';
 
     document.querySelectorAll('.cart-quantity').forEach(input => {
         input.addEventListener('input', updateQuantity);
