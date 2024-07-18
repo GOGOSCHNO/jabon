@@ -340,9 +340,10 @@ button:hover {
     margin: 20px;
 }
 
-.left-section, .right-section {
+.left-section {
     padding: 7rem 1rem;
-    width: 80%;
+    width: 50%;
+    float: left;
 }
 
 .left-section h2, .payment-instructions h3 {
@@ -386,6 +387,24 @@ button {
 
 button:hover {
     background-color: #ebb679;
+}
+/* Styles pour la section droite */
+.right-section {
+    width: 50%;
+    float: right;
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+.right-section.visible {
+    display: block;
+    opacity: 1;
+}
+
+/* Pour centrer le bouton */
+.right-section button {
+    display: block;
+    margin: 20px auto;
 }
 .right-section img {
     display: block;
