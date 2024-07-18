@@ -133,7 +133,15 @@ function handleCheckout(event) {
 
 function redirectToWhatsApp(order) {
     const { nombre, apellido, direccion, ciudad, cart } = order;
-    const totalContainer = document.querySelector('#total-container p').innerText;
+    const totalContainerElement = document.querySelector('#total-container p');
+    
+    if (!totalContainerElement) {
+        console.error('Element with selector "#total-container p" not found.');
+        alert('Erreur : Impossible de trouver le total à payer.');
+        return;
+    }
+    
+    const totalContainer = totalContainerElement.innerText;
 
     let message = "Hola,%0A%0AMi Carrito:%0A";
     cart.forEach(item => {
