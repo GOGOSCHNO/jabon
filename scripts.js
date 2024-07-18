@@ -83,11 +83,6 @@ function updateQuantity(event) {
     displayCart();
 }
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('button[onclick="handleCheckout(event)"]').addEventListener('click', handleCheckout);
-});
-
 function handleCheckout(event) {
     event.preventDefault();
 
