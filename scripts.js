@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Afficher le contenu du panier si on est sur la page du panier
     if (document.getElementById('cartContents')) {
         displayCart();
     }
@@ -26,45 +25,29 @@ function displayCart() {
     cartContents.innerHTML = '';
 
     if (cart.length === 0) {
-        cartContents.innerHTML = '<p>El carrito está vacío.</p>';
+        document.getElementById('cart-empty').style.display = 'block';
+        document.getElementById('total-container').style.display = 'none';
         return;
+    } else {
+        document.getElementById('cart-empty').style.display = 'none';
     }
 
-    let cartTable = `
-        <table id="cart-table">
-            <thead>
-                <tr>
-                    <th>Producto</th>
-                    <th>Precio</th>
-                    <th>Cantidad</th>
-                    <th>Total</th>
-                    <th>Quitar</th>
-                </tr>
-            </thead>
-            <tbody>
-    `;
-
     cart.forEach((product, index) => {
-        cartTable += `
-            <tr>
-                <td>${product.name}</td>
-                <td>$${product.price}</td>
-                <td><input type="number" value="${product.quantity}" min="1" data-index="${index}" class="cart-quantity"></td>
-                <td>$${(product.price * product.quantity).toFixed(2)}</td>
-                <td><button onclick="removeFromCart(${index})">Eliminar</button></td>
-            </tr>
+        let row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${product.name}</td>
+            <td>$${product.price.toLocaleString()}</td>
+            <td><input type="number" value="${product.quantity}" min="1" data-index="${index}" class="cart-quantity"></td>
+            <td>$${(product.price * product.quantity).toLocaleString()}</td>
+            <td><button onclick="removeFromCart(${index})">Eliminar</button></td>
         `;
+        cartContents.appendChild(row);
     });
 
-    cartTable += `
-            </tbody>
-        </table>
-    `;
-
     let total = cart.reduce((sum, product) => sum + (product.price * product.quantity), 0);
-    cartTable += `<div><p>Total: $${total.toFixed(2)}</p></div>`;
-    
-    cartContents.innerHTML = cartTable;
+    let totalContainer = document.getElementById('total-container');
+    totalContainer.innerHTML = `<p>Total: $${total.toLocaleString()}</p>`;
+    totalContainer.style.display = 'block';
 
     document.querySelectorAll('.cart-quantity').forEach(input => {
         input.addEventListener('input', updateQuantity);
@@ -86,6 +69,18 @@ function clearCart() {
 function finalizePurchase() {
     window.location.href = 'finalizar.html';
 }
+
+function updateQuantity(event) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let index = event.target.dataset.index;
+    cart[index].quantity = parseInt(event.target.value);
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCart();
+}
+
 
 function updateQuantity(event) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
