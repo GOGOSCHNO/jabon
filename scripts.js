@@ -96,14 +96,12 @@ function updateQuantity(event) {
 function handleCheckout(event) {
     event.preventDefault();
 
-    const whatsapp = document.getElementById('whatsapp').value;
     const nombre = document.getElementById('nombre').value;
     const apellido = document.getElementById('apellido').value;
     const direccion = document.getElementById('direccion').value;
     const ciudad = document.getElementById('ciudad').value;
 
     const order = {
-        whatsapp,
         nombre,
         apellido,
         direccion,
