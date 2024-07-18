@@ -27,6 +27,8 @@
                 <p>Veuillez effectuer le paiement via l'un des moyens suivants :</p>
             </div>
             <form id="checkoutForm" onsubmit="return handleCheckout(event)">
+                <label for="whatsapp">Numero WhatsApp:</label>
+                <input type="text" id="whatsapp" name="whatsapp" required>
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
                 <label for="apellido">Apellido:</label>
