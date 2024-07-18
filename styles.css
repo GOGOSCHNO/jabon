@@ -157,7 +157,7 @@ footer {
 .product button:hover {
     transform: scale(1.1);
 }
-
+/||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*Section des pages produit*/
 /* Section gauche du produit */
 .product-layout {
     display: flex;
