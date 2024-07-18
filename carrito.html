@@ -20,10 +20,21 @@
         </div>
     </header>
     <main>
-        <h2>Carrito de Compras</h2>
-        <div id="cartContents">
-            <!-- Les articles du panier seront affichés ici -->
-        </div>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th>Quitar</th>
+                </tr>
+            </thead>
+            <tbody id="cartContents">
+                <!-- Les articles du panier seront affichés ici -->
+            </tbody>
+        </table>
+        <p id="cart-empty">Tu carrito está vacío</p>
         <button onclick="clearCart()">Vider le panier</button>
         <button id="finalizeButton" onclick="finalizePurchase()">Finalizar</button>
     </main>
