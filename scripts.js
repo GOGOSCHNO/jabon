@@ -7,8 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function addToCart(id, name, price) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let product = { id, name, price };
-    cart.push(product);
+    let product = { id, name, price, quantity: 1 };
+    let existingProductIndex = cart.findIndex(item => item.id === id);
+
+    if (existingProductIndex > -1) {
+        cart[existingProductIndex].quantity++;
+    } else {
+        cart.push(product);
+    }
+
     localStorage.setItem('cart', JSON.stringify(cart));
     alert('Producto agregado al carrito!');
 }
@@ -23,19 +30,45 @@ function displayCart() {
         return;
     }
 
+    let cartTable = `
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th>Quitar</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
     cart.forEach((product, index) => {
-        let productElement = document.createElement('div');
-        productElement.innerHTML = `
-            <p>${product.name} - $${product.price}</p>
-            <button onclick="removeFromCart(${index})">Eliminar</button>
+        cartTable += `
+            <tr>
+                <td>${product.name}</td>
+                <td>$${product.price}</td>
+                <td><input type="number" value="${product.quantity}" min="1" data-index="${index}" class="cart-quantity"></td>
+                <td>$${(product.price * product.quantity).toFixed(2)}</td>
+                <td><button onclick="removeFromCart(${index})">Eliminar</button></td>
+            </tr>
         `;
-        cartContents.appendChild(productElement);
     });
 
-    let total = cart.reduce((sum, product) => sum + product.price, 0);
-    let totalElement = document.createElement('div');
-    totalElement.innerHTML = `<p>Total: $${total}</p>`;
-    cartContents.appendChild(totalElement);
+    cartTable += `
+            </tbody>
+        </table>
+    `;
+
+    let total = cart.reduce((sum, product) => sum + (product.price * product.quantity), 0);
+    cartTable += `<div><p>Total: $${total.toFixed(2)}</p></div>`;
+    
+    cartContents.innerHTML = cartTable;
+
+    document.querySelectorAll('.cart-quantity').forEach(input => {
+        input.addEventListener('input', updateQuantity);
+    });
 }
 
 function removeFromCart(index) {
@@ -54,14 +87,23 @@ function finalizePurchase() {
     window.location.href = 'finalizar.html';
 }
 
+function updateQuantity(event) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let index = event.target.dataset.index;
+    cart[index].quantity = parseInt(event.target.value);
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCart();
+}
+
 function handleCheckout(event) {
     event.preventDefault();
-    console.log("handleCheckout called");
 
     const whatsapp = document.getElementById('whatsapp').value;
     const nombre = document.getElementById('nombre').value;
     const apellido = document.getElementById('apellido').value;
-    console.log("Form data:", { whatsapp, nombre, apellido });
 
     const order = {
         whatsapp,
@@ -69,7 +111,6 @@ function handleCheckout(event) {
         apellido,
         cart: JSON.parse(localStorage.getItem('cart')) || []
     };
-    console.log("Order data:", order);
 
     fetch('https://nequi-8730a4c30191.herokuapp.com/api/initiate-payment', {
         method: 'POST',
@@ -80,9 +121,7 @@ function handleCheckout(event) {
     })
     .then(response => response.json())
     .then(data => {
-        console.log("Response data:", data);
         if (data.success) {
-            // Afficher le code QR sur la même page
             const qrCodeContainer = document.getElementById('qrCodeContainer');
             qrCodeContainer.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?data=${data.qrCode}&size=200x200" alt="QR Code">`;
         } else {
