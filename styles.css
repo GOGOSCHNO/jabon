@@ -394,7 +394,8 @@ button:hover {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     position: relative;
-    top: 20px;
+    top: 5px;
+    margin-top: 8%;
 }
 .right-section.visible {
     display: block;
@@ -409,10 +410,10 @@ button:hover {
 }
 .right-section img {
     display: block;
-    margin: 20px auto;
+    margin: 10px auto;
     max-width: 100%;
     height: auto;
     border-radius: 10px; /* Bord arrondi */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
-    width: 80%; /* Taille des images */
+    width: 60%; /* Taille des images */
 }
