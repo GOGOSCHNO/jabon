@@ -350,7 +350,8 @@ button:hover {
 }
 
 .left-section, .right-section {
-    width: 48%;
+    padding: 7rem 1rem;
+    width: 80%;
 }
 
 .left-section h2, .payment-instructions h3 {
