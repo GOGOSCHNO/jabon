@@ -84,17 +84,6 @@ function updateQuantity(event) {
 }
 
 
-function updateQuantity(event) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let index = event.target.dataset.index;
-    cart[index].quantity = parseInt(event.target.value);
-    if (cart[index].quantity <= 0) {
-        cart.splice(index, 1);
-    }
-    localStorage.setItem('cart', JSON.stringify(cart));
-    displayCart();
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('button[onclick="handleCheckout(event)"]').addEventListener('click', handleCheckout);
 });
@@ -109,7 +98,6 @@ function handleCheckout(event) {
     const ciudad = document.getElementById('ciudad').value.trim();
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Vérification des champs vides
     if (!whatsapp || !nombre || !apellido || !direccion || !ciudad) {
         alert('Por favor complete todos los campos antes de continuar.');
         return;
@@ -134,7 +122,7 @@ function handleCheckout(event) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            redirectToWhatsApp(order);
+            document.getElementById('right-section').classList.add('visible');
         } else {
             alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
         }
@@ -142,8 +130,13 @@ function handleCheckout(event) {
     .catch(error => console.error('Erreur:', error));
 }
 
-function redirectToWhatsApp(order) {
-    const { whatsapp, nombre, apellido, direccion, ciudad, cart } = order;
+function redirectToWhatsApp() {
+    const nombre = document.getElementById('nombre').value.trim();
+    const apellido = document.getElementById('apellido').value.trim();
+    const direccion = document.getElementById('direccion').value.trim();
+    const ciudad = document.getElementById('ciudad').value.trim();
+    const whatsapp = document.getElementById('whatsapp').value.trim();
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     let message = "Hola,%0A%0AMi Carrito:%0A";
     cart.forEach(item => {
