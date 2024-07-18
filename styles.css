@@ -390,15 +390,16 @@ button:hover {
 }
 /* Styles pour la section droite */
 .right-section {
-    width: 50%;
-    float: right;
     display: none;
     opacity: 0;
-    transition: opacity 1s ease-out;
+    transition: opacity 0.5s ease-in-out;
+    position: relative;
+    top: 20px;
 }
 .right-section.visible {
     display: block;
     opacity: 1;
+    top: 0;
 }
 
 /* Pour centrer le bouton */
