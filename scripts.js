@@ -117,13 +117,15 @@ function handleCheckout(event) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            document.getElementById('right-section').classList.add('visible');
+            document.querySelector('.right-section').classList.add('visible');
+            console.log('La partie droite est maintenant visible'); // Ajout de message de console
         } else {
             alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
         }
     })
     .catch(error => console.error('Erreur:', error));
 }
+
 
 function redirectToWhatsApp() {
     const nombre = document.getElementById('nombre').value.trim();
