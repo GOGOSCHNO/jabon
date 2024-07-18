@@ -275,7 +275,7 @@ td img {
     height: auto;
 }
 
-.cart-quantity input {
+.cart-quantity {
     width: 50px; /* Réduire la largeur */
     text-align: center;
     border-radius: 5px; /* Bord arrondi */
