@@ -248,7 +248,56 @@ footer {
     transform: scale(1.1);
 }
 
-/* Contenu du panier */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Contenu de la page carrito */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+td img {
+    width: 75px;
+    height: auto;
+}
+
+.cart-remove button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.cart-remove button:hover {
+    background-color: #d32f2f;
+}
+
+#cart-empty {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+button {
+    background-color: #fe9dc0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #ebb679;
+}
+
 #cartContents div {
     border: 1px solid #ddd;
     padding: 1rem;
