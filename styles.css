@@ -333,21 +333,15 @@ button:hover {
     background-color: #d32f2f;
 }
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Contenu de la page finalizar */
-/* Structure générale */
-.finalizar-main {
+.container {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+}
+
+.left-section, .right-section {
+    width: 48%;
     padding: 20px;
-}
-
-/* Section gauche */
-.left-section {
-    flex: 1;
-    margin-right: 20px;
-}
-
-.left-section h2 {
-    margin-bottom: 20px;
 }
 
 .left-section form {
@@ -355,88 +349,53 @@ button:hover {
     flex-direction: column;
 }
 
-.left-section form input {
-    margin-bottom: 10px;
-    padding: 15px;
-    font-size: 16px;
+.left-section input {
+    padding: 10px;
+    margin: 5px 0;
     border-radius: 5px;
     border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
 }
 
-.left-section form button {
-    padding: 15px;
-    font-size: 16px;
+.left-section button, .right-section button {
+    padding: 10px;
     background-color: #fe9dc0;
-    color: white;
     border: none;
     border-radius: 5px;
+    color: white;
+    font-size: 1em;
     cursor: pointer;
     margin-top: 10px;
 }
 
-.payment-details {
-    display: none;
-    margin-top: 20px;
-    text-align: center;
+.left-section button:hover, .right-section button:hover {
+    background-color: #e08dae;
 }
 
-.payment-details img {
-    width: 80%;
-    margin: 10px 0;
+.payment-images img {
+    width: 100%;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.payment-details button {
-    padding: 15px;
-    font-size: 16px;
-    background-color: #fe9dc0;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-/* Section droite */
-.right-section {
-    flex: 1;
-    margin-left: 20px;
-}
-
-.right-section h3 {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin-bottom: 20px;
 }
 
-.right-section table {
+.payment-images button {
+    width: 100%;
+}
+
+#cart-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
 }
 
-.right-section table th,
-.right-section table td {
-    border: 1px solid #ccc;
+#cart-table th, #cart-table td {
     padding: 10px;
+    border: 1px solid #ddd;
     text-align: left;
 }
 
 #total-container {
     text-align: right;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* Apparition de la section droite */
-.payment-details.visible {
-    display: block;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+    margin-top: 20px;
+    font-size: 1.2em;
 }
