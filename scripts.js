@@ -28,6 +28,7 @@ function addToCart(id, name, price, image) {
 function updateCartCount() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     document.getElementById('cart-count').innerText = cart.length;
+    document.getElementById('popup-cart-count').innerText = cart.length;
 }
 
 function animateCartIcon() {
