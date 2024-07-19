@@ -333,7 +333,7 @@ button:hover {
     background-color: #d32f2f;
 }
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Contenu de la page finalizar */
-.container {
+.finalizar-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -342,6 +342,14 @@ button:hover {
 .left-section, .right-section {
     width: 48%;
     padding: 20px;
+}
+
+.left-section {
+    margin-right: 2%;
+}
+
+.right-section {
+    margin-left: 2%;
 }
 
 .left-section form {
@@ -373,8 +381,8 @@ button:hover {
 }
 
 .payment-images img {
-    width: 100%;
-    border-radius: 5px;
+    width: 80%;
+    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin-bottom: 20px;
 }
