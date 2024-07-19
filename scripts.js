@@ -116,7 +116,7 @@ function handleCheckout(event) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            document.querySelector('.payment-details').classList.add('visible');
+            showPaymentDetails();
         } else {
             alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
         }
@@ -124,6 +124,11 @@ function handleCheckout(event) {
     .catch(error => console.error('Erreur:', error));
 }
 
+function showPaymentDetails() {
+    const paymentDetails = document.querySelector('.payment-details');
+    paymentDetails.style.display = 'block';
+    paymentDetails.scrollIntoView({ behavior: 'smooth' });
+}
 
 function redirectToWhatsApp() {
     const nombre = document.getElementById('nombre').value.trim();
