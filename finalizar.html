@@ -27,23 +27,37 @@
                 <p>Para finalizar tu pedido, debes realizar una transferencia Nequi o Bancolombia y enviar el comprobante a nuestro WhatsApp</p>
             </div>
             <form id="checkoutForm" onsubmit="return handleCheckout(event)">
-                <label for="whatsapp">Numero WhatsApp:</label>
-                <input type="text" id="whatsapp" name="whatsapp" required>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" required>
-                <label for="direccion">Dirección:</label>
-                <input type="text" id="direccion" name="direccion" required>
-                <label for="ciudad">Ciudad:</label>
-                <input type="text" id="ciudad" name="ciudad" required>
-                <button type="button" onclick="handleCheckout(event)">Procesar al Pago</button>
+                <input type="text" id="whatsapp" name="whatsapp" placeholder="Numero WhatsApp" required>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+                <input type="text" id="direccion" name="direccion" placeholder="Dirección" required>
+                <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" required>
+                <button type="submit">Realizar el Pago</button>
             </form>
+            <div class="payment-details">
+                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/nequi.PNG" alt="Nequi">
+                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/bancolombia.PNG" alt="Bancolombia">
+                <button onclick="redirectToWhatsApp()">Enviar Comprobante</button>
+            </div>
         </div>
         <div class="right-section">
-            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/nequi.PNG" alt="Nequi">
-            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/bancolombia.PNG" alt="Bancolombia">
-            <button onclick="redirectToWhatsApp()">Enviar Comprobante</button>
+            <h3>Tu Carrito</h3>
+            <table id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="cartContents">
+                    <!-- Les articles du panier seront affichés ici -->
+                </tbody>
+            </table>
+            <div id="total-container">
+                <p>Total: $<span id="total-amount">0.00</span></p>
+            </div>
         </div>
     </main>
     <script src="scripts.js"></script>
