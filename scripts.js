@@ -8,8 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function addToCart(id, name, price) {
+    const productElement = document.querySelector(`.product[data-id="${id}"]`);
+    const image = productElement ? productElement.getAttribute('data-image') : '';
+
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let product = { id, name, price, quantity: 1 };
+    let product = { id, name, price, quantity: 1, image };
     let existingProductIndex = cart.findIndex(item => item.id === id);
 
     if (existingProductIndex > -1) {
@@ -28,7 +31,7 @@ function displayCart() {
     cartContents.innerHTML = '';
 
     if (cart.length === 0) {
-        cartContents.innerHTML = '<tr><td colspan="5">Tu carrito está vacío.</td></tr>';
+        cartContents.innerHTML = '<tr><td colspan="6">Tu carrito está vacío.</td></tr>';
         document.getElementById('total-container').style.display = 'none';
         return;
     } else {
@@ -37,8 +40,10 @@ function displayCart() {
 
     cart.forEach((product, index) => {
         let row = document.createElement('tr');
+        let imagePath = product.image;
+        
         row.innerHTML = `
-            <td><img src="path_to_images/${product.name.toLowerCase().replace(/ /g, '-')}.png" alt="${product.name}" width="50"></td>
+            <td><img src="${imagePath}" alt="${product.name}" width="50"></td>
             <td>${product.name}</td>
             <td>$${product.price.toLocaleString()}</td>
             <td><input type="number" value="${product.quantity}" min="1" data-index="${index}" class="cart-quantity"></td>
