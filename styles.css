@@ -479,82 +479,57 @@ button:hover {
 }
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Section pop up*/
 .cart-popup {
-    display: none;
+    display: none; /* Start hidden */
     position: fixed;
+    top: 20%;
+    right: 5%;
+    width: 80%;
+    max-width: 500px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .cart-popup-content {
-    background-color: white;
-    margin: 5% auto;
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
 }
 
 .cart-popup-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
-    margin-bottom: 20px;
+}
+
+.cart-popup-header h2 {
+    margin: 0;
 }
 
 .close-button {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
     cursor: pointer;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: black;
-    text-decoration: none;
-}
-
-.cart-popup table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-.cart-popup th, .cart-popup td {
-    padding: 10px;
-    text-align: center;
-}
-
-.cart-popup th {
-    border-bottom: 2px solid #ddd;
+    font-size: 20px;
 }
 
 .cart-popup-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 2px solid #ddd;
+    border-top: 1px solid #ddd;
     padding-top: 10px;
+    text-align: right;
 }
 
-.cart-popup-footer button {
-    padding: 10px 20px;
+.cart-popup-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     background-color: #fe9dc0;
     border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 1em;
+    border-radius: 50%;
+    padding: 15px;
     cursor: pointer;
 }
 
-.cart-popup-footer button:hover {
-    background-color: #e08dae;
+.cart-popup-button img {
+    width: 24px;
+    height: 24px;
 }
