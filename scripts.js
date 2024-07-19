@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function addToCart(id, name, price) {
+function addToCart(id, name, price, image) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let product = { id, name, price, quantity: 1 };
+    let product = { id, name, price, image, quantity: 1 };
     let existingProductIndex = cart.findIndex(item => item.id === id);
 
     if (existingProductIndex > -1) {
@@ -25,22 +25,14 @@ function addToCart(id, name, price) {
 
 function updateCartCount() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let cartCount = cart.reduce((sum, product) => sum + product.quantity, 0);
-    let cartCountElement = document.getElementById('cart-count');
-
-    if (cartCount > 0) {
-        cartCountElement.innerText = cartCount;
-        cartCountElement.style.display = 'inline';
-    } else {
-        cartCountElement.style.display = 'none';
-    }
+    document.getElementById('cart-count').innerText = cart.length;
 }
 
 function animateCartIcon() {
-    let cartIcon = document.querySelector('.carrito-icon');
-    cartIcon.classList.add('animate');
+    const cartIcon = document.querySelector('.header-content a[href="carrito.html"] img');
+    cartIcon.classList.add('animate-cart');
     setTimeout(() => {
-        cartIcon.classList.remove('animate');
+        cartIcon.classList.remove('animate-cart');
     }, 500);
 }
 
