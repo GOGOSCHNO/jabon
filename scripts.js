@@ -117,8 +117,7 @@ function handleCheckout(event) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            document.querySelector('.right-section').classList.add('visible');
-            console.log('La partie droite est maintenant visible'); // Ajout de message de console
+            document.querySelector('.payment-details').classList.add('visible');
         } else {
             alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
         }
