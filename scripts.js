@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('checkoutForm')) {
         document.getElementById('checkoutForm').addEventListener('submit', handleCheckout);
     }
-    updateCartCount(); // Mise à jour du compteur de panier à chaque chargement de la page
+    document.querySelector('.carrito-icon').addEventListener('click', openCartPopup);
+    updateCartCount();
 });
 
 function addToCart(id, name, price, image) {
@@ -35,6 +36,17 @@ function animateCartIcon() {
     setTimeout(() => {
         cartIcon.classList.remove('animate-cart');
     }, 500);
+}
+
+function openCartPopup() {
+    const popup = document.getElementById('cart-popup');
+    popup.style.display = 'block';
+    displayCartPopup();
+}
+
+function closeCartPopup() {
+    const popup = document.getElementById('cart-popup');
+    popup.style.display = 'none';
 }
 
 function displayCart() {
