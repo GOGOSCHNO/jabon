@@ -224,6 +224,32 @@
                 </div>
             </div>
         </div>
+        <div id="cart-popup" class="cart-popup">
+            <div class="cart-popup-content">
+                <div class="cart-popup-header">
+                    <h2>Carrito de compra</h2>
+                    <span class="close-button" onclick="closeCartPopup()">&times;</span>
+                </div>
+                <table id="cart-popup-contents">
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-popup-items">
+                        <!-- Les articles du panier seront affichés ici -->
+                    </tbody>
+                </table>
+                <div class="cart-popup-footer">
+                    <p>Total: $<span id="popup-total-amount"></span></p>
+                    <button onclick="finalizePurchase()">Finalizar</button>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 Naysa</p>
