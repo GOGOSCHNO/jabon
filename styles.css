@@ -33,8 +33,8 @@ header {
 .social-icons img {
     width: 24px;
     height: 24px;
-    padding-top: 25px;
-    margin-right: 10px; /* Espace entre les icônes */
+    padding-top: 28px;
+    margin-right: 16px; /* Espace entre les icônes */
 }
 
 .header-logo {
