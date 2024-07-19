@@ -26,8 +26,19 @@ header {
     
 }
 
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
 .header-logo {
     max-width: 200px;
+    text-align: center;
+    flex-grow: 1;
     height: auto;
 }
 
