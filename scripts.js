@@ -22,17 +22,23 @@ function addToCart(id, name, price) {
     alert('Producto agregado al carrito!');
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.right-section')) {
+        displayCart();
+    }
+});
+
 function displayCart() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let cartContents = document.getElementById('cartContents');
     cartContents.innerHTML = '';
 
     if (cart.length === 0) {
-        document.getElementById('cart-empty').style.display = 'block';
+        cartContents.innerHTML = '<tr><td colspan="4">Tu carrito está vacío.</td></tr>';
         document.getElementById('total-container').style.display = 'none';
         return;
     } else {
-        document.getElementById('cart-empty').style.display = 'none';
+        document.getElementById('total-container').style.display = 'block';
     }
 
     cart.forEach((product, index) => {
@@ -42,21 +48,13 @@ function displayCart() {
             <td>$${product.price.toLocaleString()}</td>
             <td><input type="number" value="${product.quantity}" min="1" data-index="${index}" class="cart-quantity"></td>
             <td>$${(product.price * product.quantity).toLocaleString()}</td>
-            <td><button onclick="removeFromCart(${index})">Eliminar</button></td>
         `;
         cartContents.appendChild(row);
     });
 
     let total = cart.reduce((sum, product) => sum + (product.price * product.quantity), 0);
-    let totalContainer = document.getElementById('total-container');
-    totalContainer.innerHTML = `<p>Total: $${total.toLocaleString()}</p>`;
-    totalContainer.style.display = 'block';
-
-    document.querySelectorAll('.cart-quantity').forEach(input => {
-        input.addEventListener('input', updateQuantity);
-    });
+    document.getElementById('total-amount').innerText = total.toLocaleString();
 }
-
 function removeFromCart(index) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.splice(index, 1);
