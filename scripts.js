@@ -39,14 +39,41 @@ function animateCartIcon() {
 }
 
 function openCartPopup() {
-    const popup = document.getElementById('cart-popup');
-    popup.style.display = 'block';
-    displayCartPopup();
+    document.getElementById('cart-popup').style.display = 'block';
+    displayCartInPopup(); // Call this function to populate the cart
 }
 
 function closeCartPopup() {
-    const popup = document.getElementById('cart-popup');
-    popup.style.display = 'none';
+    document.getElementById('cart-popup').style.display = 'none';
+}
+
+function displayCartInPopup() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartContents = document.getElementById('cart-popup-items');
+    cartContents.innerHTML = '';
+
+    if (cart.length === 0) {
+        cartContents.innerHTML = '<tr><td colspan="6">Tu carrito está vacío.</td></tr>';
+        document.getElementById('popup-total-amount').innerText = '0';
+        return;
+    }
+
+    cart.forEach((product, index) => {
+        let row = document.createElement('tr');
+        let imagePath = product.image;
+
+        row.innerHTML = `
+            <td><img src="${imagePath}" alt="${product.name}" width="50"></td>
+            <td>${product.name}</td>
+            <td>$${product.price.toLocaleString()}</td>
+            <td>${product.quantity}</td>
+            <td>$${(product.price * product.quantity).toLocaleString()}</td>
+        `;
+        cartContents.appendChild(row);
+    });
+
+    let total = cart.reduce((sum, product) => sum + (product.price * product.quantity), 0);
+    document.getElementById('popup-total-amount').innerText = total.toLocaleString();
 }
 
 function displayCart() {
