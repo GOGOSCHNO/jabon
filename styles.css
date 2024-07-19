@@ -59,6 +59,11 @@ nav ul li a {
     font-size: 23px; /* Agrandir la police des boutons du header */
     font-weight: bold; /* Mettre les boutons du header en gras */
 }
+nav ul li img {
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+}
 
 /* Main content */
 main {
