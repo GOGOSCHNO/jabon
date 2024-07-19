@@ -48,8 +48,9 @@ function displayCart() {
     });
 
     let total = cart.reduce((sum, product) => sum + (product.price * product.quantity), 0);
-    document.getElementById('total-amount').innerText = total.toLocaleString();
-    document.getElementById('total-container').style.display = 'block';
+    let totalContainer = document.getElementById('total-container');
+    totalContainer.innerHTML = `<p>Total: $${total.toLocaleString()}</p>`;
+    totalContainer.style.display = 'block';
 
     document.querySelectorAll('.cart-quantity').forEach(input => {
         input.addEventListener('input', updateQuantity);
