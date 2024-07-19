@@ -8,11 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function addToCart(id, name, price) {
-    const productElement = document.querySelector(`.product[data-id="${id}"]`);
-    const image = productElement ? productElement.getAttribute('data-image') : '';
-
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let product = { id, name, price, quantity: 1, image };
+    let product = { id, name, price, quantity: 1 };
     let existingProductIndex = cart.findIndex(item => item.id === id);
 
     if (existingProductIndex > -1) {
@@ -22,8 +19,35 @@ function addToCart(id, name, price) {
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert('Producto agregado al carrito!');
+    updateCartCount();
+    animateCartIcon();
 }
+
+function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartCount = cart.reduce((sum, product) => sum + product.quantity, 0);
+    let cartCountElement = document.getElementById('cart-count');
+
+    if (cartCount > 0) {
+        cartCountElement.innerText = cartCount;
+        cartCountElement.style.display = 'inline';
+    } else {
+        cartCountElement.style.display = 'none';
+    }
+}
+
+function animateCartIcon() {
+    let cartIcon = document.querySelector('.carrito-icon');
+    cartIcon.classList.add('animate');
+    setTimeout(() => {
+        cartIcon.classList.remove('animate');
+    }, 500);
+}
+
+// Call updateCartCount on page load to ensure the correct count is displayed
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount();
+});
 
 function displayCart() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
