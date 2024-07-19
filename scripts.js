@@ -38,6 +38,7 @@ function displayCart() {
     cart.forEach((product, index) => {
         let row = document.createElement('tr');
         row.innerHTML = `
+            <td><img src="path_to_images/${product.name.toLowerCase().replace(/ /g, '-')}.png" alt="${product.name}" width="50"></td>
             <td>${product.name}</td>
             <td>$${product.price.toLocaleString()}</td>
             <td><input type="number" value="${product.quantity}" min="1" data-index="${index}" class="cart-quantity"></td>
