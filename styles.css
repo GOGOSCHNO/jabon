@@ -300,6 +300,7 @@ td img {
 #total-container {
     text-align: right;
     margin-top: 20px;
+    margin-right: 20%;
     font-size: 1.8em;
     border-bottom: 1px solid #ddd;
 }
