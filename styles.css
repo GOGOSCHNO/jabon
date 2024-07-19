@@ -53,7 +53,9 @@ nav ul {
 
 nav ul li {
     margin: 0 10px;
+    position: relative
 }
+
 
 nav ul li a {
     color: white;
