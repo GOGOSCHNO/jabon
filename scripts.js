@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('checkoutForm')) {
         document.getElementById('checkoutForm').addEventListener('submit', handleCheckout);
     }
+    updateCartCount(); // Mise à jour du compteur de panier à chaque chargement de la page
 });
 
 function addToCart(id, name, price, image) {
@@ -36,11 +37,6 @@ function animateCartIcon() {
     }, 500);
 }
 
-// Call updateCartCount on page load to ensure the correct count is displayed
-document.addEventListener('DOMContentLoaded', () => {
-    updateCartCount();
-});
-
 function displayCart() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let cartContents = document.getElementById('cartContents');
@@ -56,10 +52,8 @@ function displayCart() {
 
     cart.forEach((product, index) => {
         let row = document.createElement('tr');
-        let imagePath = product.image;
-        
         row.innerHTML = `
-            <td><img src="${imagePath}" alt="${product.name}" width="50"></td>
+            <td><img src="${product.image}" alt="${product.name}" width="50" class="cart-image"></td>
             <td>${product.name}</td>
             <td>$${product.price.toLocaleString()}</td>
             <td><input type="number" value="${product.quantity}" min="1" data-index="${index}" class="cart-quantity"></td>
@@ -81,11 +75,13 @@ function removeFromCart(index) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.splice(index, 1);
     localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
     displayCart();
 }
 
 function clearCart() {
     localStorage.removeItem('cart');
+    updateCartCount();
     displayCart();
 }
 
@@ -101,6 +97,7 @@ function updateQuantity(event) {
         cart.splice(index, 1);
     }
     localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
     displayCart();
 }
 
