@@ -409,14 +409,6 @@ button:hover {
     margin-right: 2%;
 }
 
-.right-section {
-    margin-left: 2%;
-    position: -webkit-sticky; /* Pour compatibilité avec certains navigateurs */
-    position: sticky;
-    top: 0;
-    align-self: flex-start; /* Pour s'assurer que la section droite commence en haut */
-}
-
 .left-section form {
     display: flex;
     flex-direction: column;
@@ -444,7 +436,52 @@ button:hover {
 .left-section button:hover, .right-section button:hover {
     background-color: #e08dae;
 }
+.form-section {
+    margin-bottom: 20px;
+}
 
+.form-section h3 {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.delivery-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.delivery-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.delivery-option input[type="radio"] {
+    margin-right: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#envia-fields input, #tienda-fields p {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
 .payment-details img {
     width: 50%;
     border-radius: 15px;
@@ -474,6 +511,14 @@ button:hover {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.right-section {
+    margin-left: 2%;
+    position: -webkit-sticky; /* Pour compatibilité avec certains navigateurs */
+    position: sticky;
+    top: 0;
+    align-self: flex-start; /* Pour s'assurer que la section droite commence en haut */
 }
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Section pop up*/
 .cart-popup {
