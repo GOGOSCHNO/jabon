@@ -32,22 +32,37 @@
     <main class="finalizar-container">
         <div class="left-section">
             <h2>Finalizar Compra</h2>
-            <div class="payment-instructions">
-                <h3>Cómo proceder al pago :</h3>
-                <p>Para finalizar tu pedido, debes realizar una transferencia Nequi o Bancolombia y enviar el comprobante a nuestro WhatsApp</p>
-            </div>
-            <form id="checkoutForm" onsubmit="return handleCheckout(event)">
-                <input type="text" id="whatsapp" name="whatsapp" placeholder="Numero WhatsApp" required>
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-                <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
-                <input type="text" id="direccion" name="direccion" placeholder="Dirección" required>
-                <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" required>
-                <button type="submit">Realizar el Pago</button>
-            </form>
-            <div class="payment-details" style="display: none;">
-                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/nequi.PNG" alt="Nequi">
-                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/bancolombia.PNG" alt="Bancolombia">
-                <button onclick="redirectToWhatsApp()">Enviar Comprobante</button>
+            <div class="form-section">
+                <h3>Contacto</h3>
+                <form id="checkoutForm" onsubmit="return handleCheckout(event)">
+                    <input type="text" id="whatsapp" name="whatsapp" placeholder="Numero WhatsApp" required>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                    <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">Enviarme novedades y ofertas</label>
+                    </div>
+                    <h3>Entrega</h3>
+                    <div class="delivery-options">
+                        <div class="delivery-option" onclick="selectDeliveryOption('envia')">
+                            <input type="radio" id="envia" name="delivery" value="envia" required>
+                            <label for="envia"><img src="envia-logo.png" alt="Envia"> Envia</label>
+                        </div>
+                        <div class="delivery-option" onclick="selectDeliveryOption('tienda')">
+                            <input type="radio" id="tienda" name="delivery" value="tienda">
+                            <label for="tienda"><img src="tienda-logo.png" alt="Tienda"> Retiro en tienda</label>
+                        </div>
+                    </div>
+                    <div id="envia-fields" class="hidden">
+                        <input type="text" id="direccion" name="direccion" placeholder="Dirección">
+                        <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad">
+                    </div>
+                    <div id="tienda-fields" class="hidden">
+                        <p>carrera 48#76-81, Barranquilla</p>
+                        <p>Edificio Kairos</p>
+                    </div>
+                    <button type="submit">Realizar el Pago</button>
+                </form>
             </div>
         </div>
         <div class="right-section">
