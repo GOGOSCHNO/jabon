@@ -32,16 +32,20 @@ function removeFromCart(index) {
     cart.splice(index, 1);
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
-    setTimeout(displayCart, 100); // Ajoute un délai de 100 ms
-    setTimeout(displayCartInPopup, 100); // Ajoute un délai de 100 ms
+    setTimeout(() => {
+        displayCart(); // Sync with page
+        displayCartInPopup(); // Sync with popup
+    }, 100);
 }
 
 function clearCart() {
     console.log('Appel à clearCart');
     localStorage.removeItem('cart');
     updateCartCount();
-    setTimeout(displayCart, 100); // Ajoute un délai de 100 ms
-    setTimeout(displayCartInPopup, 100); // Ajoute un délai de 100 ms
+    setTimeout(() => {
+        displayCart(); // Sync with page
+        displayCartInPopup(); // Sync with popup
+    }, 100);
 }
 
 function updateCartCount() {
