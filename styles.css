@@ -407,12 +407,10 @@ button:hover {
 
 .left-section {
     margin-right: 2%;
-    flex: 1;
 }
 
 .right-section {
     margin-left: 2%;
-    flex: 0 0 300px; /* Ajustez selon vos besoins */
     position: -webkit-sticky; /* Pour compatibilité avec certains navigateurs */
     position: sticky;
     top: 0;
