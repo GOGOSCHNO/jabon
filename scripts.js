@@ -5,10 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('checkoutForm')) {
         document.getElementById('checkoutForm').addEventListener('submit', handleCheckout);
     }
-    document.querySelector('.carrito-icon').addEventListener('click', openCartPopup);
     updateCartCount();
-    // Add event listener for storage change
-    window.addEventListener('storage', syncCartBetweenTabs);
 });
 
 function addToCart(id, name, price, image) {
