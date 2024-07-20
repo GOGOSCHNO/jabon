@@ -161,9 +161,29 @@ function updateQuantity(event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('envia').addEventListener('change', (e) => toggleDeliveryFields(e.target.value));
-    document.getElementById('tienda').addEventListener('change', (e) => toggleDeliveryFields(e.target.value));
+    document.getElementById('envia-option').classList.add('selected'); // Set default selected option
+    toggleDeliveryFields('envia'); // Set default fields
+
+    document.getElementById('envia').addEventListener('change', () => selectDeliveryOption('envia'));
+    document.getElementById('tienda').addEventListener('change', () => selectDeliveryOption('tienda'));
 });
+
+function selectDeliveryOption(option) {
+    const enviaOption = document.getElementById('envia-option');
+    const tiendaOption = document.getElementById('tienda-option');
+
+    if (option === 'envia') {
+        enviaOption.classList.add('selected');
+        tiendaOption.classList.remove('selected');
+        document.getElementById('envia').checked = true;
+    } else if (option === 'tienda') {
+        tiendaOption.classList.add('selected');
+        enviaOption.classList.remove('selected');
+        document.getElementById('tienda').checked = true;
+    }
+
+    toggleDeliveryFields(option);
+}
 
 function toggleDeliveryFields(selectedOption) {
     const enviaFields = document.getElementById('envia-fields');
