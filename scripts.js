@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     document.querySelector('.carrito-icon').addEventListener('click', openCartPopup);
     updateCartCount();
+    // Add event listener for storage change
+    window.addEventListener('storage', syncCartBetweenTabs);
 });
 
 function addToCart(id, name, price, image) {
@@ -117,12 +119,14 @@ function removeFromCart(index) {
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
     displayCart();
+    displayCartInPopup(); // Sync with popup
 }
 
 function clearCart() {
     localStorage.removeItem('cart');
     updateCartCount();
     displayCart();
+    displayCartInPopup(); // Sync with popup
 }
 
 function finalizePurchase() {
@@ -139,6 +143,7 @@ function updateQuantity(event) {
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
     displayCart();
+    displayCartInPopup(); // Sync with popup
 }
 
 function handleCheckout(event) {
@@ -206,4 +211,9 @@ function redirectToWhatsApp() {
 
     const whatsappUrl = `https://wa.me/3045824976?text=${message}`;
     window.open(whatsappUrl, '_blank');
+}
+
+function syncCartBetweenTabs() {
+    displayCart();
+    displayCartInPopup();
 }
