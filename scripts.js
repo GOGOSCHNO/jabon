@@ -160,6 +160,23 @@ function updateQuantity(event) {
     displayCartInPopup(); // Sync with popup
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('envia').addEventListener('change', (e) => toggleDeliveryFields(e.target.value));
+    document.getElementById('tienda').addEventListener('change', (e) => toggleDeliveryFields(e.target.value));
+});
+
+function toggleDeliveryFields(selectedOption) {
+    const enviaFields = document.getElementById('envia-fields');
+    const tiendaFields = document.getElementById('tienda-fields');
+
+    if (selectedOption === 'envia') {
+        enviaFields.classList.remove('hidden');
+        tiendaFields.classList.add('hidden');
+    } else if (selectedOption === 'tienda') {
+        tiendaFields.classList.remove('hidden');
+        enviaFields.classList.add('hidden');
+    }
+}
 function handleCheckout(event) {
     event.preventDefault();
 
