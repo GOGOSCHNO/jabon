@@ -26,6 +26,21 @@ function addToCart(id, name, price, image) {
     updateCartCount();
     animateCartIcon();
 }
+function removeFromCart(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    displayCart();
+    displayCartInPopup(); // Sync with popup
+}
+
+function clearCart() {
+    localStorage.removeItem('cart');
+    updateCartCount();
+    displayCart();
+    displayCartInPopup(); // Sync with popup
+}
 
 function updateCartCount() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -111,22 +126,6 @@ function displayCart() {
     document.querySelectorAll('.cart-quantity').forEach(input => {
         input.addEventListener('input', updateQuantity);
     });
-}
-
-function removeFromCart(index) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartCount();
-    displayCart();
-    displayCartInPopup(); // Sync with popup
-}
-
-function clearCart() {
-    localStorage.removeItem('cart');
-    updateCartCount();
-    displayCart();
-    displayCartInPopup(); // Sync with popup
 }
 
 function finalizePurchase() {
