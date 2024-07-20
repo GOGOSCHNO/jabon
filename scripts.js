@@ -27,18 +27,20 @@ function addToCart(id, name, price, image) {
     animateCartIcon();
 }
 function removeFromCart(index) {
+    console.log('Appel à removeFromCart avec index:', index);
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.splice(index, 1);
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
-    displayCart();
+    displayCart(); // Sync with page
     displayCartInPopup(); // Sync with popup
 }
 
 function clearCart() {
+    console.log('Appel à clearCart');
     localStorage.removeItem('cart');
     updateCartCount();
-    displayCart();
+    displayCart(); // Sync with page
     displayCartInPopup(); // Sync with popup
 }
 
