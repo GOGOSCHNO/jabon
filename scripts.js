@@ -200,6 +200,8 @@ function toggleDeliveryFields(selectedOption) {
 function handleCheckout(event) {
     event.preventDefault();
 
+    console.log('handleCheckout called');
+
     const whatsapp = document.getElementById('whatsapp').value.trim();
     const nombre = document.getElementById('nombre').value.trim();
     const apellido = document.getElementById('apellido').value.trim();
