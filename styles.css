@@ -16,6 +16,22 @@ body {
     left: 0;
     z-index: 1000; /* Assurez-vous que la bande est au-dessus de tout autre contenu */
     font-size: 1em;
+    overflow: hidden; /* Assurez-vous que le contenu ne déborde pas */
+}
+
+.announcement-bar span {
+    display: inline-block;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.fade-out {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.fade-in {
+    transform: translateY(100%);
+    opacity: 1;
 }
 /* Header */
 header {
