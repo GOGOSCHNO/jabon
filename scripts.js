@@ -200,17 +200,21 @@ function toggleDeliveryFields(selectedOption) {
 function handleCheckout(event) {
     event.preventDefault();
 
-    console.log('handleCheckout called');
-
     const whatsapp = document.getElementById('whatsapp').value.trim();
     const nombre = document.getElementById('nombre').value.trim();
     const apellido = document.getElementById('apellido').value.trim();
+    const deliveryOption = document.querySelector('input[name="delivery"]:checked').value;
     const direccion = document.getElementById('direccion').value.trim();
     const ciudad = document.getElementById('ciudad').value.trim();
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    if (!whatsapp || !nombre || !apellido || !direccion || !ciudad) {
-        alert('Por favor complete todos los campos antes de continuar.');
+    if (!whatsapp || !nombre || !apellido) {
+        alert('Por favor complete todos los campos de contacto antes de continuar.');
+        return;
+    }
+
+    if (deliveryOption === 'envia' && (!direccion || !ciudad)) {
+        alert('Por favor complete los campos de dirección y ciudad.');
         return;
     }
 
@@ -218,8 +222,9 @@ function handleCheckout(event) {
         whatsapp,
         nombre,
         apellido,
-        direccion,
-        ciudad,
+        deliveryOption,
+        direccion: deliveryOption === 'envia' ? direccion : 'Retiro en tienda',
+        ciudad: deliveryOption === 'envia' ? ciudad : '',
         cart
     };
 
