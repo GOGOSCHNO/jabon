@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const messages = [
+        'TIEMPO DE ENTREGA HASTA 24H',
+        'ENVIOS A TODO BARRANQUILLA ET SOLEDAD'
+    ];
+    let currentMessageIndex = 0;
+
+    const announcementMessageElement = document.getElementById('announcementMessage');
+
+    function showNextMessage() {
+        announcementMessageElement.textContent = messages[currentMessageIndex];
+        currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+    }
+
+    showNextMessage(); // Affiche le premier message immédiatement
+    setInterval(showNextMessage, 5000); // Change le message toutes les 5 secondes
+});
+
+document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('cartContents')) {
         displayCart();
     }
