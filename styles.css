@@ -549,7 +549,7 @@ button:hover {
     margin-left: 2%;
     position: -webkit-sticky; /* Pour compatibilité avec certains navigateurs */
     position: sticky;
-    top: 0;
+    top: 100px;
     align-self: flex-start; /* Pour s'assurer que la section droite commence en haut */
 }
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Section pop up*/
