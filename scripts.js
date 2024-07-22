@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('cartContents')) {
+        displayCart();
+    }
+    if (document.getElementById('checkoutForm')) {
+        document.getElementById('checkoutForm').addEventListener('submit', handleCheckout);
+    }
+    updateCartCount();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
     const messages = [
         'TIEMPO DE ENTREGA HASTA 24H',
         'ENVIOS A TODO BARRANQUILLA ET SOLEDAD'
