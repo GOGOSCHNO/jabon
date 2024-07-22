@@ -438,6 +438,7 @@ button:hover {
 }
 .form-section {
     margin-bottom: 20px;
+    text-align: left; /* Aligne le texte à gauche */
 }
 
 .form-section h3 {
