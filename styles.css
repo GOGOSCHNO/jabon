@@ -478,6 +478,17 @@ button:hover {
     display: none;
 }
 
+.direccion-container {
+    border: 1px solid ; /* Ajoute une bordure à la case */
+    padding: 10px; /* Ajoute du padding à la case */
+    border-radius: 5px; /* Ajoute des coins arrondis */
+    background-color: #f1f1f1; /* Ajoute un fond de couleur */
+}
+.direccion-container p {
+    margin: 0; /* Supprime les marges des paragraphes */
+    text-align: left; /* Aligne le texte à gauche */
+}
+
 #envia-fields input, #tienda-fields p {
     width: 100%;
     margin-bottom: 10px;
