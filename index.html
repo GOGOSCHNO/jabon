@@ -44,41 +44,51 @@
         </section>
         <h2>Bienvenido !</h2>
         <p>Descubren nuestros productos capilares naturales</p>
-        <div class="product-container">
-            <div class="product" data-id="1" data-name="Multivitamínico Capilar" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/multivitaminico.PNG">
-                <div class="product-top" onclick="location.href='multivitaminico.html'">
-                    <span class="product-tag">Nuevo | Edición limitada</span>
-                    <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/multivitaminico.PNG" alt="Multivitamínico Capilar" class="product-image">
-                    <h3>Multivitamínico Capilar</h3>
-                </div>   
-                <div class="product-bottom">
-                    <button onclick="addToCart(1, 'Multivitamínico Capilar 250ml', 28000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/multivitaminico.PNG')">250ml | $28.000</button>
-                    <button onclick="addToCart(1, 'Multivitamínico Capilar 500ml', 48000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/multivitaminico.PNG')">500ml | $48.000</button>
-                    <button onclick="location.href='multivitaminico.html'">Ver el producto</button>    
+        <section class="productos-favoritos">
+            <h2>Productos Favoritos</h2>
+            <div class="product-container">
+                <div class="product" data-id="1" data-name="Multivitamínico Capilar" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/multivitaminico.PNG">
+                    <div class="product-top" onclick="location.href='multivitaminico.html'">
+                        <span class="product-tag">Nuevo | Edición limitada</span>
+                        <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/multivitaminico.PNG" alt="Multivitamínico Capilar" class="product-image">
+                        <h3>Multivitamínico Capilar</h3>
+                    </div>   
+                    <div class="product-bottom">
+                        <button onclick="addToCart(1, 'Multivitamínico Capilar 250ml', 28000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/multivitaminico.PNG')">250ml | $28.000</button>
+                        <button onclick="addToCart(1, 'Multivitamínico Capilar 500ml', 48000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/multivitaminico.PNG')">500ml | $48.000</button>
+                        <button onclick="location.href='multivitaminico.html'">Ver el producto</button>    
+                    </div>
+                </div>
+                <div class="product" data-id="2" data-name="Repolarizador" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/repolarizador.PNG">
+                    <div class="product-top" onclick="location.href='repolarizador.html'">
+                        <span class="product-tag">Nuevo | Edición limitada</span>
+                        <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/repolarizador.PNG" alt="Repolarizador">
+                        <h3>Repolarizador</h3>
+                    </div>
+                    <div class="product-bottom">
+                        <button onclick="addToCart(2, 'Repolarizador 240ml', 28000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/repolarizador.PNG')",>240ml | $28.000</button>
+                        <button onclick="location.href='repolarizador.html'">Ver el producto</button>
+                    </div>
+                </div>
+                <div class="product" data-id="3" data-name="PALETA HAIR POP" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/paleta.PNG">
+                    <div class="product-top" onclick="location.href='paleta.html'">
+                        <span class="product-tag">Nuevo | Edición limitada</span>
+                        <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/paleta.PNG" alt="Repolarizador">
+                        <h3>Paleta Hair Pop</h3>
+                    </div>
+                    <div class="product-bottom">
+                        <button onclick="addToCart(3, 'Paleta Hair Pop 1u', 39000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/paleta.PNG')">1u | $39.000</button>
+                        <button onclick="location.href='paleta.html'">Ver el producto</button>
+                    </div>
                 </div>
             </div>
-            <div class="product" data-id="2" data-name="Repolarizador" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/repolarizador.PNG">
-                <div class="product-top" onclick="location.href='repolarizador.html'">
-                    <span class="product-tag">Nuevo | Edición limitada</span>
-                    <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/repolarizador.PNG" alt="Repolarizador">
-                    <h3>Repolarizador</h3>
-                </div>
-                <div class="product-bottom">
-                    <button onclick="addToCart(2, 'Repolarizador 240ml', 28000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/repolarizador.PNG')",>240ml | $28.000</button>
-                    <button onclick="location.href='repolarizador.html'">Ver el producto</button>
-                </div>
+        </section>
+        <section class="image-text-section">
+            <div class="image-text-container">
+                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/cremaarrozycoco.PNG" alt="Image Section">
+                <p>Texto descriptivo sobre la imagen y la sección.</p>
             </div>
-            <div class="product" data-id="3" data-name="PALETA HAIR POP" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/paleta.PNG">
-                <div class="product-top" onclick="location.href='paleta.html'">
-                    <span class="product-tag">Nuevo | Edición limitada</span>
-                    <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/paleta.PNG" alt="Repolarizador">
-                    <h3>Paleta Hair Pop</h3>
-                </div>
-                <div class="product-bottom">
-                    <button onclick="addToCart(3, 'Paleta Hair Pop 1u', 39000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/paleta.PNG')">1u | $39.000</button>
-                    <button onclick="location.href='paleta.html'">Ver el producto</button>
-                </div>
-            </div>           
+        </section>
             <div class="product" data-id="4" data-name="crema capilar arroz y coco" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/cremaarrozycoco.PNG">
                 <div class="product-top" onclick="location.href='cremaarrozycoco.html'">
                     <span class="product-tag">Nuevo | Edición limitada</span>
