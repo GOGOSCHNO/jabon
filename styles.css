@@ -5,7 +5,18 @@ body {
     padding: 0;
     background-color: #f9f9f9;
 }
-
+.announcement-bar {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Assurez-vous que la bande est au-dessus de tout autre contenu */
+    font-size: 1em;
+}
 /* Header */
 header {
     background-color: #fe9dc0;
