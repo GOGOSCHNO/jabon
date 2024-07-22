@@ -130,6 +130,66 @@ main {
     margin-right: auto;
 }
 
+/* Carrousel */
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-container img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/* Productos Favoritos */
+.productos-favoritos, .nuestra-linea-capilar {
+    padding: 20px;
+}
+
+.productos-favoritos h2, .nuestra-linea-capilar h2 {
+    text-align: left;
+}
+
+/* Image et Texte */
+.image-text-section {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.image-text-container img {
+    max-width: 50%;
+    margin-right: 20px;
+}
+
+.image-text-container p {
+    max-width: 50%;
+}
+
+/* Nuestra Linea Capilar */
+.nuestra-linea-capilar button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #fe9dc0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
 /* Footer */
 footer {
     background-color: #fe9dc0;
