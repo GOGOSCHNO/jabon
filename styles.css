@@ -460,14 +460,16 @@ button:hover {
     flex-direction: column;
 }
 
+.delivery-options button {
+    background-color: white;
+    border: 2px solid #fe9dc0;
+}
 .delivery-option {
     display: flex;
     justify-content: space-between; /* Espace entre le texte et le logo */
     align-items: center;
     padding: 10px;
-    margin-bottom: -15px; /* Supprime l'espace entre les options */
-    background-color: #f1f1f1;
-    border: 1px solid #ddd;
+    margin-bottom: -11px; /* Supprime l'espace entre les options */
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
@@ -507,6 +509,9 @@ button:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
+}
+#envia-fields , #tienda-fields {
+    margin-top: 20px;
 }
 .payment-details img {
     width: 50%;
