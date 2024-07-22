@@ -41,6 +41,31 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(showNextMessage, 5000); // Change le message toutes les 5 secondes
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Carrousel
+    let currentIndex = 0;
+    const carouselContainer = document.querySelector('.carousel-container');
+    const images = document.querySelectorAll('.carousel-container img');
+    const totalImages = images.length;
+
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    setInterval(showNextImage, 3000);
+
+    // Ver Más Button
+    const verMasButton = document.getElementById('verMasButton');
+    const masProductos = document.getElementById('masProductos');
+
+    verMasButton.addEventListener('click', () => {
+        masProductos.classList.toggle('hidden');
+        verMasButton.textContent = masProductos.classList.contains('hidden') ? 'Ver Más' : 'Ver Menos';
+    });
+});
+
+
 function addToCart(id, name, price, image) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let product = { id, name, price, image, quantity: 1 };
