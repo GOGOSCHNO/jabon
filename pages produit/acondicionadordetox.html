@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acondicionador Detox</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="announcement-bar" id="announcementBar">
+        <span id="announcementMessage"></span>
+    </div>
+    <header>
+        <div class="header-content">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/naysa_barranquilla" target="_blank"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/instagram.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/profile.php?id=61562812220497&locale=fr_FR" target="_blank"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/facebook.png" alt="Facebook"></a>
+                <a href="https://wa.me/3045824976" target="_blank"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/whatsapp.png" alt="WhatsApp"></a>
+            </div>
+            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png" alt="naysa" class="header-logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/abri.png" alt="Inicio"></a></li>
+                    <li>
+                        <a href="carrito.html">
+                            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/panier.png" alt="Carrito" class="carrito-icon">
+                            <span id="cart-count" class="cart-count"></span>
+                        </a>
+                    </li>
+                    <li><a href="contacto.html"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/contact.png" alt="Contacto"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="product-layout">
+            <div class="product-left">
+                <span class="product-tag">Nuevo | Edición limitada</span>
+                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/acondicionadordetox.PNG" alt="Acondicionador Detox">
+            </div>
+            <div class="product-right">
+                <h2>Acondicionador Detox</h2>
+                <p class="product-description">Acondicionador detoxificante que hidrata y revitaliza el cabello, dejándolo suave y brillante.</p>
+                <p class="product-ingredients">
+                    <strong>Contiene :</strong><br>
+                    Extracto de té verde, carbón activado, aceite de argán, vitaminas B y E.
+                </p>
+                <p class="product-usage">
+                    <strong>Modo de uso :</strong><br>
+                    Aplicar sobre el cabello mojado después del shampoo. Dejar actuar por 2-3 minutos y enjuagar.
+                </p>
+                <div class="product-prices">
+                    <button onclick="addToCart(14, 'Acondicionador Detox 500ml', 50000)">500ml - $50.000</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 La Tienda del Jabon</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
