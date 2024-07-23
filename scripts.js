@@ -14,6 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function toggleMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+        mobileMenu.style.display = 'flex';
+        mobileMenu.style.flexDirection = 'column';
+    } else {
+        mobileMenu.style.display = 'none';
+    }
+    const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenu.classList.contains('open')) {
         mobileMenu.classList.remove('open');
     } else {
