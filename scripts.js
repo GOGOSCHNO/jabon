@@ -157,6 +157,7 @@ function openCartPopup() {
     overlay.addEventListener('click', closeCartPopup);
     cartPopup.style.display = 'block';
     overlay.style.display = 'block';
+    displayCartInPopup(); // Update the popup with cart items
 }
 
 function closeCartPopup() {
