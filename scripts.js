@@ -84,7 +84,11 @@ function addToCart(id, name, price, image) {
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
     animateCartIcon();
+
+    // Affichez le contenu du panier pour vérifier les informations après ajout
+    console.log('Cart after adding product:', cart);
 }
+
 function removeFromCart(index) {
     console.log('Appel à removeFromCart avec index:', index);
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
