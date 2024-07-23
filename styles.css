@@ -80,6 +80,8 @@ header {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    width: 100%; /* Ajustez la largeur si nécessaire */
+    padding: 20px; /* Ajoutez du padding si nécessaire */
 }
 
 .mobile-menu ul {
@@ -89,14 +91,16 @@ header {
 }
 
 .mobile-menu li {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ccc
+    padding: 10px 0;
+    text-align: center; /* Centrer les éléments du menu */
 }
 
 .mobile-menu li a {
     display: block;
-    padding: 10px 20px;
-    color: #333;
+    color: #fe9dc0;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .mobile-menu li a:hover {
