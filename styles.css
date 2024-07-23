@@ -843,8 +843,33 @@ button:hover {
     .header-content-mobile {
         display: flex;
     }
-
+    
     .menu-hamburger {
         display: flex;
+    }
+    
+    .header-logo {
+        height: 80%;
+    }
+    .carrito-icon {
+        position: relative;
+        max-height: 50px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .carrito-icon img {
+        max-height: 30px; /* Taille de l'icône du panier */
+        width: auto;
+    }
+    .cart-count {
+        position: absolute;
+        top: -5px;
+        right: -10px;
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        padding: 2px 5px;
+        font-size: 12px;
     }
 }
