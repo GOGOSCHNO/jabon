@@ -496,7 +496,7 @@ button:hover {
 
 .left-section, .right-section {
     width: 48%;
-    padding: 20px;
+    padding: 40px;
 }
 
 .left-section {
@@ -643,7 +643,7 @@ button:hover {
     margin-left: 2%;
     position: -webkit-sticky; /* Pour compatibilité avec certains navigateurs */
     position: sticky;
-    top: 100px;
+    top: 125px;
     align-self: flex-start; /* Pour s'assurer que la section droite commence en haut */
 }
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Section pop up*/
