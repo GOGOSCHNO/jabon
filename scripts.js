@@ -14,11 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function toggleMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
-        mobileMenu.style.display = 'flex';
-        mobileMenu.style.flexDirection = 'column';
+    if (mobileMenu.classList.contains('open')) {
+        mobileMenu.classList.remove('open');
     } else {
-        mobileMenu.style.display = 'none';
+        mobileMenu.classList.add('open');
     }
 }
 
