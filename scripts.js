@@ -303,6 +303,25 @@ function handleCheckout(event) {
     const ciudad = document.getElementById('ciudad').value.trim();
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+    // Vérifiez que chaque objet du panier contient bien les propriétés name, quantity, et price
+    for (let item of cart) {
+        if (!item.name || typeof item.name !== 'string') {
+            console.error('Item missing name or name is not a string:', item);
+            alert('Un des articles dans le panier est invalide.');
+            return;
+        }
+        if (!item.quantity || typeof item.quantity !== 'number') {
+            console.error('Item missing quantity or quantity is not a number:', item);
+            alert('Un des articles dans le panier est invalide.');
+            return;
+        }
+        if (!item.price || typeof item.price !== 'number') {
+            console.error('Item missing price or price is not a number:', item);
+            alert('Un des articles dans le panier est invalide.');
+            return;
+        }
+    }
+
     if (!whatsapp || !nombre || !apellido) {
         alert('Por favor complete todos los campos de contacto antes de continuar.');
         return;
@@ -326,6 +345,9 @@ function handleCheckout(event) {
             price: item.price
         }))
     };
+
+    // Affichez l'objet order pour vérifier les informations avant de les envoyer
+    console.log('Order object to be sent:', order);
 
     fetch('https://nequi-8730a4c30191.herokuapp.com/api/save-order', {
         method: 'POST',
