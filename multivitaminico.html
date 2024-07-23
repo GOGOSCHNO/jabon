@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multivitamínico Capilar</title>
+    <title>Carrito de Compras</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="announcement-bar" id="announcementBar">
+        <span id="announcementMessage"></span>
+    </div>
     <header>
         <div class="header-content">
-            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png" alt="La Tienda del Jabon Logo" class="header-logo">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/naysa_barranquilla" target="_blank"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/instagram.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/profile.php?id=61562812220497&locale=fr_FR" target="_blank"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/facebook.png" alt="Facebook"></a>
+                <a href="https://wa.me/3045824976" target="_blank"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/whatsapp.png" alt="WhatsApp"></a>
+            </div>
+            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png" alt="naysa" class="header-logo">
             <nav>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="carrito.html">Carrito</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="index.html"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/abri.png" alt="Inicio"></a></li>
+                    <li>
+                        <a href="carrito.html">
+                            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/panier.png" alt="Carrito" class="carrito-icon">
+                            <span id="cart-count" class="cart-count"></span>
+                        </a>
+                    </li>
+                    <li><a href="contacto.html"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/contact.png" alt="Contacto"></a></li>
                 </ul>
             </nav>
         </div>
