@@ -149,9 +149,11 @@ main {
 .main-title {
     font-size: 20px;
     font-weight: bold;
+    color: #fd518f;
 }
 .main-text {
     font-size: 16px;
+    color: #fd518f;
 }
 /* Productos Favoritos */
 .productos-favoritos, .nuestra-linea-capilar {
@@ -173,6 +175,7 @@ main {
 .image-text-container {
     display: flex;
     align-items: center; /* Centrer verticalement */
+    color: #fd518f;
 }
 .image-text-container img {
     max-width: 80%;
