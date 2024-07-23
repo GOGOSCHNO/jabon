@@ -2,9 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('cartContents')) {
         displayCart();
     }
-    if (document.getElementById('checkoutForm')) {
-        document.getElementById('checkoutForm').addEventListener('submit', handleCheckout);
+    
+    const checkoutForm = document.getElementById('checkoutForm');
+    if (checkoutForm && !checkoutForm.dataset.listenerAdded) {
+        checkoutForm.addEventListener('submit', handleCheckout);
+        checkoutForm.dataset.listenerAdded = 'true';
     }
+
     updateCartCount();
 });
 
