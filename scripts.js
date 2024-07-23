@@ -320,7 +320,11 @@ function handleCheckout(event) {
         deliveryOption,
         direccion: deliveryOption === 'envia' ? direccion : 'Retiro en tienda',
         ciudad: deliveryOption === 'envia' ? ciudad : '',
-        cart
+        cart: cart.map(item => ({
+            name: item.name,
+            quantity: item.quantity,
+            price: item.price
+        }))
     };
 
     fetch('https://nequi-8730a4c30191.herokuapp.com/api/save-order', {
