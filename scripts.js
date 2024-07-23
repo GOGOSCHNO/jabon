@@ -122,21 +122,22 @@ function updateCartCount() {
 }
 
 function animateCartIcon() {
-    const cartIcon = document.querySelector('.header-content a[href="carrito.html"] img');
-    const cartPopup = document.getElementById('cart-popup');
+    const cartIconHeader = document.querySelector('.header-content a[href="carrito.html"] img');
+    const cartIconPopup = document.querySelector('.cart-popup-button img');
 
-    // Ajout de l'animation de rebondissement à l'icône du panier
-    cartIcon.classList.add('animate-cart');
+    // Ajout de l'animation de rebondissement à l'icône du panier dans le header
+    cartIconHeader.classList.add('animate-cart');
     setTimeout(() => {
-        cartIcon.classList.remove('animate-cart');
+        cartIconHeader.classList.remove('animate-cart');
     }, 500);
 
-    // Ajout de l'animation de rebondissement au pop-up du panier
-    cartPopup.classList.add('bounce');
+    // Ajout de l'animation de rebondissement à l'icône du panier dans le pop-up
+    cartIconPopup.classList.add('bounce');
     setTimeout(() => {
-        cartPopup.classList.remove('bounce');
+        cartIconPopup.classList.remove('bounce');
     }, 1000); // Durée de l'animation définie dans CSS
 }
+
 
 function openCartPopup() {
     document.getElementById('cart-popup').style.display = 'block';
