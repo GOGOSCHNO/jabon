@@ -262,26 +262,24 @@
                         <h2>Carrito de compra</h2>
                         <span class="close-button" onclick="closeCartPopup()">&times;</span>
                     </div>
-                    <div class="cart-popup-body">
-                        <table id="cart-table">
-                            <thead>
-                                <tr>
-                                    <th>Imagen</th>
-                                    <th>Producto</th>
-                                    <th>Precio</th>
-                                    <th>Cantidad</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody id="cart-popup-items">
-                                <!-- Les articles du panier seront affichés ici -->
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="cart-popup-footer">
-                        <p>Total: $<span id="popup-total-amount"></span></p>
-                        <button onclick="finalizePurchase()">Finalizar</button>
-                    </div>
+                    <table id="cart-table">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-popup-items">
+                            <!-- Les articles du panier seront affichés ici -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cart-popup-footer">
+                    <p>Total: $<span id="popup-total-amount"></span></p>
+                    <button onclick="finalizePurchase()">Finalizar</button>
                 </div>
             </div>
         
