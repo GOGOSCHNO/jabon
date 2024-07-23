@@ -386,10 +386,15 @@ footer {
 }
 
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Contenu de la page carrito */
+.cart-title {
+    text-align: right;
+    padding-top: 50px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 50px;
+    margin-top: 20px;
     border: none;
 }
 th, td {
