@@ -651,7 +651,7 @@ button:hover {
     display: none; /* Start hidden */
     position: fixed;
     top: 20%;
-    right: 5%;
+    right: 1%;
     width: 80%;
     max-width: 500px;
     max-height: 80vh;
