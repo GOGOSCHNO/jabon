@@ -123,10 +123,19 @@ function updateCartCount() {
 
 function animateCartIcon() {
     const cartIcon = document.querySelector('.header-content a[href="carrito.html"] img');
+    const cartPopup = document.getElementById('cart-popup');
+
+    // Ajout de l'animation de rebondissement à l'icône du panier
     cartIcon.classList.add('animate-cart');
     setTimeout(() => {
         cartIcon.classList.remove('animate-cart');
     }, 500);
+
+    // Ajout de l'animation de rebondissement au pop-up du panier
+    cartPopup.classList.add('bounce');
+    setTimeout(() => {
+        cartPopup.classList.remove('bounce');
+    }, 1000); // Durée de l'animation définie dans CSS
 }
 
 function openCartPopup() {
