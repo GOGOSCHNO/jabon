@@ -12,6 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartCount();
 });
 
+function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const messages = [
         'TIEMPO DE ENTREGA HASTA 24H',
