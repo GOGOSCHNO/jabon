@@ -10,13 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function toggleMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
-        mobileMenu.style.display = 'flex';
-        mobileMenu.style.flexDirection = 'column';
-    } else {
-        mobileMenu.style.display = 'none';
-    }
-    const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenu.classList.contains('open')) {
         mobileMenu.classList.remove('open');
     } else {
@@ -80,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         verMasButton.textContent = masProductos.classList.contains('hidden') ? 'Ver Más' : 'Ver Menos';
     });
 });
-
 
 function addToCart(id, name, price, image) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -165,7 +157,6 @@ function animateCartIcon() {
         cartPopup.classList.remove('popup-animation');
     }, 500);
 }
-
 
 function openCartPopup() {
     const cartPopup = document.getElementById('cart-popup');
@@ -308,6 +299,7 @@ function toggleDeliveryFields(selectedOption) {
         enviaFields.classList.add('hidden');
     }
 }
+
 function handleCheckout(event) {
     event.preventDefault();
 
