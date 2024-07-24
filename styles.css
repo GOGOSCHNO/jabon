@@ -101,6 +101,7 @@ header {
 
 .mobile-menu li a {
     display: block;
+    padding: 10px 20px;
     color: #fe9dc0;
     text-decoration: none;
     font-weight: bold;
@@ -851,7 +852,8 @@ button:hover {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px; /* Ajoutez un padding si nécessaire */
+        width: 100%;
+        padding: 10px 20px; /* Ajustez le padding si nécessaire */
     }
     
     .menu-hamburger {
@@ -888,5 +890,18 @@ button:hover {
     .header-content-mobile .header-logo {
         max-height: 120px;
         max-width: 120px;
+    }
+    .menu-hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .menu-hamburger .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 4px 0;
+        transition: 0.4s;
     }
 }
