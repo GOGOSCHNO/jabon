@@ -71,9 +71,6 @@ header {
 }
 
 /* Styles pour le menu mobile */
-.mobile-menu.open {
-    display: flex;
-}
 .mobile-menu {
     display: none;
     flex-direction: column;
