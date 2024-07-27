@@ -902,4 +902,18 @@ button:hover {
         margin: 4px 0;
         transition: 0.4s;
     }
+        .nuestra-linea-capilar, 
+    .image-text-section, 
+    .productos-favoritos {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Pour centrer les éléments */
+    }
+    .nuestra-linea-capilar .product, 
+    .image-text-section .product, 
+    .productos-favoritos .product {
+        width: 100%;
+        flex: 1 1 100%;/* Assurez-vous que les éléments occupent toute la largeur */
+        margin-bottom: 20px; /* Ajoutez un espace entre les éléments */
+    }
 }
