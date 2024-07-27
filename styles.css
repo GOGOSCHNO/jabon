@@ -858,7 +858,7 @@ button:hover {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-right: 15px;
+        padding-right: 120px;
     }
     
     .header-logo {
