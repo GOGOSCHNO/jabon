@@ -902,7 +902,23 @@ button:hover {
         margin: 4px 0;
         transition: 0.4s;
     }
-        .nuestra-linea-capilar, 
+    
+    .image-text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .image-text-container img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px; /* Ajouter un espace entre l'image et le texte */
+    }
+    .image-text-container p {
+        padding: 0 20px; /* Ajouter un padding pour éviter que le texte colle aux bords */
+    }
+    
+    .nuestra-linea-capilar, 
     .image-text-section, 
     .productos-favoritos {
         display: flex;
