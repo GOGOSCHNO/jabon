@@ -824,23 +824,29 @@ button:hover {
 }
 .cart-popup-button {
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
     background-color: #fe9dc0;
     border: none;
-    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20%;
     cursor: pointer;
     animation: breathe 2s infinite;
 }
 
 .cart-popup-button img {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
 }
 #popup-cart-count {
     position: absolute;
-    top: -1px;
-    right: -1px;
+    top: -15px;
+    right: -15px;
     background: red;
     color: white;
     border-radius: 50%;
