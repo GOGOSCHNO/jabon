@@ -68,10 +68,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ver Más Button
     const verMasButton = document.getElementById('verMasButton');
     const masProductos = document.getElementById('masProductos');
+    const verMenosButton = document.getElementById('verMenosButton');
 
     verMasButton.addEventListener('click', () => {
         masProductos.classList.toggle('hidden');
-        verMasButton.textContent = masProductos.classList.contains('hidden') ? 'Ver Más' : 'Ver Menos';
+        verMasButton.style.display = masProductos.classList.contains('hidden') ? 'block' : 'none';
+        verMenosButton.style.display = masProductos.classList.contains('hidden') ? 'none' : 'block';
+    });
+
+    verMenosButton.addEventListener('click', () => {
+        masProductos.classList.add('hidden');
+        verMasButton.style.display = 'block';
+        verMenosButton.style.display = 'none';
     });
 });
 
