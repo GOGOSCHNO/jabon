@@ -227,6 +227,7 @@ main {
     justify-content: center;
     align-items: center;
     text-align: left;
+    border-top: 1px solid #fd518f;
 }
 .image-text-container {
     display: flex;
