@@ -1,10 +1,17 @@
 /* Styles généraux */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
+    height: 100%;
 }
 .announcement-bar {
     width: 100%;
