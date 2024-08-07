@@ -1,6 +1,7 @@
 /* Styles généraux */
 body {
     font-family: Arial, sans-serif;
+    display: flex;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
