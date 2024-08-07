@@ -242,7 +242,7 @@ main {
 }
 
 .image-text-container p {
-    max-width: 50%;
+    max-width: 100%;
     margin: 0; /* Supprimer les marges par défaut du paragraphe */
 }
 
