@@ -958,4 +958,9 @@ button:hover {
         width: 100%; /* Prend toute la largeur disponible */
         margin: 0; /* Supprime les marges si nécessaire */
     }
+    .payment-details img {
+        width: 100%; /* Ajuste la largeur des images à 100% de leur conteneur */
+        max-width: 300px; /* Limite la largeur maximale pour éviter qu'elles ne soient trop grandes */
+        margin-bottom: 10px; /* Ajoute un espacement inférieur entre les images */
+    }
 }
