@@ -121,6 +121,39 @@
             </div>
         </div>
     </main>
+              <div id="cart-popup" class="cart-popup">
+                <div class="cart-popup-content">
+                    <div class="cart-popup-header">
+                        <h2>Carrito de compra</h2>
+                        <span class="close-button" onclick="closeCartPopup()">&times;</span>
+                    </div>
+                    <table id="cart-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-popup-items">
+                            <!-- Les articles du panier seront affichés ici -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cart-popup-footer">
+                    <p>Total: $<span id="popup-total-amount"></span></p>
+                    <button onclick="finalizePurchase()">Finalizar</button>
+                </div>
+            </div>
+        
+    <div class="cart-popup-button">
+        <button onclick="openCartPopup()">
+            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/panier.png" alt="Carrito">
+            <span id="popup-cart-count" class="cart-count"></span>
+        </button>
+    </div>
     <script src="scripts.js"></script>
     <footer>
         <p>&copy; 2024 Boutique de Maillots de Bain</p>
