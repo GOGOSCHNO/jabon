@@ -947,4 +947,15 @@ button:hover {
         flex: 1 1 100%;/* Assurez-vous que les éléments occupent toute la largeur */
         margin-bottom: 20px; /* Ajoutez un espace entre les éléments */
     }
+        .right-section {
+        display: none;
+    }
+    .container {
+        display: block; /* Force le conteneur à s'afficher en bloc, annulant les flex ou grids qui pourraient limiter la largeur */
+        width: 100%; /* Assure que le conteneur occupe toute la largeur */
+    }
+    .left-section {
+        width: 100%; /* Prend toute la largeur disponible */
+        margin: 0; /* Supprime les marges si nécessaire */
+    }
 }
