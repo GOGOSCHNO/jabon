@@ -97,30 +97,7 @@
                 <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/bancolombia.PNG" alt="Bancolombia">
                 <button onclick="redirectToWhatsApp()">Enviar Comprobante</button>
             </div>
-        </div>
-        <div class="right-section">
-            <h3>Tu Carrito</h3>
-            <table id="cart-table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Total</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="cartContents">
-                    <!-- Les articles du panier seront affichés ici -->
-                </tbody>
-            </table>
-            <div id="total-container">
-                <p>Total: $<span id="total-amount">0.00</span></p>
-            </div>
-        </div>
-    </main>
-              <div id="cart-popup" class="cart-popup">
+            <div id="cart-popup" class="cart-popup">
                 <div class="cart-popup-content">
                     <div class="cart-popup-header">
                         <h2>Carrito de compra</h2>
@@ -146,13 +123,35 @@
                     <button onclick="finalizePurchase()">Finalizar</button>
                 </div>
             </div>
-        
-    <div class="cart-popup-button">
-        <button onclick="openCartPopup()">
-            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/panier.png" alt="Carrito">
-            <span id="popup-cart-count" class="cart-count"></span>
-        </button>
-    </div>
+            <div class="cart-popup-button">
+                <button onclick="openCartPopup()">
+                    <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/panier.png" alt="Carrito">
+                    <span id="popup-cart-count" class="cart-count"></span>
+                </button>
+            </div>
+        </div>
+        <div class="right-section">
+            <h3>Tu Carrito</h3>
+            <table id="cart-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="cartContents">
+                    <!-- Les articles du panier seront affichés ici -->
+                </tbody>
+            </table>
+            <div id="total-container">
+                <p>Total: $<span id="total-amount">0.00</span></p>
+            </div>
+        </div>
+    </main>
     <script src="scripts.js"></script>
     <footer>
         <p>&copy; 2024 Boutique de Maillots de Bain</p>
