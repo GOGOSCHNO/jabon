@@ -866,7 +866,7 @@ button:hover {
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        height: auto;
+        height: 60px;
         padding: 10px 20px; /* Ajustez le padding si nécessaire */
     }
     
