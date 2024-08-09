@@ -947,7 +947,7 @@ button:hover {
         flex: 1 1 100%;/* Assurez-vous que les éléments occupent toute la largeur */
         margin-bottom: 20px; /* Ajoutez un espace entre les éléments */
     }
-        .right-section {
+    .right-section {
         display: none;
     }
     .container {
@@ -962,5 +962,28 @@ button:hover {
         width: 100%; /* Ajuste la largeur des images à 100% de leur conteneur */
         max-width: 300px; /* Limite la largeur maximale pour éviter qu'elles ne soient trop grandes */
         margin-bottom: 10px; /* Ajoute un espacement inférieur entre les images */
+    }
+    .product-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .product-left,
+    .product-right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .product-left img {
+        max-width: 100%;
+        height: auto;
+    }
+    .product-right h2 {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+    .product-prices button {
+        width: 100%;
+        margin-top: 10px;
     }
 }
