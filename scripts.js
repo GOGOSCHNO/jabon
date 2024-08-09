@@ -212,6 +212,7 @@ function displayCartInPopup() {
             <td>$${product.price.toLocaleString()}</td>
             <td>${product.quantity}</td>
             <td>$${(product.price * product.quantity).toLocaleString()}</td>
+            <td><button onclick="removeFromCart(${index})">Eliminar</button></td>
         `;
         cartContents.appendChild(row);
     });
