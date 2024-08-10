@@ -880,6 +880,7 @@ button:hover {
     
     .header-logo {
         height: 80%;
+        box-sizing: border-box;
     }
     .carrito-icon {
         max-height: 50px;
