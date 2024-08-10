@@ -904,7 +904,7 @@ button:hover {
         padding: 2px 5px;
         font-size: 12px;
     }
-    .header-content-mobile {
+    .header-content-mobile, {
         max-height: 120px;
         max-width: 120px;
     }
