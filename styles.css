@@ -614,6 +614,7 @@ button:hover {
 
 .left-section button:hover, .right-section button:hover {
     background-color: #e08dae;
+    color: black;
 }
 .form-section {
     margin-bottom: 20px;
