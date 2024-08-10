@@ -881,6 +881,8 @@ button:hover {
     .header-logo {
         height: 80%;
         box-sizing: border-box;
+        max-width: 120px; /* Réduisez la taille du logo pour les petits écrans si nécessaire */
+        height: auto;
     }
     .carrito-icon {
         max-height: 50px;
@@ -902,7 +904,7 @@ button:hover {
         padding: 2px 5px;
         font-size: 12px;
     }
-    .header-content-mobile .header-logo {
+    .header-content-mobile {
         max-height: 120px;
         max-width: 120px;
     }
