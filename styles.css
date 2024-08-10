@@ -207,6 +207,7 @@ main {
 .carousel-container img {
     width: 100%;
     flex-shrink: 0;
+    border-radius: 5%;
 }
 .main-title {
     font-size: 20px;
