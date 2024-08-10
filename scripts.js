@@ -194,11 +194,20 @@ function closeCartPopup() {
 function displayCartInPopup() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let cartContents = document.getElementById('cart-popup-items');
+    if (!cartContents) {
+        console.error("Element with ID 'cart-popup-items' not found.");
+        return;
+    }
     cartContents.innerHTML = '';
 
     if (cart.length === 0) {
         cartContents.innerHTML = '<tr><td colspan="6">Tu carrito está vacío.</td></tr>';
-        document.getElementById('popup-total-amount').innerText = '0';
+        let totalAmountElement = document.getElementById('popup-total-amount');
+        if (totalAmountElement) {
+            totalAmountElement.innerText = '0';
+        } else {
+            console.error("Element with ID 'popup-total-amount' not found.");
+        }
         return;
     }
 
@@ -218,20 +227,39 @@ function displayCartInPopup() {
     });
 
     let total = cart.reduce((sum, product) => sum + (product.price * product.quantity), 0);
-    document.getElementById('popup-total-amount').innerText = total.toLocaleString();
+    let totalAmountElement = document.getElementById('popup-total-amount');
+    if (totalAmountElement) {
+        totalAmountElement.innerText = total.toLocaleString();
+    } else {
+        console.error("Element with ID 'popup-total-amount' not found.");
+    }
 }
 
 function displayCart() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let cartContents = document.getElementById('cartContents');
+    if (!cartContents) {
+        console.error("Element with ID 'cartContents' not found.");
+        return;
+    }
     cartContents.innerHTML = '';
 
     if (cart.length === 0) {
         cartContents.innerHTML = '<tr><td colspan="6">Tu carrito está vacío.</td></tr>';
-        document.getElementById('total-container').style.display = 'none';
+        let totalContainer = document.getElementById('total-container');
+        if (totalContainer) {
+            totalContainer.style.display = 'none';
+        } else {
+            console.error("Element with ID 'total-container' not found.");
+        }
         return;
     } else {
-        document.getElementById('total-container').style.display = 'block';
+        let totalContainer = document.getElementById('total-container');
+        if (totalContainer) {
+            totalContainer.style.display = 'block';
+        } else {
+            console.error("Element with ID 'total-container' not found.");
+        }
     }
 
     cart.forEach((product, index) => {
@@ -248,7 +276,12 @@ function displayCart() {
     });
 
     let total = cart.reduce((sum, product) => sum + (product.price * product.quantity), 0);
-    document.getElementById('total-amount').innerText = total.toLocaleString();
+    let totalAmountElement = document.getElementById('total-amount');
+    if (totalAmountElement) {
+        totalAmountElement.innerText = total.toLocaleString();
+    } else {
+        console.error("Element with ID 'total-amount' not found.");
+    }
 
     document.querySelectorAll('.cart-quantity').forEach(input => {
         input.addEventListener('input', updateQuantity);
