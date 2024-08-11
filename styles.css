@@ -214,6 +214,7 @@ main {
     width: 100%;
     flex-shrink: 0;
     border-radius: 5%;
+    pointer-events: none;
 }
 .main-title {
     font-size: 20px;
