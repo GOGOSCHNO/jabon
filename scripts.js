@@ -55,15 +55,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Carrousel
     let currentIndex = 0;
     const carouselContainer = document.querySelector('.carousel-container');
-    const images = document.querySelectorAll('.carousel-container img');
-    const totalImages = images.length;
+    const mediaItems = document.querySelectorAll('.carousel-container img, .carousel-container video');
+    const totalItems = mediaItems.length;
 
-    function showNextImage() {
-        currentIndex = (currentIndex + 1) % totalImages;
+    function showNextItem() {
+        currentIndex = (currentIndex + 1) % totalItems;
         carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
-    setInterval(showNextImage, 3000);
+    setInterval(showNextItem, 3000);
 
     // Ver Más Button
     const verMasButton = document.getElementById('verMasButton');
