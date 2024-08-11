@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
-    setInterval(showNextItem, 3000);
+    setInterval(showNextItem, 3800);
 
     // Ver Más Button
     const verMasButton = document.getElementById('verMasButton');
