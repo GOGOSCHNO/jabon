@@ -425,7 +425,6 @@ function generateQRCode(orderId) {
     fetch(`https://nequi-8730a4c30191.herokuapp.com/api/generate-qr/${orderId}`, {
         method: 'GET',
         headers: {
-            'Authorization': `Bearer ${access_token}`, // Ajouter le token pour l'authentification
             'Content-Type': 'application/json'
         }
     })
@@ -443,6 +442,7 @@ function generateQRCode(orderId) {
     })
     .catch(error => console.error('Erreur:', error));
 }
+
 function showPaymentDetails() {
     const paymentDetails = document.querySelector('.payment-details');
     paymentDetails.style.display = 'block';
