@@ -400,6 +400,7 @@ function handleCheckout(event) {
     // Affichez l'objet order pour vérifier les informations avant de les envoyer
     console.log('Order object to be sent:', order);
 
+    // Envoyer la commande au backend
     fetch('https://nequi-8730a4c30191.herokuapp.com/api/save-order', {
         method: 'POST',
         headers: {
@@ -410,7 +411,8 @@ function handleCheckout(event) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            showPaymentDetails();
+            // Générer le QR code une fois que la commande est sauvegardée
+            generateQRCode(data.orderId);
         } else {
             alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
         }
@@ -418,6 +420,29 @@ function handleCheckout(event) {
     .catch(error => console.error('Erreur:', error));
 }
 
+function generateQRCode(orderId) {
+    // Appeler le backend pour générer un QR code
+    fetch(`https://nequi-8730a4c30191.herokuapp.com/api/generate-qr/${orderId}`, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${access_token}`, // Ajouter le token pour l'authentification
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.qrCodeUrl) {
+            // Afficher le QR code sur la page
+            const qrCodeImage = document.createElement('img');
+            qrCodeImage.src = data.qrCodeUrl;
+            document.getElementById('qr-code-container').appendChild(qrCodeImage);
+            document.getElementById('payment-status').innerText = 'Escanea el código QR para realizar el pago.';
+        } else {
+            alert('Erreur lors de la génération du QR code. Veuillez réessayer.');
+        }
+    })
+    .catch(error => console.error('Erreur:', error));
+}
 function showPaymentDetails() {
     const paymentDetails = document.querySelector('.payment-details');
     paymentDetails.style.display = 'block';
