@@ -847,6 +847,9 @@ button:hover {
     width: 25px;
     height: 25px;
 }
+.cart-popup-button.above-footer {
+    bottom: 100px; /* Ajustez cette valeur en fonction de la hauteur du footer */
+}
 #popup-cart-count {
     position: absolute;
     top: -15px;
