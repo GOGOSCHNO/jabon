@@ -12,11 +12,6 @@ body {
     background-color: #f9f9f9;
     height: 100%;
 }
-
-.home-page {
-    display: flex;
-    min-height: 100vh;
-}
 .announcement-bar {
     width: 100%;
     background-color: black;
