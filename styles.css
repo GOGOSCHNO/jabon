@@ -841,6 +841,7 @@ button:hover {
     border-radius: 20%;
     cursor: pointer;
     animation: breathe 2s infinite;
+    transition: bottom 0.5s ease; /* Transition lisse pour la position du bas */
 }
 
 .cart-popup-button img {
