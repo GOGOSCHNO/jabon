@@ -484,3 +484,26 @@ window.addEventListener('scroll', function() {
         carritoButton.classList.remove('above-footer');
     }
 });
+document.querySelectorAll('.product-top').forEach(item => {
+    item.addEventListener('click', function() {
+        const productName = item.querySelector('h3').innerText;
+        gtag('event', 'product_click', {
+            'event_category': 'Product',
+            'event_label': productName,
+            'value': item.closest('.product').dataset.id
+        });
+    });
+});
+document.querySelector('.carrito-icon').addEventListener('click', function() {
+    gtag('event', 'carrito_popup_open', {
+        'event_category': 'Carrito',
+        'event_label': 'Popup Opened'
+    });
+});
+document.querySelector('.cart-popup-footer button').addEventListener('click', function() {
+    gtag('event', 'finalize_purchase', {
+        'event_category': 'Checkout',
+        'event_label': 'Finalizar Button Clicked'
+    });
+});
+
