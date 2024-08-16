@@ -829,7 +829,7 @@ button:hover {
 .cart-popup-button {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 3%;
     width: 40px;
     height: 40px;
     background-color: #fe9dc0;
