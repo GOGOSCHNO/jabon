@@ -285,10 +285,11 @@ main {
 }
 /* Conteneur pour les images de la section Productos Favoritos */
 .favoritos-image-container {
-    width: 100%; 
-    height: 300px; /* Vous pouvez ajuster cette valeur en fonction de vos besoins */
+    width: 250px; /* Réduit la largeur du conteneur */
+    height: 250px; /* Réduit la hauteur du conteneur */
     overflow: hidden; /* Cache tout ce qui dépasse du cadre */
     display: block;
+    margin: 0 auto; /* Centre le conteneur horizontalement */
     position: relative;
 }
 
@@ -305,6 +306,7 @@ main {
 .favoritos-image-container:hover img {
     transform: scale(1.2); /* Effet de zoom amélioré */
 }
+
 /* Image et Texte */
 .image-text-section {
     padding: 20px;
