@@ -245,10 +245,10 @@ main {
 }
 
 .image-container {
-    width: 300px; /* Fixe la largeur du cadre */
+    width: 100%; /* Les images prennent toute la largeur disponible */
     height: 300px; /* Fixe la hauteur du cadre */
     overflow: hidden; /* Cache tout ce qui dépasse du cadre */
-    display: inline-block;
+    display: block; /* Assure que le conteneur occupe toute la largeur disponible */
     position: relative;
 }
 
