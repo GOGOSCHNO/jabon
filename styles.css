@@ -285,11 +285,10 @@ main {
 }
 /* Conteneur pour les images de la section Productos Favoritos */
 .favoritos-image-container {
-    width: 250px; /* Réduit la largeur du conteneur */
-    height: 250px; /* Réduit la hauteur du conteneur */
-    overflow: hidden; /* Cache tout ce qui dépasse du cadre */
+    width: 100%; /* Assure que les images prennent toute la largeur du produit */
+    height: 250px; /* Taille fixe des images */
+    overflow: hidden;
     display: block;
-    margin: 0 auto; /* Centre le conteneur horizontalement */
     position: relative;
 }
 
@@ -297,14 +296,12 @@ main {
     width: 100%;
     height: 100%;
     transition: transform 0.5s ease-in-out;
-    object-fit: cover; /* Assure que l'image remplisse bien le cadre sans être tronquée */
+    object-fit: cover;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%); /* Centre verticalement l'image */
 }
 
 .favoritos-image-container:hover img {
-    transform: scale(1.2); /* Effet de zoom amélioré */
+    transform: scale(1.2);
 }
 
 /* Image et Texte */
@@ -364,16 +361,18 @@ footer {
 /* Conteneur de produits */
 .product-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Espace entre les produits */
-    gap: 20px; /* Espace entre les produits */
+    justify-content: flex-start; /* Aligne les produits à gauche */
+    align-items: flex-start; /* Aligne les produits au début */
+    flex-wrap: wrap; /* Permet aux produits de se renvoyer à la ligne si nécessaire */
+    gap: 0; /* Supprime l'espace entre les éléments */
 }
 
-/* Produits */
 .product {
-    flex: 1 1 calc(33.333% - 20px);
-    box-sizing: border-box;
-  
+    flex: 0 0 auto; /* Garde les produits à leur taille sans étirement */
+    margin: 0; /* Supprime les marges */
+    padding: 0; /* Supprime les espacements internes */
+    text-align: center;
+    width: 250px; /* Largeur des produits */
 }
 
 .product-top {
