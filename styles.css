@@ -81,10 +81,10 @@ header {
 .header-nav ul li a {
     text-decoration: none;
     color: #333;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
-    margin-left: -20px; /* Ajustez cette valeur pour déplacer les textes vers la gauche */
-    margin-top: 10px; /* Ajustez cette valeur pour déplacer les textes vers le bas */
+    margin-left: -px; /* Ajustez cette valeur pour déplacer les textes vers la gauche */
+    margin-top: 23px; /* Ajustez cette valeur pour déplacer les textes vers le bas */
     display: inline-block;
 }
 .header-content-mobile {
@@ -184,12 +184,12 @@ nav ul li img {
     width: 24px;
     height: 24px;
     margin-left: 5px;
-    padding-top: 25px;
+    padding-top: 28px;
     margin-right: 10px; /* Espace entre les icônes */
 }
 .cart-count {
     position: absolute;
-    top: 5px;
+    top: 8px;
     right: -5px;
     background: red;
     color: white;
