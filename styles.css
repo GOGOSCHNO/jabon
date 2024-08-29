@@ -211,42 +211,53 @@ main {
     border-radius: 5%;
     pointer-events: none;
 }
-.main-title {
-    font-size: 20px;
-    font-weight: bold;
-    color: #fd518f;
-}
-.main-text {
-    font-size: 16px;
-    color: #fd518f;
-}
 .categoria-container {
-    display: flex;
-    justify-content: space-around;
+    text-align: center;
     margin-top: 50px;
 }
 
+.main-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333; /* Vous pouvez changer la couleur si nécessaire */
+}
+
+.main-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #666; /* Vous pouvez changer la couleur si nécessaire */
+}
+
+/* Conteneur pour les éléments */
 .categoria-item {
+    display: inline-block;
+    margin: 0 20px;
     text-align: center;
-    transition: transform 0.3s;
 }
 
-.categoria-item img {
+.img-wrapper {
+    overflow: hidden;
+    border-radius: 15px; /* Ajout de bords arrondis */
+    display: inline-block;
+    width: 300px; /* Largeur de l'image */
+    height: 300px; /* Hauteur de l'image */
+}
+
+.img-wrapper img {
     width: 100%;
-    max-width: 400px;
-    border-radius: 15px;
-    transition: transform 0.3s;
+    height: 100%;
+    transition: transform 0.5s ease;
 }
 
-.categoria-item:hover img {
-    transform: scale(1.1);
+.img-wrapper:hover img {
+    transform: scale(1.1); /* Effet de zoom */
 }
 
 .categoria-item span {
     display: block;
     margin-top: 10px;
-    font-size: 1.5rem;
-    color: #fe9dc0;
+    font-size: 1.2rem;
+    color: #fe9dc0; /* Couleur du texte */
     font-weight: bold;
 }
 /* Productos Favoritos */
