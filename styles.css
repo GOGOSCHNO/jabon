@@ -1,8 +1,8 @@
 /* Styles généraux */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+body, html {
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les espaces par défaut */
 }
 
 body {
