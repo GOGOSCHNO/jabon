@@ -228,30 +228,30 @@ main {
     color: #666;
 }
 
-/* Alignement horizontal des images */
+/* Alignement horizontal des images occupant toute la largeur */
 .categoria-section {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
     margin-top: 30px;
-    overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
+    width: 100%;
+    padding: 0;
 }
 
 .categoria-item {
+    flex: 1; /* Les images prennent toute la largeur disponible */
     text-align: center;
-    flex: 0 0 auto; /* Force l'élément à ne pas se rétrécir */
 }
 
 .categoria-item img {
-    width: 300px;
-    height: 300px;
-    border-radius: 15px;
+    width: 100%;
+    height: auto;
     transition: transform 0.5s ease-in-out;
+    border-radius: 0; /* Enlever les bords arrondis */
 }
 
 .categoria-item:hover img {
-    transform: scale(1.2); /* Effet de zoom amélioré */
+    transform: scale(1.1); /* Effet de zoom amélioré */
 }
 
 .categoria-item span {
