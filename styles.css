@@ -80,12 +80,16 @@ header {
 
 .header-nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: white;
     font-size: 20px;
     font-weight: bold;
     margin-left: -px; /* Ajustez cette valeur pour déplacer les textes vers la gauche */
     margin-top: 23px; /* Ajustez cette valeur pour déplacer les textes vers le bas */
     display: inline-block;
+    transition: color 0.3s ease; /* Ajoute une transition douce pour l'effet hover */
+}
+.header-nav ul li a:hover {
+    color: #ff69b4; /* Changez cette couleur à celle que vous souhaitez lors du hover */
 }
 .header-content-mobile {
         display: none;
