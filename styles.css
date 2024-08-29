@@ -447,6 +447,48 @@ footer {
 .product button:hover {
     transform: scale(1.1);
 }
+/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Section des pages collection*/
+.collection-banner img {
+    width: 100%;
+    height: auto;
+}
+
+.collection-main {
+    display: flex;
+    padding: 20px;
+}
+
+.collection-menu {
+    width: 20%;
+    padding-right: 20px;
+}
+
+.collection-menu h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.collection-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.collection-menu ul li {
+    margin-bottom: 10px;
+}
+
+.collection-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.collection-products {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Section des pages produit*/
 /* Section gauche du produit */
 .product-layout {
