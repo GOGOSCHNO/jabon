@@ -635,13 +635,13 @@ footer {
 }
 
 .acondicionador-button.active-button {
-    background-color: #4CAF50; /* Couleur spécifique pour Acondicionador */
+    background-color: #ff69b4; /* Couleur spécifique pour Acondicionador */
     color: #fff;
     font-weight: bold;
 }
 
 .mascarilla-button.active-button {
-    background-color: #FFA500; /* Couleur spécifique pour Mascarilla Capilar */
+    background-color: #ff69b4; /* Couleur spécifique pour Mascarilla Capilar */
     color: #fff;
     font-weight: bold;
 }
