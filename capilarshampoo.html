@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>NAYSA - Productos capilares 100% naturales</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Descubre los productos capilares 100% naturales de NAYSA. Basados en Barranquilla, ofrecemos soluciones orgánicas para cuidar tu cabello.">
+    <meta name="keywords" content="productos capilares, cuidados naturales, champú, Barranquilla, cuidados del cabello, orgánico, eco-conservantes, colorantes vegetales">
+    <meta name="author" content="NAYSA">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="NAYSA - Productos capilares 100% naturales">
+    <meta property="og:description" content="Descubre los productos capilares 100% naturales de NAYSA. Basados en Barranquilla, ofrecemos soluciones orgánicas para cuidar tu cabello.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png">
+    <meta property="og:url" content="https://www.naysacare.com">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NAYSA - Productos capilares 100% naturales">
+    <meta name="twitter:description" content="Descubre los productos capilares 100% naturales de NAYSA. Basados en Barranquilla, ofrecemos soluciones orgánicas para cuidar tu cabello.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/fav.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/fav.png" type="image/x-icon">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HV2FV4QCP2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-HV2FV4QCP2');
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="home-page">
+    <div class="announcement-bar" id="announcementBar">
+        <span id="announcementMessage"></span>
+    </div>
+    <!-- Votre code de header existant -->
+    <header>
+        <div class="header-content">
+            <!-- Logo à gauche -->
+            <a href="index.html">
+                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png" alt="naysa" class="header-logo">
+            </a>
+        
+            <!-- Texte de navigation centré dans une division distincte -->
+            <div class="header-nav">
+                <ul>
+                    <li><a href="collection.html">Capilar</a></li>
+                    <li><a href="collection.html">Corporal</a></li>
+                    <li><a href="collection.html">Kits</a></li>
+                </ul>
+            </div>
+        
+            <!-- Navigation contenant le panier à droite -->
+            <nav>
+                <ul>
+                    <li>
+                        <a href="carrito.html">
+                            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/panier.png" alt="Carrito" class="carrito-icon">
+                            <span id="cart-count" class="cart-count"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        
+            <!-- Icônes sociales à droite -->
+            <div class="social-icons">
+                <a href="https://www.instagram.com/naysa_barranquilla" target="_blank">
+                    <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61562812220497&locale=fr_FR" target="_blank">
+                    <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/facebook.png" alt="Facebook">
+                </a>
+            </div>
+        </div>
+        <div class="header-content-mobile">
+            <a href="index.html">
+                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png" alt="naysa" class="header-logo">
+            </a>
+            <div class="menu-hamburger" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <nav id="mobile-menu" class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="https://www.instagram.com/naysa_barranquilla" target="_blank">Instagram</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61562812220497&locale=fr_FR" target="_blank">Facebook</a></li>
+                <li><a href="https://wa.me/3045824976" target="_blank">WhatsApp</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="collection-banner">
+        <img src="votre-image.jpg" alt="Collection Banner">
+    </section>
+    <!-- Section principale de la collection -->
+    <main class="collection-main">
+        <!-- Menu de catégories à gauche -->
+        <aside class="collection-menu">
+            <h3>Filtrer par catégorie</h3>
+            <ul>
+                <li><a href="capilar.html">Capilar</a></li>
+                <li><a href="corporal.html">Corporal</a></li>
+                <li><a href="kits.html">Kits</a></li>
+            </ul>
+        </aside>
+
+        <!-- Produits à droite -->
+        <section class="collection-products">
+            <!-- Produits affichés ici -->
+            <div class="product-container">
+                <div class="product" data-id="1" data-name="Multivitamínico Capilar" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/multivitaminico.PNG">
+                    <div class="product-top" onclick="location.href='multivitaminico.html'">
+                        <span class="product-tag">Nuevo | Edición limitada</span>
+                        <div class="favoritos-image-container">
+                            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/multivitaminico.PNG" alt="Multivitamínico Capilar" class="product-image">
+                        </div>
+                        <h3>Multivitamínico Capilar</h3>
+                    </div>   
+                    <div class="product-bottom">
+                        <button onclick="addToCart(1, 'Multivitamínico Capilar 500ml', 48000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/multivitaminico.PNG')">500ml | $48.000</button>
+                        <button onclick="location.href='multivitaminico.html'">Ver el producto</button>    
+                    </div>
+                </div>
+                <div class="product" data-id="5" data-name="CHOCOLATERAPIA" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/chocolaterapia.png">
+                    <div class="product-top" onclick="location.href='chocolaterapia.html'">
+                        <span class="product-tag">Nuevo | Edición limitada</span>
+                        <div class="favoritos-image-container">
+                            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/chocolaterapia.png" alt="Chocolaterapia">
+                        </div>
+                        <h3>Chocolaterapia</h3>
+                    </div>
+                    <div class="product-bottom">
+                        <button onclick="addToCart(5, 'Chocolaterapia 500ml', 48000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/chocolaterapia.png')">500ml | $48.000</button>
+                        <button onclick="location.href='chocolaterapia.html'">Ver el producto</button>
+                    </div>
+                </div>
+                <div class="product" data-id="8" data-name="TERMOPROTECTOR" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/termoprotector.PNG">
+                    <div class="product-top" onclick="location.href='termoprotector.html'">
+                        <span class="product-tag">Nuevo | Edición limitada</span>
+                        <div class="favoritos-image-container">
+                            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/termoprotector.PNG" alt="Termoprotector">
+                        </div>
+                        <h3>Termoprotector</h3>
+                    </div>
+                    <div class="product-bottom">
+                        <button onclick="addToCart(8, 'Termoprotector 240ml', 31000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/termoprotector.PNG')">240ml | $31.000</button>
+                        <button onclick="location.href='termoprotector.html'">Ver el producto</button>
+                    </div>
+                </div>
+            
+                <div class="product" data-id="9" data-name="SHAMPOO NUTRICIÓN PROFUNDA" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/nutricionprofunda.PNG">
+                    <div class="product-top" onclick="location.href='nutricionprofunda.html'">
+                        <span class="product-tag">Nuevo | Edición limitada</span>
+                        <div class="favoritos-image-container">
+                            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/nutricionprofunda.PNG" alt="Shampoo Nutrición Profunda">
+                        </div>
+                        <h3>Shampoo Nutrición Profunda</h3>
+                    </div>
+                    <div class="product-bottom">
+                        <button onclick="addToCart(9, 'Shampoo Nutrición Profunda 500ml', 44000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/nutricionprofunda.PNG')">500ml | $44.000</button>
+                        <button onclick="location.href='nutricionprofunda.html'">Ver el producto</button>
+                    </div>
+                </div>
+                <div class="product" data-id="11" data-name="SHAMPOO CEBOLLA MORADA" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/cebollamorada.PNG">
+                    <div class="product-top" onclick="location.href='cebollamorada.html'">
+                        <span class="product-tag">Nuevo | Edición limitada</span>
+                        <div class="favoritos-image-container">
+                            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/cebollamorada.PNG" alt="Shampoo Cebolla Morada">
+                        </div>
+                        <h3>Shampoo Cebolla Morada</h3>
+                    </div>
+                    <div class="product-bottom">
+                        <button onclick="addToCart(11, 'Shampoo Cebolla Morada 500ml', 44000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/cebollamorada.PNG')">500ml | $44.000</button>
+                        <button onclick="location.href='cebollamorada.html'">Ver el producto</button>
+                    </div>
+                </div>
+                <div class="product" data-id="13" data-name="SHAMPOO DETOX" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/detox.PNG">
+                    <div class="product-top" onclick="location.href='detox.html'">
+                        <span class="product-tag">Nuevo | Edición limitada</span>
+                        <div class="favoritos-image-container">
+                            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/detox.PNG" alt="Shampoo Detox">
+                        </div>
+                        <h3>Shampoo Detox</h3>
+                    </div>
+                    <div class="product-bottom">
+                        <button onclick="addToCart(13, 'Shampoo Detox 500ml', 46000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/detox.PNG')">500ml | $46.000</button>
+                        <button onclick="location.href='detox.html'">Ver el producto</button>
+                    </div>
+                </div>
+
+                <div class="product" data-id="15" data-name="SHAMPOO LECHE DE COCO Y ALMENDRAS" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/lechecocoalmendras.PNG">
+                    <div class="product-top" onclick="location.href='lechecocoalmendras.html'">
+                        <span class="product-tag">Nuevo | Edición limitada</span>
+                        <div class="favoritos-image-container">
+                            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/lechecocoalmendras.PNG" alt="Shampoo Leche de Coco y Almendras">
+                        </div>
+                        <h3>Shampoo Leche de Coco y Almendras</h3>
+                    </div>
+                    <div class="product-bottom">
+                        <button onclick="addToCart(15, 'Shampoo Leche de Coco y Almendras 500ml', 44000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/lechecocoalmendras.PNG')">500ml | $44.000</button>
+                        <button onclick="addToCart(15, 'Shampoo Leche de Coco y Almendras 240ml', 28000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/lechecocoalmendras.PNG')">240ml | $28.000</button>
+                        <button onclick="location.href='lechecocoalmendras.html'">Ver el producto</button>
+                    </div>
+                </div>
+                <div class="product" data-id="17" data-name="SHAMPOO DE CHOCOLATE" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/shampoochocolate.png">
+                    <div class="product-top" onclick="location.href='shampoochocolate.html'">
+                        <span class="product-tag">Nuevo | Edición limitada</span>
+                        <div class="favoritos-image-container">
+                            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/shampoochocolate.png" alt="Shampoo de Chocolate">
+                        </div>
+                        <h3>Shampoo de Chocolate</h3>
+                    </div>
+                    <div class="product-bottom">
+                        <button onclick="addToCart(17, 'Shampoo de Chocolate 500ml', 44000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/shampoochocolate.png')">500ml | $44.000</button>
+                        <button onclick="location.href='shampoochocolate.html'">Ver el producto</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="cart-popup" class="cart-popup">
+        <div class="cart-popup-content">
+            <div class="cart-popup-header">
+                <h2>Carrito de compra</h2>
+                <span class="close-button" onclick="closeCartPopup()">&times;</span>
+            </div>
+            <table id="cart-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-popup-items">
+                    <!-- Les articles du panier seront affichés ici -->
+                </tbody>
+            </table>
+        </div>
+        <div class="cart-popup-footer">
+            <p>Total: $<span id="popup-total-amount"></span></p>
+            <button onclick="finalizePurchase()">Finalizar</button>
+        </div>
+    </div>
+
+    <div class="cart-popup-button">
+    <button onclick="openCartPopup()">
+        <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/panier.png" alt="Carrito">
+        <span id="popup-cart-count" class="cart-count"></span>
+    </button>
+    </div>
+    <footer>
+    <p>&copy; 2024 Naysa</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
