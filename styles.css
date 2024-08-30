@@ -102,6 +102,7 @@ header {
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     padding: 20px;
     z-index: 9999;
+    display: flex;
     justify-content: space-around;
     opacity: 0; /* Transparent par défaut */
     visibility: hidden; /* Caché par défaut */
