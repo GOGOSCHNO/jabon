@@ -17,31 +17,38 @@ function toggleMenu() {
         mobileMenu.style.display = 'none';
     }
 }
-// Gestion des annonces déroulantes
-function initializeAnnouncementMessage() {
+document.addEventListener('DOMContentLoaded', () => {
     const messages = [
         'TIEMPO DE ENTREGA HASTA 24H',
         'ENVIOS A TODO BARRANQUILLA ET SOLEDAD'
     ];
     let currentMessageIndex = 0;
+
     const announcementMessageElement = document.getElementById('announcementMessage');
 
     function showNextMessage() {
+        // Ajoutez la classe fade-out pour faire disparaître l'ancien message
         announcementMessageElement.classList.add('fade-out');
+        
         setTimeout(() => {
+            // Changez le texte après l'animation de disparition
             announcementMessageElement.textContent = messages[currentMessageIndex];
             currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+
+            // Ajoutez la classe fade-in pour faire apparaître le nouveau message
             announcementMessageElement.classList.remove('fade-out');
             announcementMessageElement.classList.add('fade-in');
+
             setTimeout(() => {
+                // Retirez la classe fade-in après l'animation d'apparition
                 announcementMessageElement.classList.remove('fade-in');
             }, 500);
-        }, 500);
+        }, 500); // Correspond à la durée de l'animation CSS
     }
 
-    showNextMessage();
-    setInterval(showNextMessage, 5000);
-}
+    showNextMessage(); // Affiche le premier message immédiatement
+    setInterval(showNextMessage, 5000); // Change le message toutes les 5 secondes
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     // Carrousel
