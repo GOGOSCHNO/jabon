@@ -475,23 +475,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
     navItem.addEventListener("mouseover", function() {
         clearTimeout(timeoutId); // Annule l'action de masquer le sous-menu
-        submenu.style.display = "flex"; // Affiche le sous-menu
+        submenu.classList.add("show"); // Affiche le sous-menu avec un effet smooth
     });
 
     navItem.addEventListener("mouseout", function() {
         timeoutId = setTimeout(function() {
-            submenu.style.display = "none"; // Masque le sous-menu après un court délai
+            submenu.classList.remove("show"); // Masque le sous-menu après un court délai
         }, 300); // 300 ms de délai
     });
 
     submenu.addEventListener("mouseover", function() {
         clearTimeout(timeoutId); // Empêche de masquer le sous-menu quand la souris est sur lui
-        submenu.style.display = "flex"; // S'assure que le sous-menu reste visible
+        submenu.classList.add("show"); // S'assure que le sous-menu reste visible
     });
 
     submenu.addEventListener("mouseout", function() {
         timeoutId = setTimeout(function() {
-            submenu.style.display = "none"; // Masque le sous-menu après un court délai
+            submenu.classList.remove("show"); // Masque le sous-menu après un court délai
         }, 300); // 300 ms de délai
     });
 });
