@@ -110,18 +110,17 @@ header {
     color: #ff69b4; /* Change la couleur au survol */
 }
 
+/* Styles pour le sous-menu */
 .submenu {
-    display: none;
+    display: none; /* Caché par défaut */
     position: absolute;
-    top: 100%;
-    left: 0;
+    width: 100%; /* Prend toute la largeur */
     background-color: #fff;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    z-index: 1000;
-    min-width: 600px; /* Largeur minimum du sous-menu */
-    display: flex; /* Affiche les catégories côte à côte */
-    justify-content: space-between; /* Espace égal entre les catégories */
+    z-index: 9999;
+    display: flex;
+    justify-content: space-around;
 }
 
 .submenu-category {
@@ -131,13 +130,13 @@ header {
 .submenu-category h4 {
     margin-bottom: 10px;
     font-size: 16px;
-    color: #ff69b4; /* Couleur des titres de catégorie */
+    color: #ff69b4;
 }
 
 .submenu-category ul {
-    list-style-type: none;
-    margin: 0;
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .submenu-category ul li {
@@ -151,10 +150,11 @@ header {
 }
 
 .submenu-category ul li a:hover {
-    color: #ff69b4; /* Change la couleur au survol */
+    color: #ff69b4;
 }
 
-.nav-item:hover .submenu {
+.header-nav ul li:hover + #submenu-capilar,
+#submenu-capilar:hover {
     display: flex; /* Affiche le sous-menu au survol */
 }
 .header-content-mobile {
