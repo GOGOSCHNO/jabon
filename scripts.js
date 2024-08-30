@@ -468,6 +468,27 @@ window.addEventListener('scroll', function() {
         carritoButton.classList.remove('above-footer');
     }
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const navItem = document.getElementById("capilar-item");
+    const submenu = document.getElementById("submenu-capilar");
+
+    navItem.addEventListener("mouseover", function() {
+        submenu.style.display = "flex";
+    });
+
+    navItem.addEventListener("mouseout", function() {
+        submenu.style.display = "none";
+    });
+
+    submenu.addEventListener("mouseover", function() {
+        submenu.style.display = "flex";
+    });
+
+    submenu.addEventListener("mouseout", function() {
+        submenu.style.display = "none";
+    });
+});
+
 document.querySelectorAll('.product-top').forEach(item => {
     item.addEventListener('click', function() {
         const productName = item.querySelector('h3').innerText;
