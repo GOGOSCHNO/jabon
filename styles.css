@@ -103,8 +103,16 @@ header {
     padding: 20px;
     z-index: 9999;
     justify-content: space-around;
+    opacity: 0; /* Transparent par défaut */
+    visibility: hidden; /* Caché par défaut */
+    transform: translateY(-20px); /* Déplacement initial vers le haut */
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
 }
-
+.submenu.show {
+    opacity: 1; /* Rend le sous-menu visible */
+    visibility: visible; /* Affiche le sous-menu */
+    transform: translateY(0); /* Ramène le sous-menu à sa position d'origine */
+}
 .submenu-category {
     margin-right: 20px;
 }
