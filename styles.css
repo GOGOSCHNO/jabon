@@ -159,6 +159,14 @@ header {
     margin-right: 16px; /* Espace entre les icônes */
 }
 
+.social-icons a:hover {
+    transform: scale(1.1); /* Effet d'agrandissement sur le hover */
+    
+}
+.social-icons a {
+    transition: transform 0.3s ease; /* Transition pour l'effet d'agrandissement */
+    
+}
 .header-logo {
     max-width: 200px;
     text-align: center;
