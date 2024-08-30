@@ -521,6 +521,13 @@ footer {
     text-decoration: none;
     color: #333;
     font-size: 1.2rem;
+    transition: transform 0.3s ease, font-weight 0.3s ease, color 0.3s ease;
+}
+
+/* Effet hover pour tous les éléments du menu "aside" */
+.collection-menu ul li a:hover {
+    transform: scale(1.1); /* Agrandit l'élément à 110% de sa taille normale */
+    font-weight: bold; /* Rend le texte en gras */
 }
 
 .collection-products {
@@ -528,6 +535,12 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+}
+.capilarpage.active-category,
+.corporalpage.active-category,
+.kitspage.active-category {
+    color: #fe9dc0; /* Couleur spéciale pour Kits */
+    font-weight: bold; /* Peut être en gras pour indiquer la page active */
 }
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Section des pages produit*/
 /* Section gauche du produit */
