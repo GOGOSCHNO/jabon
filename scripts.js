@@ -471,24 +471,30 @@ window.addEventListener('scroll', function() {
 document.addEventListener("DOMContentLoaded", function() {
     const navItem = document.getElementById("capilar-item");
     const submenu = document.getElementById("submenu-capilar");
+    let timeoutId;
 
     navItem.addEventListener("mouseover", function() {
-        submenu.style.display = "flex";
+        clearTimeout(timeoutId); // Annule l'action de masquer le sous-menu
+        submenu.style.display = "flex"; // Affiche le sous-menu
     });
 
     navItem.addEventListener("mouseout", function() {
-        submenu.style.display = "none";
+        timeoutId = setTimeout(function() {
+            submenu.style.display = "none"; // Masque le sous-menu après un court délai
+        }, 300); // 300 ms de délai
     });
 
     submenu.addEventListener("mouseover", function() {
-        submenu.style.display = "flex";
+        clearTimeout(timeoutId); // Empêche de masquer le sous-menu quand la souris est sur lui
+        submenu.style.display = "flex"; // S'assure que le sous-menu reste visible
     });
 
     submenu.addEventListener("mouseout", function() {
-        submenu.style.display = "none";
+        timeoutId = setTimeout(function() {
+            submenu.style.display = "none"; // Masque le sous-menu après un court délai
+        }, 300); // 300 ms de délai
     });
 });
-
 document.querySelectorAll('.product-top').forEach(item => {
     item.addEventListener('click', function() {
         const productName = item.querySelector('h3').innerText;
