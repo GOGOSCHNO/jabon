@@ -93,24 +93,6 @@ header {
 .header-nav ul li a:hover {
     color: #ff69b4; /* Changez cette couleur à celle que vous souhaitez lors du hover */
 }
-.nav-item {
-    position: relative;
-    margin: 0 20px;
-}
-
-.nav-item a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: color 0.3s ease;
-}
-
-.nav-item a:hover {
-    color: #ff69b4; /* Change la couleur au survol */
-}
-
-/* Styles pour le sous-menu */
 .submenu {
     display: none; /* Caché par défaut */
     position: absolute;
