@@ -7,7 +7,82 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     updateCartCount();
 });
+function handleCheckout(event) {
+    event.preventDefault();
 
+    const whatsapp = document.getElementById('whatsapp').value.trim();
+    const nombre = document.getElementById('nombre').value.trim();
+    const apellido = document.getElementById('apellido').value.trim();
+    const deliveryOption = document.querySelector('input[name="delivery"]:checked').value;
+    const direccion = document.getElementById('direccion').value.trim();
+    const ciudad = document.getElementById('ciudad').value.trim();
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Vérifiez que chaque objet du panier contient bien les propriétés name, quantity, et price
+    for (let item of cart) {
+        if (!item.name || typeof item.name !== 'string') {
+            console.error('Item missing name or name is not a string:', item);
+            alert('Un des articles dans le panier est invalide.');
+            return;
+        }
+        if (!item.quantity || typeof item.quantity !== 'number') {
+            console.error('Item missing quantity or quantity is not a number:', item);
+            alert('Un des articles dans le panier est invalide.');
+            return;
+        }
+        if (!item.price || typeof item.price !== 'number') {
+            console.error('Item missing price or price is not a number:', item);
+            alert('Un des articles dans le panier est invalide.');
+            return;
+        }
+    }
+
+    if (!whatsapp || !nombre || !apellido) {
+        alert('Por favor complete todos los campos de contacto antes de continuar.');
+        return;
+    }
+
+    if (deliveryOption === 'envia' && (!direccion || !ciudad)) {
+        alert('Por favor complete los campos de dirección y ciudad.');
+        return;
+    }
+
+    const order = {
+        whatsapp,
+        nombre,
+        apellido,
+        deliveryOption,
+        direccion: deliveryOption === 'envia' ? direccion : 'Retiro en tienda',
+        ciudad: deliveryOption === 'envia' ? ciudad : '',
+        cart: cart.map(item => ({
+            name: item.name,
+            quantity: item.quantity,
+            price: item.price
+        }))
+    };
+
+    // Affichez l'objet order pour vérifier les informations avant de les envoyer
+    console.log('Order object to be sent:', order);
+
+    // Envoyer la commande au backend
+    fetch('https://nequi-8730a4c30191.herokuapp.com/api/save-order', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(order)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Utilisez directement le URL du QR code renvoyé par le backend
+            displayQRCode(data.qrCodeUrl);
+        } else {
+            alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
+        }
+    })
+    .catch(error => console.error('Erreur:', error));
+}
 function toggleMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
@@ -340,83 +415,6 @@ function toggleDeliveryFields(selectedOption) {
         tiendaFields.classList.remove('hidden');
         enviaFields.classList.add('hidden');
     }
-}
-
-function handleCheckout(event) {
-    event.preventDefault();
-
-    const whatsapp = document.getElementById('whatsapp').value.trim();
-    const nombre = document.getElementById('nombre').value.trim();
-    const apellido = document.getElementById('apellido').value.trim();
-    const deliveryOption = document.querySelector('input[name="delivery"]:checked').value;
-    const direccion = document.getElementById('direccion').value.trim();
-    const ciudad = document.getElementById('ciudad').value.trim();
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Vérifiez que chaque objet du panier contient bien les propriétés name, quantity, et price
-    for (let item of cart) {
-        if (!item.name || typeof item.name !== 'string') {
-            console.error('Item missing name or name is not a string:', item);
-            alert('Un des articles dans le panier est invalide.');
-            return;
-        }
-        if (!item.quantity || typeof item.quantity !== 'number') {
-            console.error('Item missing quantity or quantity is not a number:', item);
-            alert('Un des articles dans le panier est invalide.');
-            return;
-        }
-        if (!item.price || typeof item.price !== 'number') {
-            console.error('Item missing price or price is not a number:', item);
-            alert('Un des articles dans le panier est invalide.');
-            return;
-        }
-    }
-
-    if (!whatsapp || !nombre || !apellido) {
-        alert('Por favor complete todos los campos de contacto antes de continuar.');
-        return;
-    }
-
-    if (deliveryOption === 'envia' && (!direccion || !ciudad)) {
-        alert('Por favor complete los campos de dirección y ciudad.');
-        return;
-    }
-
-    const order = {
-        whatsapp,
-        nombre,
-        apellido,
-        deliveryOption,
-        direccion: deliveryOption === 'envia' ? direccion : 'Retiro en tienda',
-        ciudad: deliveryOption === 'envia' ? ciudad : '',
-        cart: cart.map(item => ({
-            name: item.name,
-            quantity: item.quantity,
-            price: item.price
-        }))
-    };
-
-    // Affichez l'objet order pour vérifier les informations avant de les envoyer
-    console.log('Order object to be sent:', order);
-
-    // Envoyer la commande au backend
-    fetch('https://nequi-8730a4c30191.herokuapp.com/api/save-order', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(order)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            // Utilisez directement le URL du QR code renvoyé par le backend
-            displayQRCode(data.qrCodeUrl);
-        } else {
-            alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
-        }
-    })
-    .catch(error => console.error('Erreur:', error));
 }
 
 function displayQRCode(qrCodeUrl) {
