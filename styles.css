@@ -542,6 +542,48 @@ footer {
     color: #fe9dc0; /* Couleur spéciale pour Kits */
     font-weight: bold; /* Peut être en gras pour indiquer la page active */
 }
+.capilar-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Ajuste cet espace selon vos préférences */
+}
+
+.capilar-buttons a {
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: 2px solid #333; /* Bordure par défaut */
+    border-radius: 5px; /* Coins arrondis */
+    background-color: #f5f5f5; /* Couleur de fond par défaut */
+    color: #333; /* Couleur de texte par défaut */
+    font-weight: normal;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.capilar-buttons a:hover {
+    background-color: #fe9dc0; /* Couleur de fond au survol */
+    color: #fff; /* Couleur de texte au survol */
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}
+
+/* Styles spécifiques pour chaque page */
+.shampoo-button.active-button {
+    background-color: #ff69b4; /* Couleur spécifique pour Shampoo */
+    color: #fff;
+    font-weight: bold;
+}
+
+.acondicionador-button.active-button {
+    background-color: #4CAF50; /* Couleur spécifique pour Acondicionador */
+    color: #fff;
+    font-weight: bold;
+}
+
+.mascarilla-button.active-button {
+    background-color: #FFA500; /* Couleur spécifique pour Mascarilla Capilar */
+    color: #fff;
+    font-weight: bold;
+}
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Section des pages produit*/
 /* Section gauche du produit */
 .product-layout {
