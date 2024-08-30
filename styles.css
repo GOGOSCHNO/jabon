@@ -95,7 +95,7 @@ header {
 }
 .submenu {
     display: none; /* Caché par défaut */
-    position: absolute;
+    position: fixed;
     top: 175px; /* Positionner en dessous du header */
     width: 100%; /* Prend toute la largeur */
     background-color: #fff;
