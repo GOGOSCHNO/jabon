@@ -425,8 +425,9 @@ footer {
 
 .product-tag {
     display: block;
-    margin-bottom: 0.5rem;
-    color: #fd518f; /* Couleur du texte du tag */
+    margin-bottom: 0.2rem;
+    color: #333; /* Couleur du texte du tag */
+    transition: color 0.3s ease;
 }
 
 .product img {
@@ -444,9 +445,13 @@ footer {
 
 .product h3 {
     margin: 0.5rem 0;
-    color: #fd518f; /* Couleur du texte du nom du produit */
+    color: #333; /* Couleur du texte du nom du produit */
+    transition: color 0.3s ease;
 }
-
+.product-top:hover .product-tag,
+.product-top:hover h3 {
+    color: #fe9dc0; /* Couleur au survol */
+}
 .product-bottom {
     display: flex;
     flex-direction: column; /* Aligner les boutons verticalement */
