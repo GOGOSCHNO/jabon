@@ -12,27 +12,46 @@
     </div>
     <header>
         <div class="header-content">
-            <div class="social-icons">
-                <a href="https://www.instagram.com/naysa_barranquilla" target="_blank"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/instagram.png" alt="Instagram"></a>
-                <a href="https://www.facebook.com/profile.php?id=61562812220497&locale=fr_FR" target="_blank"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/facebook.png" alt="Facebook"></a>
-                <a href="https://wa.me/3045824976" target="_blank"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/whatsapp.png" alt="WhatsApp"></a>
+            <!-- Logo à gauche -->
+            <a href="index.html">
+                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png" alt="naysa" class="header-logo">
+            </a>
+        
+            <!-- Texte de navigation centré dans une division distincte -->
+            <div class="header-nav">
+                <ul>
+                    <li class="nav-item" id="capilar-item"><a href="capilar.html">Capilar</a></li>
+                    <li class="nav-item"><a href="corporal.html">Corporal</a></li>
+                    <li class="nav-item"><a href="kits.html">Kits</a></li>
+                </ul>
             </div>
-            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png" alt="naysa" class="header-logo">
+        
+            <!-- Navigation contenant le panier à droite -->
             <nav>
                 <ul>
-                    <li><a href="index.html"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/abri.png" alt="Inicio"></a></li>
                     <li>
                         <a href="carrito.html">
                             <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/panier.png" alt="Carrito" class="carrito-icon">
                             <span id="cart-count" class="cart-count"></span>
                         </a>
                     </li>
-                    <li><a href="contacto.html"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/contact.png" alt="Contacto"></a></li>
                 </ul>
             </nav>
+        
+            <!-- Icônes sociales à droite -->
+            <div class="social-icons">
+                <a href="https://www.instagram.com/naysa_barranquilla" target="_blank">
+                    <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61562812220497&locale=fr_FR" target="_blank">
+                    <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/facebook.png" alt="Facebook">
+                </a>
+            </div>
         </div>
         <div class="header-content-mobile">
-            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png" alt="naysa" class="header-logo">
+            <a href="index.html">
+                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png" alt="naysa" class="header-logo">
+            </a>
             <div class="menu-hamburger" onclick="toggleMenu()">
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -41,7 +60,6 @@
         </div>
         <nav id="mobile-menu" class="mobile-menu">
             <ul>
-                <li><a href="carrito.html">Carrito</a></li>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="https://www.instagram.com/naysa_barranquilla" target="_blank">Instagram</a></li>
@@ -50,6 +68,33 @@
             </ul>
         </nav>
     </header>
+    <div class="submenu" id="submenu-capilar">
+        <div class="submenu-category">
+            <h4>Shampoo</h4>
+            <ul>
+                <li><a href="multivitaminico.html">Multivitamínico Capilar</a></li>
+                <li><a href="nutricionprofunda.html">Shampoo Nutrición Profunda</a></li>
+                <li><a href="cebollamorada.html">Shampoo Cebolla Morada</a></li>
+                <li><a href="detox.html">Shampoo Detox</a></li>
+                <li><a href="lechecocoalmendras.html">Shampoo Leche de Coco y Almendras</a></li>
+            </ul>
+        </div>
+        <div class="submenu-category">
+            <h4>Acondicionador</h4>
+            <ul>
+                <li><a href="acondicionadornutricion.html">Acondicionador Nutrición Profunda</a></li>
+                <li><a href="acondicionadorcebolla.html">Acondicionador Cebolla Morada</a></li>
+                <li><a href="acondicionadorleche.html">Acondicionador Leche de Coco y Almendras</a></li>
+            </ul>
+        </div>
+        <div class="submenu-category">
+            <h4>Mascarilla Capilar</h4>
+            <ul>
+                <li><a href="paleta.html">Paleta Hair Pop</a></li>
+                <li><a href="hairpopminimora.html">Hair Pop Mini Mora</a></li>
+            </ul>
+        </div>
+    </div>
     <main>
         <h2 class="cart-title">Carrito de compra</h2>
         <table id="cart-table">
