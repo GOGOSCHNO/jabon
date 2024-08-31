@@ -1270,15 +1270,3 @@ button:hover {
         margin-top: 10px;
     }
 }
-@media (min-width: 1200px) { /* Tu peux ajuster la valeur min-width selon tes besoins */
-    .carousel-container {
-        justify-content: center; /* Centre les éléments du carrousel */
-    }
-    .carousel-container video {
-        width: 100%; /* Réduit la taille des vidéos */
-    }
-    .carousel {
-        width: 25%; /* Assure que le conteneur du carrousel n'affiche qu'une vidéo à la fois */
-        margin: 0 auto; /* Centre le carrousel sur la page */
-    }
-}
