@@ -336,6 +336,9 @@ function displayCartInPopup() {
         console.error("Element with ID 'popup-total-amount' not found.");
     }
 }
+function finalizePurchase() {
+    window.location.href = 'finalizar.html';
+}
 function displayCart() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let cartContents = document.getElementById('cartContents');
