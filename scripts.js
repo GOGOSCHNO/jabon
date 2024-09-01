@@ -229,7 +229,30 @@ function addToCart(id, name, price, image) {
 
     console.log('Cart after adding product:', cart);
 }
+function animateCartIcon() {
+    const cartIconHeader = document.querySelector('.header-content a[href="carrito.html"] img');
+    const cartIcon = document.querySelector('.cart-popup-button button img');
+    const cartIconPopup = document.querySelector('.cart-popup-button img');
+    const cartPopup = document.getElementById('cart-popup');
 
+    // Ajout de l'animation de rebondissement à l'icône du panier dans le header
+    cartIconHeader.classList.add('animate-cart');
+    setTimeout(() => {
+        cartIconHeader.classList.remove('animate-cart');
+    }, 500);
+
+    // Ajout de l'animation de rebondissement à l'icône du panier dans le pop-up
+    cartIconPopup.classList.add('bounce');
+    setTimeout(() => {
+        cartIconPopup.classList.remove('bounce');
+    }, 1000); // Durée de l'animation définie dans CSS
+    
+    // Trigger popup animation
+    cartPopup.classList.add('popup-animation');
+    setTimeout(() => {
+        cartPopup.classList.remove('popup-animation');
+    }, 500);
+}
 function removeFromCart(index) {
     console.log('Appel à removeFromCart avec index:', index);
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
