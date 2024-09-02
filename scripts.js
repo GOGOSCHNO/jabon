@@ -201,7 +201,11 @@ function handleCheckout(event) {
 
         if (data.success) {
             console.log('QR Code URL:', data.qrCodeUrl); // Log the QR Code URL
-            displayQRCode(data.qrCodeUrl);
+            if (typeof data.qrCodeUrl === 'string') {
+                displayQRCode(data.qrCodeUrl);
+            } else {
+                console.error('QR Code URL is not a string:', data.qrCodeUrl);
+            }
         } else {
             alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
         }
