@@ -192,15 +192,23 @@ function handleCheckout(event) {
         },
         body: JSON.stringify(order)
     })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                displayQRCode(data.qrCodeUrl);
-            } else {
-                alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
-            }
-        })
-        .catch(error => console.error('Erreur:', error));
+    .then(response => {
+        console.log('Raw response:', response); // Log the raw response object
+        return response.json();
+    })
+    .then(data => {
+        console.log('Parsed response data:', data); // Log the parsed response data
+
+        if (data.success) {
+            console.log('QR Code URL:', data.qrCodeUrl); // Log the QR Code URL
+            displayQRCode(data.qrCodeUrl);
+        } else {
+            alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
+        }
+    })
+    .catch(error => {
+        console.error('Erreur:', error);
+    });
 }
 
 // Fonction pour afficher le QR code
