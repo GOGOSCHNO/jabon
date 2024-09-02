@@ -205,10 +205,15 @@ function handleCheckout(event) {
 
 // Fonction pour afficher le QR code
 function displayQRCode(qrCodeUrl) {
-    const qrCodeImage = document.createElement('img');
-    qrCodeImage.src = qrCodeUrl;
-    document.getElementById('qr-code-container').appendChild(qrCodeImage);
-    document.getElementById('payment-status').innerText = 'Escanea el código QR para realizar el pago.';
+    const qrCodeContainer = document.getElementById('qr-code-container');
+    if (qrCodeContainer) {
+        const qrCodeImage = document.createElement('img');
+        qrCodeImage.src = qrCodeUrl;
+        qrCodeContainer.appendChild(qrCodeImage);
+        document.getElementById('payment-status').innerText = 'Escanea el código QR para realizar el pago.';
+    } else {
+        console.error('QR Code container not found.');
+    }
 }
 
 // Fonctions de gestion du panier
