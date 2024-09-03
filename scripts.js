@@ -204,7 +204,13 @@ function handleCheckout(event) {
 
             // Check if qrCodeUrl is an object and contains generateCodeQRRS
             if (data.qrCodeUrl && typeof data.qrCodeUrl === 'object' && data.qrCodeUrl.generateCodeQRRS && typeof data.qrCodeUrl.generateCodeQRRS.codeQR === 'string') {
-                const qrCodeUrl = data.qrCodeUrl.generateCodeQRRS.codeQR;
+                let qrCodeUrl = data.qrCodeUrl.generateCodeQRRS.codeQR;
+
+                // Check if the QR code URL is relative or complete
+                if (!qrCodeUrl.startsWith('http')) {
+                    qrCodeUrl = 'https://baseurl.com/' + qrCodeUrl; // Remplace 'https://baseurl.com/' par ton domaine
+                }
+
                 console.log('QR Code URL:', qrCodeUrl); // Log the final QR Code URL
                 displayQRCode(qrCodeUrl);
             } else {
