@@ -200,11 +200,15 @@ function handleCheckout(event) {
         console.log('Parsed response data:', data); // Log the parsed response data
 
         if (data.success) {
-            console.log('QR Code URL:', data.qrCodeUrl); // Log the QR Code URL
-            if (typeof data.qrCodeUrl === 'string') {
-                displayQRCode(data.qrCodeUrl);
+            console.log('QR Code URL data:', data.qrCodeUrl); // Log the QR Code URL data
+
+            // Check if qrCodeUrl is an object and contains generateCodeQRRS
+            if (data.qrCodeUrl && typeof data.qrCodeUrl === 'object' && data.qrCodeUrl.generateCodeQRRS && typeof data.qrCodeUrl.generateCodeQRRS.codeQR === 'string') {
+                const qrCodeUrl = data.qrCodeUrl.generateCodeQRRS.codeQR;
+                console.log('QR Code URL:', qrCodeUrl); // Log the final QR Code URL
+                displayQRCode(qrCodeUrl);
             } else {
-                console.error('QR Code URL is not a string:', data.qrCodeUrl);
+                console.error('QR Code URL is not valid or is missing:', data.qrCodeUrl);
             }
         } else {
             alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
