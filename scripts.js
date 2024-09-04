@@ -138,7 +138,15 @@ function toggleDeliveryFields(selectedOption) {
         enviaFields.classList.add('hidden');
     }
 }
-
+function toggleMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+        mobileMenu.style.display = 'flex';
+        mobileMenu.style.flexDirection = 'column';
+    } else {
+        mobileMenu.style.display = 'none';
+    }
+}
 // Fonction de gestion du processus de validation de l'achat
 function handleCheckout(event) {
     event.preventDefault();
