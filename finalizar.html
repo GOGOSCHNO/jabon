@@ -92,13 +92,41 @@
                 <div class="bar"></div>
             </div>
         </div>
+        
+        <!-- Menu mobile latéral -->
         <nav id="mobile-menu" class="mobile-menu">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="https://www.instagram.com/naysa_barranquilla" target="_blank">Instagram</a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=61562812220497&locale=fr_FR" target="_blank">Facebook</a></li>
-                <li><a href="https://wa.me/3045824976" target="_blank">WhatsApp</a></li>
+            <div class="mobile-menu-header">
+                <span>Menú</span>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/naysa_barranquilla" target="_blank">
+                        <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61562812220497&locale=fr_FR" target="_blank">
+                        <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/facebook.png" alt="Facebook">
+                    </a>
+                </div>
+                <div class="menu-close" onclick="toggleMenu()">X</div>
+            </div>
+            <ul class="mobile-menu-list">
+                <li>
+                    <a href="capilar.html">Capilar</a>
+                    <button class="submenu-toggle" onclick="toggleSubmenu('capilar-submenu')">+</button>
+                    <ul id="capilar-submenu" class="submenu">
+                        <li><a href="capilarshampoo.html">Shampoo</a></li>
+                        <li><a href="capilaracondicionador.html">Acondicionador</a></li>
+                        <li><a href="capilarmascarilla.html">Mascarilla Capilar</a></li>
+                    </ul>
+                </li>
+                <li><a href="corporal.html">Corporal</a></li>
+                <li>
+                    <a href="kits.html">Kits</a>
+                    <button class="submenu-toggle" onclick="toggleSubmenu('kits-submenu')">+</button>
+                    <ul id="kits-submenu" class="submenu">
+                        <li><a href="Kit Nutricion Profunda.html">Kit Nutrición Profunda</a></li>
+                        <li><a href="Kit reparacion y Crecimiento.html">Kit Reparación y Crecimiento</a></li>
+                        <li><a href="Kit Detox Completo.html">Kit Detox Completo</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
