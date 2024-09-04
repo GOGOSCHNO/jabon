@@ -143,12 +143,12 @@ function toggleMenu() {
     mobileMenu.classList.toggle("active");
 }
 
-function toggleSubmenu(submenuId) {
+function toggleSubmenuMobile(submenuId) {
     var submenu = document.getElementById(submenuId);
-    if (submenu.classList.contains('active')) {
-        submenu.classList.remove('active');
+    if (submenu.style.maxHeight) {
+        submenu.style.maxHeight = null;
     } else {
-        submenu.classList.add('active');
+        submenu.style.maxHeight = submenu.scrollHeight + "px";
     }
 }
 // Fonction de gestion du processus de validation de l'achat
