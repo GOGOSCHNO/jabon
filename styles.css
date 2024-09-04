@@ -211,10 +211,6 @@ header {
     overflow: hidden; /* Cacher le contenu débordant */
     transition: max-height 0.3s ease-out; /* Effet d'animation */
 }
-
-.submenu-mobile.active {
-    max-height: 1000px; /* Valeur assez grande pour afficher le sous-menu */
-
 .social-icons {
     display: flex;
     gap: 10px;
