@@ -272,11 +272,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 30px;
     background-color: #fe9dc0;
     color: #fff;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 25px;
 }
 .mobile-menu-footer {
     text-align: center;
