@@ -205,6 +205,15 @@ header {
 .mobile-menu li a:hover {
     background-color: #f2f2f2;
 }
+/* Transition smooth pour les sous-menus mobiles */
+.submenu-mobile {
+    max-height: 0; /* Sous-menu fermé par défaut */
+    overflow: hidden; /* Cacher le contenu débordant */
+    transition: max-height 0.3s ease-out; /* Effet d'animation */
+}
+
+.submenu-mobile.active {
+    max-height: 1000px; /* Valeur assez grande pour afficher le sous-menu */
 
 .social-icons {
     display: flex;
