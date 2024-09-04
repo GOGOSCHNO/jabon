@@ -139,13 +139,13 @@ function toggleDeliveryFields(selectedOption) {
     }
 }
 function toggleMenu() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
-        mobileMenu.style.display = 'flex';
-        mobileMenu.style.flexDirection = 'column';
-    } else {
-        mobileMenu.style.display = 'none';
-    }
+    var mobileMenu = document.getElementById("mobile-menu");
+    mobileMenu.classList.toggle("active");
+}
+
+function toggleSubmenu(submenuId) {
+    var submenu = document.getElementById(submenuId);
+    submenu.classList.toggle("active");
 }
 // Fonction de gestion du processus de validation de l'achat
 function handleCheckout(event) {
