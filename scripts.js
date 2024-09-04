@@ -145,11 +145,7 @@ function toggleMenu() {
 
 function toggleSubmenuMobile(submenuId) {
     var submenuElement = document.getElementById(submenuId);
-    if (submenuElement.style.maxHeight && submenuElement.style.maxHeight !== "0px") {
-        submenuElement.style.maxHeight = "0px";
-    } else {
-        submenuElement.style.maxHeight = submenuElement.scrollHeight + "px";
-    }
+    submenuElement.classList.toggle("active");
 }
 // Fonction de gestion du processus de validation de l'achat
 function handleCheckout(event) {
