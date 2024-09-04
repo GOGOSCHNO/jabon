@@ -211,6 +211,10 @@ header {
     overflow: hidden; /* Cacher le contenu débordant */
     transition: max-height 0.3s ease-out; /* Effet d'animation */
 }
+.submenu-mobile.active {
+    max-height: 500px; /* Assurez-vous que cette valeur est suffisante pour afficher tout le contenu */
+    transition: max-height 0.5s ease; /* Ajoute une transition douce */
+}
 .social-icons {
     display: flex;
     gap: 10px;
