@@ -145,7 +145,11 @@ function toggleMenu() {
 
 function toggleSubmenu(submenuId) {
     var submenu = document.getElementById(submenuId);
-    submenu.classList.toggle("active");
+    if (submenu.classList.contains('active')) {
+        submenu.classList.remove('active');
+    } else {
+        submenu.classList.add('active');
+    }
 }
 // Fonction de gestion du processus de validation de l'achat
 function handleCheckout(event) {
