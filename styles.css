@@ -178,7 +178,7 @@ header {
     z-index: 1000;
     width: 100%; /* Ajustez la largeur si nécessaire */
     height: 100%;
-
+    transition: right 0.3s ease;
 }
 
 .mobile-menu ul {
