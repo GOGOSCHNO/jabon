@@ -144,11 +144,11 @@ function toggleMenu() {
 }
 
 function toggleSubmenuMobile(submenuId) {
-    var submenu = document.getElementById(submenuId);
-    if (submenu.style.maxHeight) {
-        submenu.style.maxHeight = null;
+    var submenuElement = document.getElementById(submenuId);
+    if (submenuElement.style.maxHeight && submenuElement.style.maxHeight !== "0px") {
+        submenuElement.style.maxHeight = "0px";
     } else {
-        submenu.style.maxHeight = submenu.scrollHeight + "px";
+        submenuElement.style.maxHeight = submenuElement.scrollHeight + "px";
     }
 }
 // Fonction de gestion du processus de validation de l'achat
