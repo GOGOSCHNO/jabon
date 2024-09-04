@@ -262,6 +262,7 @@ header {
     border: none;
     cursor: pointer;
     font-size: 18px;
+    color: #333;
 }
 .mobile-menu.active {
     right: 0;
