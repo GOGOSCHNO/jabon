@@ -183,25 +183,16 @@ header {
 
 .mobile-menu ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: -10px;
     flex-direction: column;
 }
-
-.mobile-menu li {
-    border-bottom: 1px solid #ccc
-    padding: 10px 0;
-    text-align: center; /* Centrer les éléments du menu */
-}
-
-.mobile-menu li a {
-    display: block;
-    padding: 10px 20px;
-    color: #fe9dc0;
+.submenu-mobile li a {
     text-decoration: none;
     font-weight: bold;
+    font-size: 22px;
+    border-bottom: 1px solid #ccc;
+    padding-left: -10px;
 }
-
 .mobile-menu li a:hover {
     background-color: #f2f2f2;
 }
