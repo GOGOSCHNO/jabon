@@ -39,70 +39,24 @@
       gtag('config', 'G-HV2FV4QCP2');
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        function loadHeader() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+        }
+        window.onload = loadHeader;
+    </script>
 </head>
 <body class="home-page">
     <div class="announcement-bar" id="announcementBar">
         <span id="announcementMessage"></span>
     </div>
     <!-- Votre code de header existant -->
-    <header>
-        <div class="header-content">
-            <!-- Logo à gauche -->
-            <a href="index.html">
-                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png" alt="naysa" class="header-logo">
-            </a>
-        
-            <!-- Texte de navigation centré dans une division distincte -->
-            <div class="header-nav">
-                <ul>
-                    <li class="nav-item" id="capilar-item"><a href="capilar.html">Capilar</a></li>
-                    <li class="nav-item"><a href="corporal.html">Corporal</a></li>
-                    <li class="nav-item"><a href="kits.html">Kits</a></li>
-                </ul>
-            </div>
-        
-            <!-- Navigation contenant le panier à droite -->
-            <nav>
-                <ul>
-                    <li>
-                        <a href="carrito.html">
-                            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/panier.png" alt="Carrito" class="carrito-icon">
-                            <span id="cart-count" class="cart-count"></span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        
-            <!-- Icônes sociales à droite -->
-            <div class="social-icons">
-                <a href="https://www.instagram.com/naysa_barranquilla" target="_blank">
-                    <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/instagram.png" alt="Instagram">
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61562812220497&locale=fr_FR" target="_blank">
-                    <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/facebook.png" alt="Facebook">
-                </a>
-            </div>
-        </div>
-        <div class="header-content-mobile">
-            <a href="index.html">
-                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png" alt="naysa" class="header-logo">
-            </a>
-            <div class="menu-hamburger" onclick="toggleMenu()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-        </div>
-        <nav id="mobile-menu" class="mobile-menu">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="https://www.instagram.com/naysa_barranquilla" target="_blank">Instagram</a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=61562812220497&locale=fr_FR" target="_blank">Facebook</a></li>
-                <li><a href="https://wa.me/3045824976" target="_blank">WhatsApp</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
     <div class="submenu" id="submenu-capilar">
         <div class="submenu-category">
             <h4>Shampoo</h4>
