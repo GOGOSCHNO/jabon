@@ -39,18 +39,24 @@
       gtag('config', 'G-HV2FV4QCP2');
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        function loadHeader() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+        }
+        window.onload = loadHeader;
+    </script>
 </head>
-<body>
-    <header>
-        <h1>Boutique de Maillots de Bain</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="carrito.html">Carrito</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="home-page">
+    <div class="announcement-bar" id="announcementBar">
+        <span id="announcementMessage"></span>
+    </div>
+    <!-- Votre code de header existant -->
+    <div id="header-placeholder"></div>
     <main>
         <h2>Pagar</h2>
         <p>Utiliza el siguiente código QR para realizar el pago:</p>
