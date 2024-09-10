@@ -208,21 +208,16 @@ function handleCheckout(event) {
         console.log('Parsed response data:', data); // Log the parsed response data
 
         if (data.success) {
-            console.log('QR Code URL data:', data.qrCodeUrl); // Log the QR Code URL data
-
-            // Check if qrCodeUrl is an object and contains generateCodeQRRS
+            // Vérifie que le code QR est valide
             if (data.qrCodeUrl && typeof data.qrCodeUrl === 'object' && data.qrCodeUrl.generateCodeQRRS && typeof data.qrCodeUrl.generateCodeQRRS.codeQR === 'string') {
-                let qrCodeUrl = data.qrCodeUrl.generateCodeQRRS.codeQR;
+                let qrCode = data.qrCodeUrl.generateCodeQRRS.codeQR;
 
-                // Check if the QR code URL is relative or complete
-                if (!qrCodeUrl.startsWith('http')) {
-                    qrCodeUrl = 'https://baseurl.com/' + qrCodeUrl; // Remplace 'https://baseurl.com/' par ton domaine
-                }
+                console.log('QR Code:', qrCode); // Log le code QR brut
 
-                console.log('QR Code URL:', qrCodeUrl); // Log the final QR Code URL
-                displayQRCode(qrCodeUrl);
+                // Appelle la fonction pour afficher le QR code
+                displayQRCode(qrCode);
             } else {
-                console.error('QR Code URL is not valid or is missing:', data.qrCodeUrl);
+                console.error('QR Code data is not valid or is missing:', data.qrCodeUrl);
             }
         } else {
             alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
@@ -234,18 +229,24 @@ function handleCheckout(event) {
 }
 
 // Fonction pour afficher le QR code
-function displayQRCode(qrCodeUrl) {
+function displayQRCode(qrCode) {
     const qrCodeContainer = document.getElementById('qr-code-container');
     if (qrCodeContainer) {
-        const qrCodeImage = document.createElement('img');
-        qrCodeImage.src = qrCodeUrl;
-        qrCodeContainer.appendChild(qrCodeImage);
+        // Nettoie le contenu existant du conteneur QR code
+        qrCodeContainer.innerHTML = '';
+
+        // Utilise la bibliothèque qrcode.js pour générer le QR code
+        new QRCode(qrCodeContainer, {
+            text: "bancadigital-" + qrCode, // Concatène bancadigital au code fourni par Nequi
+            width: 128,  // Largeur du QR code
+            height: 128  // Hauteur du QR code
+        });
+
         document.getElementById('payment-status').innerText = 'Escanea el código QR para realizar el pago.';
     } else {
         console.error('QR Code container not found.');
     }
 }
-
 // Fonctions de gestion du panier
 function addToCart(id, name, price, image) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
