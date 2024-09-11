@@ -589,25 +589,45 @@ function initializeProductInteractions() {
     document.querySelectorAll('.product-top').forEach(item => {
         item.addEventListener('click', function() {
             const productName = item.querySelector('h3').innerText;
-            gtag('event', 'product_click', {
-                'event_category': 'Product',
-                'event_label': productName,
-                'value': item.closest('.product').dataset.id
-            });
+            console.log('Product clicked:', productName); // Log de débogage
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'product_click', {
+                    'event_category': 'Product',
+                    'event_label': productName,
+                    'value': item.closest('.product').dataset.id
+                });
+            } else {
+                console.error('Google Analytics not initialized'); // Alerte si gtag n'est pas défini
+            }
         });
     });
 
-    document.querySelector('.carrito-icon').addEventListener('click', function() {
-        gtag('event', 'carrito_popup_open', {
-            'event_category': 'Carrito',
-            'event_label': 'Popup Opened'
+    const carritoIcon = document.querySelector('.carrito-icon');
+    if (carritoIcon) {
+        carritoIcon.addEventListener('click', function() {
+            console.log('Carrito popup opened');
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'carrito_popup_open', {
+                    'event_category': 'Carrito',
+                    'event_label': 'Popup Opened'
+                });
+            }
         });
-    });
+    }
 
-    document.querySelector('.cart-popup-footer button').addEventListener('click', function() {
-        gtag('event', 'finalize_purchase', {
-            'event_category': 'Checkout',
-            'event_label': 'Finalizar Button Clicked'
+    const finalizeButton = document.querySelector('.cart-popup-footer button');
+    if (finalizeButton) {
+        finalizeButton.addEventListener('click', function() {
+            console.log('Finalize purchase clicked');
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'finalize_purchase', {
+                    'event_category': 'Checkout',
+                    'event_label': 'Finalizar Button Clicked'
+                });
+            }
         });
-    });
+    }
 }
+
+// Initialisation des interactions après le chargement de la page
+document.addEventListener('DOMContentLoaded', initializeProductInteractions);
