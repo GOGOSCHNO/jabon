@@ -198,7 +198,6 @@ function handleCheckout(event) {
         headers: {
             'Content-Type': 'application/json',
         },
-        credentials: 'include', // Autorise l'envoi des cookies avec la requête
         body: JSON.stringify(order),
     })
     .then(response => {
