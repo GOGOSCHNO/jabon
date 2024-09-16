@@ -196,9 +196,9 @@ function handleCheckout(event) {
     fetch('https://nequi-8730a4c30191.herokuapp.com/api/save-order', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify(order),
+        body: JSON.stringify(order)
     })
     .then(response => {
         console.log('Raw response:', response); // Log the raw response object
