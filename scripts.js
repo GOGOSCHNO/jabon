@@ -198,7 +198,8 @@ function handleCheckout(event) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(order)
+        body: JSON.stringify(order),
+        credentials: 'include' // Autorise l'envoi des cookies avec la requête
     })
     .then(response => {
         console.log('Raw response:', response); // Log the raw response object
