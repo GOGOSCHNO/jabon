@@ -639,6 +639,9 @@ document.querySelectorAll('.video-item video').forEach(video => {
         // Activer la vidéo actuellement lue
         video.closest('.video-item').classList.add('active');
         video.closest('.video-item').classList.remove('inactive');
+
+        // Afficher l'overlay
+        document.getElementById('video-overlay').classList.add('active');
     });
 
     // Revenir à l'état initial quand la vidéo est en pause ou terminée
@@ -646,12 +649,17 @@ document.querySelectorAll('.video-item video').forEach(video => {
     video.addEventListener('ended', resetVideos);
 });
 
+// Fermer la vidéo lorsqu'on clique en dehors
+document.getElementById('video-overlay').addEventListener('click', resetVideos);
+
 function resetVideos() {
     document.querySelectorAll('.video-item').forEach(item => {
         item.classList.remove('active', 'inactive');
     });
-}
 
+    // Masquer l'overlay
+    document.getElementById('video-overlay').classList.remove('active');
+}
 // Initialisation des interactions après le chargement de la page
 document.addEventListener('DOMContentLoaded', initializeProductInteractions);
 function isMobileDevice() {
