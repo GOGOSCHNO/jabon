@@ -577,21 +577,36 @@ video:hover {
 /* Classe pour la vidéo centrée */
 .video-item.active {
     position: fixed;
-    top: 50%;
+    top: 10%; /* Ajustez ce pourcentage pour donner une marge supérieure et éviter le header */
     left: 50%;
-    transform: translate(-50%, -50%) scale(1.5); /* Centrer et agrandir légèrement */
+    transform: translate(-50%, 0) scale(1.5);
     z-index: 999;
     width: 80vw;
     height: auto;
     transition: all 0.5s ease;
     opacity: 1;
 }
-
 /* Masquer les autres vidéos */
 .video-item.inactive {
     opacity: 0;
     pointer-events: none; /* Empêche l'interaction avec les autres vidéos */
     transition: opacity 0.5s ease;
+}
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998; /* Juste en dessous de la vidéo */
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Montrer l'overlay */
+.video-overlay.active {
+    display: block;
 }
 /* Footer */
 footer {
