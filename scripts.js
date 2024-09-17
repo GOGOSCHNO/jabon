@@ -662,28 +662,35 @@ function resetVideos() {
 }
 function expandVideo(videoElement) {
     const videoOverlay = document.getElementById('video-overlay');
-    
+
     // Montrer l'overlay et ajuster la vidéo
     videoOverlay.style.display = 'block';
     videoElement.classList.add('video-fullscreen');
+
+    // Jouer la vidéo
+    videoElement.play();
     
     // Scroll bloqué pour éviter que la page défile
     document.body.style.overflow = 'hidden';
 }
 
-// Fonction pour fermer la vidéo
 function closeVideo() {
     const videoOverlay = document.getElementById('video-overlay');
     const fullscreenVideo = document.querySelector('.video-fullscreen');
-    
+
     if (fullscreenVideo) {
+        // Pause la vidéo et la réinitialise
+        fullscreenVideo.pause();
+        fullscreenVideo.currentTime = 0; // Revenir au début de la vidéo
         fullscreenVideo.classList.remove('video-fullscreen');
     }
+
     videoOverlay.style.display = 'none';
-    
-    // Réactiver le défilement
+
+    // Réactiver le défilement de la page
     document.body.style.overflow = 'auto';
 }
+
 
 // Initialisation des interactions après le chargement de la page
 document.addEventListener('DOMContentLoaded', initializeProductInteractions);
