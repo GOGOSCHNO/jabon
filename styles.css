@@ -652,8 +652,13 @@ footer {
     display: flex;
     justify-content: flex-start; /* Aligne les produits à gauche */
     align-items: flex-start; /* Aligne les produits au début */
-    flex-wrap: wrap; /* Permet aux produits de se renvoyer à la ligne si nécessaire */
     gap: 0; /* Supprime l'espace entre les éléments */
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    -ms-overflow-style: none;  /* Supprimer la barre de défilement sur Internet Explorer */
+    scrollbar-width: none;  /* Supprimer la barre de défilement sur Firefox */
+    
 }
 
 .product {
