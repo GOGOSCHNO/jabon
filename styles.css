@@ -603,6 +603,17 @@ video:hover {
     display: none;
     transition: opacity 0.3s ease;
 }
+/* Pour la vidéo */
+.video-fullscreen {
+    position: fixed;
+    top: 50%; /* Centre verticalement */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, -50%); /* Ajuste pour centrer parfaitement */
+    z-index: 1001; /* S'assure que la vidéo est au-dessus de l'overlay */
+    width: 80%; /* Largeur de la vidéo */
+    height: auto; /* Hauteur auto, adaptée à la largeur */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Ombre pour la vidéo */
+    border-radius: 10px; /* Bords arrondis */
 
 /* Montrer l'overlay */
 .video-overlay.active {
