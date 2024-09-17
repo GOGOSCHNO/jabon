@@ -656,9 +656,15 @@ footer {
     white-space: nowrap;
     scroll-behavior: smooth;
     overflow-x: auto;
-    -ms-overflow-style: none;  /* Supprimer la barre de défilement sur Internet Explorer */
-    scrollbar-width: none;  /* Supprimer la barre de défilement sur Firefox */
+    padding: 10px 0;
     
+}
+.product-container::-webkit-scrollbar {
+    height: 8px;
+}
+.product-container::-webkit-scrollbar-thumb {
+    background-color: #fe9dc0;  /* Couleur du curseur de défilement */
+    border-radius: 10px;  /* Bord arrondi */
 }
 
 .product {
