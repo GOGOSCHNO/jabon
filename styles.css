@@ -551,9 +551,11 @@ main {
 
 .video-item {
     width: 100%;
-    max-width: 300px; /* Taille maximale des vidéos */
+    max-width: 270px; /* Taille maximale des vidéos */
     text-align: center;
     flex-shrink: 0;
+    position: relative;
+    display: inline-block;
 }
 
 video {
@@ -569,9 +571,23 @@ video:hover {
 }
 
 .video-description {
-    font-size: 16px;
-    margin-top: 10px;
-    color: #333;
+    display: none; /* Cacher par défaut */
+    position: absolute;
+    bottom: 100%; /* Placer la description au-dessus de la vidéo */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.video-item:hover .video-description {
+    display: block; /* Afficher la description lors du survol */
+    opacity: 1;
 }
 
 /* Classe pour la vidéo centrée */
