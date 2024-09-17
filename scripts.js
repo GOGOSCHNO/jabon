@@ -628,6 +628,29 @@ function initializeProductInteractions() {
         });
     }
 }
+document.querySelectorAll('.video-item video').forEach(video => {
+    video.addEventListener('play', function() {
+        // Réinitialiser toutes les vidéos
+        document.querySelectorAll('.video-item').forEach(item => {
+            item.classList.remove('active');
+            item.classList.add('inactive');
+        });
+
+        // Activer la vidéo actuellement lue
+        video.closest('.video-item').classList.add('active');
+        video.closest('.video-item').classList.remove('inactive');
+    });
+
+    // Revenir à l'état initial quand la vidéo est en pause ou terminée
+    video.addEventListener('pause', resetVideos);
+    video.addEventListener('ended', resetVideos);
+});
+
+function resetVideos() {
+    document.querySelectorAll('.video-item').forEach(item => {
+        item.classList.remove('active', 'inactive');
+    });
+}
 
 // Initialisation des interactions après le chargement de la page
 document.addEventListener('DOMContentLoaded', initializeProductInteractions);
