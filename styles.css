@@ -614,7 +614,7 @@ video:hover {
     height: auto; /* Hauteur auto, adaptée à la largeur */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Ombre pour la vidéo */
     border-radius: 10px; /* Bords arrondis */
-
+}
 /* Montrer l'overlay */
 .video-overlay.active {
     display: block;
