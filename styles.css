@@ -47,7 +47,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 999;
     margin-top: 38px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Ajout de l'ombre */
 }
