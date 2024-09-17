@@ -558,9 +558,12 @@ main {
 
 video {
     width: 100%;
-    height: auto;
-    border-radius: 15px; /* Bords arrondis */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre sous la vidéo */
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+video:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .video-description {
@@ -569,11 +572,24 @@ video {
     color: #333;
 }
 
-/* Effet au survol */
-video:hover {
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Accentuation de l'ombre au survol */
-    transform: scale(1.02); /* Légère augmentation de la taille */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Classe pour la vidéo centrée */
+.video-item.active {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5); /* Centrer et agrandir légèrement */
+    z-index: 999;
+    width: 80vw;
+    height: auto;
+    transition: all 0.5s ease;
+    opacity: 1;
+}
+
+/* Masquer les autres vidéos */
+.video-item.inactive {
+    opacity: 0;
+    pointer-events: none; /* Empêche l'interaction avec les autres vidéos */
+    transition: opacity 0.5s ease;
 }
 /* Footer */
 footer {
