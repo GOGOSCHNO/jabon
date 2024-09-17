@@ -606,15 +606,6 @@ footer {
     margin: 0.5rem 0; /* Ajouter de la marge entre les boutons */
 }
 
-.product-bottom button:last-child {
-    background-color: transparent; /* Pas de cadre */
-    color: #fe9dc0; /* Couleur de texte */
-    border: none;
-    text-decoration: underline; /* Texte souligné */
-    font-weight: bold; /* Texte en gras */
-    cursor: pointer;
-}
-
 .product-bottom button:last-child:hover {
     text-decoration: underline;
 }
@@ -626,7 +617,7 @@ footer {
     padding: 0.5rem 1rem;
     cursor: pointer;
     border-radius: 5px;
-    margin: 0.5rem 0;
+    margin: -5px;
     font-size: 16px;
     transition: transform 0.2s;
 }
