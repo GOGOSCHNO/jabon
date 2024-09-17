@@ -564,6 +564,8 @@ video {
 
 video:hover {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02); /* Légère augmentation de la taille */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .video-description {
