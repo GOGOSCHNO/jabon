@@ -482,10 +482,6 @@ main {
     position: relative;
 }
 
-.favoritos-image-container:hover img {
-    transform: scale(1.2);
-}
-
 /* Image et Texte */
 .image-text-section {
     padding: 20px;
