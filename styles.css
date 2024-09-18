@@ -688,7 +688,7 @@ footer {
 
 .product-tag {
     display: none; /* Cacher par défaut */
-    position: absolute;
+    position: relative;
     bottom: 100%; /* Placer la description au-dessus du produit */
     left: 50%;
     transform: translateX(-50%);
