@@ -661,7 +661,7 @@ footer {
     
 }
 .product-container::-webkit-scrollbar {
-    height: 8px;
+    height: 12px;
 }
 .product-container::-webkit-scrollbar-thumb {
     background-color: #fe9dc0;  /* Couleur du curseur de défilement */
