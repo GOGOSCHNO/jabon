@@ -494,6 +494,7 @@ main {
     align-items: center;
     text-align: left;
     border-top: 1px solid #fd518f;
+    margin-top: 50px;
 }
 .image-text-container {
     display: flex;
