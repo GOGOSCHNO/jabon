@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>NAYSA - Productos capilares 100% naturales</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Descubre los productos capilares 100% naturales de NAYSA. Basados en Barranquilla, ofrecemos soluciones orgánicas para cuidar tu cabello.">
+    <meta name="keywords" content="productos capilares, cuidados naturales, champú, Barranquilla, cuidados del cabello, orgánico, eco-conservantes, colorantes vegetales">
+    <meta name="author" content="NAYSA">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="NAYSA - Productos capilares 100% naturales">
+    <meta property="og:description" content="Descubre los productos capilares 100% naturales de NAYSA. Basados en Barranquilla, ofrecemos soluciones orgánicas para cuidar tu cabello.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png">
+    <meta property="og:url" content="https://www.naysacare.com">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NAYSA - Productos capilares 100% naturales">
+    <meta name="twitter:description" content="Descubre los productos capilares 100% naturales de NAYSA. Basados en Barranquilla, ofrecemos soluciones orgánicas para cuidar tu cabello.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/fav2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/fav2.png" type="image/x-icon">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HV2FV4QCP2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-HV2FV4QCP2');
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        function loadHeader() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+        }
+        window.onload = loadHeader;
+    </script>
+</head>
+<body class="home-page">
+    <div class="announcement-bar" id="announcementBar">
+        <span id="announcementMessage"></span>
+    </div>
+    <!-- Votre code de header existant -->
+    <div id="header-placeholder"></div>
+    <div class="submenu" id="submenu-capilar">
+        <div class="submenu-category">
+            <h4>Shampoo</h4>
+            <ul>
+                <li><a href="multivitaminico.html">Multivitamínico Capilar</a></li>
+                <li><a href="nutricionprofunda.html">Shampoo Nutrición Profunda</a></li>
+                <li><a href="cebollamorada.html">Shampoo Cebolla Morada</a></li>
+                <li><a href="detox.html">Shampoo Detox</a></li>
+                <li><a href="lechecocoalmendras.html">Shampoo Leche de Coco y Almendras</a></li>
+            </ul>
+        </div>
+        <div class="submenu-category">
+            <h4>Acondicionador</h4>
+            <ul>
+                <li><a href="acondicionadornutricion.html">Acondicionador Nutrición Profunda</a></li>
+                <li><a href="acondicionadorcebolla.html">Acondicionador Cebolla Morada</a></li>
+                <li><a href="acondicionadorleche.html">Acondicionador Leche de Coco y Almendras</a></li>
+            </ul>
+        </div>
+        <div class="submenu-category">
+            <h4>Mascarilla Capilar</h4>
+            <ul>
+                <li><a href="paleta.html">Paleta Hair Pop</a></li>
+                <li><a href="hairpopminimora.html">Hair Pop Mini Mora</a></li>
+            </ul>
+        </div>
+    </div>
+    <section class="collection-banner">
+        <img src="votre-image.jpg" alt="Collection Banner">
+    </section>
+    <!-- Section principale de la collection -->
+    <main class="collection-main">
+        <!-- Menu de catégories à gauche -->
+        <aside class="collection-menu">
+            <h3>Filtrer par catégorie</h3>
+            <ul>
+                <li><a href="capilar.html">Capilar</a></li>
+                <li><a href="corporal.html">Corporal</a></li>
+                <li><a href="kits.html" class="kitspage active-category">Kits</a></li>
+            </ul>
+        </aside>
+        <!-- Produits à droite -->
+        <section class="collection-products">
+            <div class="capilar-buttons">
+                <a href="capilarshampoo.html" class="hidratacion-button active-button">Hidratación</a>
+                <a href="capilaracondicionador.html" class="reparacion-button">Reparación</a>
+                <a href="capilarmascarilla.html" class="crecimiento-button">Crecimiento</a>
+                <a href="capilarmascarilla.html" class="anticaida-button">Anticaída</a>
+            </div>
+            <!-- Produits affichés ici -->
+            <div class="product-container-collection">
+                 <div class="product" data-id="100" data-name="Kit Hidratación Intensa" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/multivitaminico.PNG">
+                    <div class="product-top" onclick="location.href='kit_hidratacion_intensa.html'">
+                        <span class="product-tag">Hidrata y suaviza profundamente, ideal para cabellos secos y dañados.</span>
+                        <div class="favoritos-image-container">
+                            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/hidratacionintensa.PNG" alt="Kit Hidratación Intensa" class="product-image">
+                        </div>
+                        <h3>Kit Hidratación Intensa</h3>
+                    </div>   
+                    <div class="product-bottom">
+                        <button onclick="addToCart(100, 'Kit Hidratación Intensa', 102000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/hidratacionintensa.PNG')">500ml | $102.000</button>
+                    </div>
+                </div>
+        
+                <div class="product" data-id="101" data-name="Kit Cuidados Básicos" data-image="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/multivitaminico.PNG">
+                    <div class="product-top" onclick="location.href='kit_cuidados_basicos.html'">
+                        <span class="product-tag">Hidratación diaria y suavidad, perfecto para el cuidado capilar constante.</span>
+                        <div class="favoritos-image-container">
+                            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/cuidadosbasicos.PNG" alt="Kit Cuidados Básicos" class="product-image">
+                        </div>
+                        <h3>Kit Cuidados Básicos</h3>
+                    </div>   
+                    <div class="product-bottom">
+                        <button onclick="addToCart(101, 'Kit Cuidados Básicos', 90000, 'https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/cuidadosbasicos.PNG')">500ml | $90.000</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="cart-popup" class="cart-popup">
+        <div class="cart-popup-content">
+            <div class="cart-popup-header">
+                <h2>Carrito de compra</h2>
+                <span class="close-button" onclick="closeCartPopup()">&times;</span>
+            </div>
+            <table id="cart-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-popup-items">
+                    <!-- Les articles du panier seront affichés ici -->
+                </tbody>
+            </table>
+        </div>
+        <div class="cart-popup-footer">
+            <p>Total: $<span id="popup-total-amount"></span></p>
+            <button onclick="finalizePurchase()">Finalizar</button>
+        </div>
+    </div>
+
+    <div class="cart-popup-button">
+    <button onclick="openCartPopup()">
+        <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/panier.png" alt="Carrito">
+        <span id="popup-cart-count" class="cart-count"></span>
+    </button>
+    </div>
+    <footer>
+    <p>&copy; 2024 Naysa</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
