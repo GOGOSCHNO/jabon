@@ -690,15 +690,17 @@ footer {
 .product-tag {
     display: none; /* Cacher par défaut */
     position: absolute;
-    bottom: 90%; /* Placer la description au-dessus du produit */
+    bottom: 50%; /* Placer la description au-dessus du produit */
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: break-word; /* Permet de couper le texte si trop long */
     z-index: 10;
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
     opacity: 0;
     transition: opacity 0.3s ease;
 }
