@@ -688,8 +688,8 @@ footer {
 
 .product-tag {
     display: none; /* Cacher par défaut */
-    position: relative;
-    bottom: 100%; /* Placer la description au-dessus du produit */
+    position: absolute;
+    bottom: 90%; /* Placer la description au-dessus du produit */
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.8);
