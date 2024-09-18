@@ -860,6 +860,34 @@ footer {
     color: #fff;
     font-weight: bold;
 }
+.coming-soon-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    border: 2px solid #fe9dc0; /* Bordure avec la couleur du thème */
+    border-radius: 12px;
+    background-color: #fff5f7; /* Fond doux */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Effet d'ombre pour donner du relief */
+}
+
+.coming-soon-message h2 {
+    font-size: 36px;
+    color: #fe9dc0;
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif; /* Typographie harmonisée */
+}
+
+.coming-soon-message p {
+    font-size: 18px;
+    color: #333;
+    max-width: 600px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    margin-top: 0;
+}
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Section des pages produit*/
 /* Section gauche du produit */
 .product-layout {
