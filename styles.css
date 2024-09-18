@@ -676,7 +676,7 @@ footer {
 }
 .product {
     flex: 0 0 auto; /* Garde les produits à leur taille sans étirement */
-    margin: 0; /* Supprime les marges */
+    margin: 10px; /* Supprime les marges */
     padding: 0; /* Supprime les espacements internes */
     text-align: center;
     width: 250px; /* Largeur des produits */
