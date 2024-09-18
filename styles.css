@@ -667,7 +667,13 @@ footer {
     background-color: #fe9dc0;  /* Couleur du curseur de défilement */
     border-radius: 10px;  /* Bord arrondi */
 }
-
+.product-container-collection {
+    display: flex;
+    justify-content: flex-start; /* Aligne les produits à gauche */
+    align-items: flex-start; /* Aligne les produits au début */
+    flex-wrap: wrap; /* Permet aux produits de se renvoyer à la ligne si nécessaire */
+    gap: 0; /* Supprime l'espace entre les éléments */
+}
 .product {
     flex: 0 0 auto; /* Garde les produits à leur taille sans étirement */
     margin: 0; /* Supprime les marges */
