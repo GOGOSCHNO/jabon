@@ -860,6 +860,26 @@ footer {
     color: #fff;
     font-weight: bold;
 }
+.hidratacion-button.active-button {
+    background-color: #ff69b4; /* Couleur spécifique pour Mascarilla Capilar */
+    color: #fff;
+    font-weight: bold;
+}
+.reparacion-button.active-button {
+    background-color: #ff69b4; /* Couleur spécifique pour Mascarilla Capilar */
+    color: #fff;
+    font-weight: bold;
+}
+.crecimiento-button.active-button {
+    background-color: #ff69b4; /* Couleur spécifique pour Mascarilla Capilar */
+    color: #fff;
+    font-weight: bold;
+}
+.anticaida-button.active-button {
+    background-color: #ff69b4; /* Couleur spécifique pour Mascarilla Capilar */
+    color: #fff;
+    font-weight: bold;
+}
 .coming-soon-message {
     display: flex;
     flex-direction: column;
