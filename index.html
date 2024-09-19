@@ -49,6 +49,7 @@
 
                     // Placez ici l'initialisation du sous-menu après chargement du header
                     initializeSubmenu(); // Appel de la fonction d'initialisation
+                    updateCartCount(); // Appeler updateCartCount après que le header soit chargé
                 })
                 .catch(error => console.error('Erreur lors du chargement du header:', error));
         }
@@ -83,23 +84,6 @@
                 });
             } else {
                 console.error("Éléments non trouvés pour le sous-menu.");
-            }
-        }
-        function updateCartCount() {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let cartCountElement = document.getElementById('cart-count');
-            let popupCartCountElement = document.getElementById('popup-cart-count');
-    
-            if (cartCountElement) {
-                cartCountElement.innerText = cart.length;
-            } else {
-                console.error('Element with ID "cart-count" not found.');
-            }
-    
-            if (popupCartCountElement) {
-                popupCartCountElement.innerText = cart.length;
-            } else {
-                console.error('Element with ID "popup-cart-count" not found.');
             }
         }
         window.onload = loadHeader; // Appeler la fonction loadHeader au chargement de la page
