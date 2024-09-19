@@ -53,6 +53,37 @@
                 })
                 .catch(error => console.error('Erreur lors du chargement du header:', error));
         }
+        function initializeSubmenu() {
+            const navItem = document.getElementById("capilar-item");
+            const submenu = document.getElementById("submenu-capilar");
+            let timeoutId;
+
+            if (navItem && submenu) {  // Vérifier que les éléments existent
+                navItem.addEventListener("mouseover", function () {
+                    clearTimeout(timeoutId);
+                    submenu.classList.add("show");
+                });
+
+                navItem.addEventListener("mouseout", function () {
+                    timeoutId = setTimeout(function () {
+                        submenu.classList.remove("show");
+                    }, 300);
+                });
+
+                submenu.addEventListener("mouseover", function () {
+                    clearTimeout(timeoutId);
+                    submenu.classList.add("show");
+                });
+
+                submenu.addEventListener("mouseout", function () {
+                    timeoutId = setTimeout(function () {
+                        submenu.classList.remove("show");
+                    }, 300);
+                });
+            } else {
+                console.error("Éléments non trouvés pour le sous-menu.");
+            }
+        }
         window.onload = loadHeader; // Appeler la fonction loadHeader au chargement de la page
     </script>
 </head>
