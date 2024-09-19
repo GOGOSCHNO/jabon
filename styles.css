@@ -675,7 +675,7 @@ footer {
     margin: 10px; /* Supprime les marges */
     padding: 0; /* Supprime les espacements internes */
     text-align: center;
-    width: 250px; /* Largeur des produits */
+    width: 310px; /* Largeur des produits */
     position: relative;
     display: inline-block;
 }
@@ -716,11 +716,12 @@ footer {
     border-radius: 15px; /* Ajouter des bords arrondis */
     transition: transform 0.2s;
     margin: 0; /* Réduire l'écart */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajouter une ombre sous l'image */
 }
 
 .product-top:hover .product-image {
-    transform: scale(1.1); /* Effet d'agrandissement sur l'image */
+    transform: scale(1.0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;/* Effet d'agrandissement sur l'image */
 }
 
 .product h3 {
