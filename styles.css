@@ -688,7 +688,10 @@ footer {
 .product-top:hover {
     transform: scale(1.05); /* Effet d'agrandissement */
 }
-
+.product img:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;/* Effet d'agrandissement sur l'image */
+}
 .product-tag {
     display: none; /* Cacher par défaut */
     position: absolute;
