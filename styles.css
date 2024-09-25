@@ -1751,4 +1751,14 @@ button:hover {
         width: 100%;
         margin-top: 10px;
     }
+    .categoria-item {
+        flex: 1; /* Chaque élément prend toute la largeur disponible */
+        margin-bottom: -50px; /* Ajouter un espace entre les catégories */
+        text-align: center;
+    }
+
+    .image-container img {
+        width: 100%; /* Image prend 100% de la largeur du conteneur */
+        height: 75%; /* Garde les proportions d'origine */
+    }
 }
