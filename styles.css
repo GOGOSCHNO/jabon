@@ -766,6 +766,29 @@ footer {
 .product button:hover {
     transform: scale(1.1);
 }
+.ver-mas-container {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px; /* Ajuste de la largeur selon les besoins */
+    height: 300px; /* Ajuste de la hauteur selon les besoins */
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.ver-mas-container:hover {
+    transform: scale(1.05);
+}
+
+.ver-mas-text {
+    font-size: 18px;
+    color: #ff69b4;
+}
+
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Section des pages collection*/
 .collection-banner img {
     width: 100%;
