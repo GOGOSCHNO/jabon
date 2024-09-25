@@ -1698,16 +1698,12 @@ button:hover {
         padding: 0 20px; /* Ajouter un padding pour éviter que le texte colle aux bords */
     }
     
-    .nuestra-linea-capilar, 
-    .image-text-section, 
-    .productos-favoritos {
+    .image-text-section{
         display: flex;
         flex-direction: column;
         align-items: center; /* Pour centrer les éléments */
     }
-    .nuestra-linea-capilar .product, 
-    .image-text-section .product, 
-    .productos-favoritos .product {
+    .image-text-section .product{
         width: 100%;
         flex: 1 1 100%;/* Assurez-vous que les éléments occupent toute la largeur */
         margin-bottom: 20px; /* Ajoutez un espace entre les éléments */
