@@ -1756,4 +1756,7 @@ button:hover {
         width: 100%; /* Image prend 100% de la largeur du conteneur */
         height: 75%; /* Garde les proportions d'origine */
     }
+    .collection-menu {
+        display: none;
+    }
 }
