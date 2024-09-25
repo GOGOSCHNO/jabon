@@ -544,6 +544,7 @@ main {
     gap: 30px; /* Espace entre chaque vidéo */
     verflow-x: auto; /* Permet le défilement horizontal si le contenu dépasse la largeur de l'écran */
     padding: 10px;
+    margin-top: 34px;
 }
 
 .video-item {
