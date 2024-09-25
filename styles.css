@@ -539,7 +539,6 @@ main {
 /* Alignement vertical des vidéos */
 .videos-grid-vertical {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 30px; /* Espace entre chaque vidéo */
     verflow-x: auto; /* Permet le défilement horizontal si le contenu dépasse la largeur de l'écran */
