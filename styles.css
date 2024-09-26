@@ -1784,3 +1784,7 @@ button:hover {
     color: #fe9dc0;
     }
 }
+@media (min-width: 769px) {
+    .scroll-hint, .scroll-hint-right {
+        display: none;
+}
