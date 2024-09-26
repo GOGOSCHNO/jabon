@@ -1763,4 +1763,24 @@ button:hover {
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch; /* Ajoute un défilement plus fluide sur iOS */
     }
+    .scroll-hint-right {
+    position: absolute;
+    right: 7px; /* Position à droite */
+    top: 132%; /* Même alignement que la flèche de gauche */
+    transform: translateY(-50%);
+    font-size: 50px;
+    opacity: 0.4;
+    font-weight: bold;
+    color: #fe9dc0;
+    }
+    .scroll-hint {
+    position: absolute;
+    left: 7px;
+    top: 132%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    opacity: 0.4;
+    font-weight: bold;
+    color: #fe9dc0;
+    }
 }
