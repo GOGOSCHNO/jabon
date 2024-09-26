@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>NAYSA - Productos capilares 100% naturales</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Descubre los productos capilares 100% naturales de NAYSA. Basados en Barranquilla, ofrecemos soluciones orgánicas para cuidar tu cabello.">
+    <meta name="keywords" content="productos capilares, cuidados naturales, champú, Barranquilla, cuidados del cabello, orgánico, eco-conservantes, colorantes vegetales">
+    <meta name="author" content="NAYSA">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="NAYSA - Productos capilares 100% naturales">
+    <meta property="og:description" content="Descubre los productos capilares 100% naturales de NAYSA. Basados en Barranquilla, ofrecemos soluciones orgánicas para cuidar tu cabello.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png">
+    <meta property="og:url" content="https://www.naysacare.com">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NAYSA - Productos capilares 100% naturales">
+    <meta name="twitter:description" content="Descubre los productos capilares 100% naturales de NAYSA. Basados en Barranquilla, ofrecemos soluciones orgánicas para cuidar tu cabello.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/logonaysa.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/fav2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/fav2.png" type="image/x-icon">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HV2FV4QCP2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-HV2FV4QCP2');
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        function loadHeader() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+
+                    // Placez ici l'initialisation du sous-menu après chargement du header
+                    initializeSubmenu(); // Appel de la fonction d'initialisation
+                    updateCartCount(); // Appeler updateCartCount après que le header soit chargé
+                })
+                .catch(error => console.error('Erreur lors du chargement du header:', error));
+        }
+        function initializeSubmenu() {
+            const navItem = document.getElementById("capilar-item");
+            const submenu = document.getElementById("submenu-capilar");
+            let timeoutId;
+
+            if (navItem && submenu) {  // Vérifier que les éléments existent
+                navItem.addEventListener("mouseover", function () {
+                    clearTimeout(timeoutId);
+                    submenu.classList.add("show");
+                });
+
+                navItem.addEventListener("mouseout", function () {
+                    timeoutId = setTimeout(function () {
+                        submenu.classList.remove("show");
+                    }, 300);
+                });
+
+                submenu.addEventListener("mouseover", function () {
+                    clearTimeout(timeoutId);
+                    submenu.classList.add("show");
+                });
+
+                submenu.addEventListener("mouseout", function () {
+                    timeoutId = setTimeout(function () {
+                        submenu.classList.remove("show");
+                    }, 300);
+                });
+            } else {
+                console.error("Éléments non trouvés pour le sous-menu.");
+            }
+        }
+        window.onload = loadHeader; // Appeler la fonction loadHeader au chargement de la page
+    </script>
+</head>
+<body class="home-page">
+    <div class="announcement-bar" id="announcementBar">
+        <span id="announcementMessage"></span>
+    </div>
+    <!-- Votre code de header existant -->
+    <div id="header-placeholder"></div>
+    <div class="submenu" id="submenu-capilar">
+        <div class="submenu-category">
+            <h4>Shampoo</h4>
+            <ul>
+                <li><a href="multivitaminico.html">Multivitamínico Capilar</a></li>
+                <li><a href="nutricionprofunda.html">Shampoo Nutrición Profunda</a></li>
+                <li><a href="cebollamorada.html">Shampoo Cebolla Morada</a></li>
+                <li><a href="detox.html">Shampoo Detox</a></li>
+                <li><a href="lechecocoalmendras.html">Shampoo Leche de Coco y Almendras</a></li>
+            </ul>
+        </div>
+        <div class="submenu-category">
+            <h4>Acondicionador</h4>
+            <ul>
+                <li><a href="acondicionadornutricion.html">Acondicionador Nutrición Profunda</a></li>
+                <li><a href="acondicionadorcebolla.html">Acondicionador Cebolla Morada</a></li>
+                <li><a href="acondicionadorleche.html">Acondicionador Leche de Coco y Almendras</a></li>
+            </ul>
+        </div>
+        <div class="submenu-category">
+            <h4>Mascarilla Capilar</h4>
+            <ul>
+                <li><a href="paleta.html">Paleta Hair Pop</a></li>
+                <li><a href="hairpopminimora.html">Hair Pop Mini Mora</a></li>
+            </ul>
+        </div>
+    </div>
+    <main>
+        <div class="product-layout">
+            <div class="product-left">
+                <span class="product-tag">Recupera el brillo y la suavidad natural para cabellos opacos o porosos.</span>
+                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/Kit%20Brillo.png" alt="Kit Brillo">
+            </div>
+            <div class="product-right">
+                <h2>Kit Brillo</h2>
+                <p class="product-description">Con ingredientes nutritivos como el chocolate y la fresa, este kit devolverá el brillo y la suavidad natural a tu cabello.</p>
+                <p class="product-ingredients">
+                    <strong>Contiene:</strong><br>
+                    <a href="shampoochocolate.html"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/shamcho.png" width="50"> Shampoo de Chocolate</a><br>
+                    <a href="chocolaterapia.html"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/chocolaterapia.png" width="50"> Chocolaterapia</a><br>
+                    <a href="hairpopminifresa.html"><img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/minifresa.png" width="50"> Hair Pop Mini Fresa</a><br>
+                </p>
+                <p class="product-usage">
+                    <strong>Modo de uso:</strong><br>
+                    Usa el shampoo de chocolate y la Chocolaterapia semanalmente para obtener un brillo intenso, y aplica Hair Pop Mini Fresa para mantener tu cabello suave.
+                </p>
+                <div class="product-prices">
+                    <button onclick="addToCart(105, 'Kit Brillo', 130000)">Comprar por $130.000</button>
+                </div>
+            </div>
+        </div>
+    </main>
+       
+          <div id="cart-popup" class="cart-popup">
+                <div class="cart-popup-content">
+                    <div class="cart-popup-header">
+                        <h2>Carrito de compra</h2>
+                        <span class="close-button" onclick="closeCartPopup()">&times;</span>
+                    </div>
+                    <table id="cart-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-popup-items">
+                            <!-- Les articles du panier seront affichés ici -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cart-popup-footer">
+                    <p>Total: $<span id="popup-total-amount"></span></p>
+                    <button onclick="finalizePurchase()">Finalizar</button>
+                </div>
+            </div>
+        
+    <div class="cart-popup-button">
+        <button onclick="openCartPopup()">
+            <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/panier.png" alt="Carrito">
+            <span id="popup-cart-count" class="cart-count"></span>
+        </button>
+    </div>
+    <footer>
+        <p>&copy; 2024 La Tienda del Jabon</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
