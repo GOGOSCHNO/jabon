@@ -1759,4 +1759,8 @@ button:hover {
     .collection-menu {
         display: none;
     }
+    .product-container {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch; /* Ajoute un défilement plus fluide sur iOS */
+    }
 }
