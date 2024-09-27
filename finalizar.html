@@ -160,12 +160,20 @@
                             <p>Edificio Kairos</p>
                         </div>
                     </div>
-                    <button type="submit">Realizar el Pago</button>
+                    <!-- Bouton avec logo Nequi -->
+                    <button type="submit">
+                        <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/nequipetit.PNG" alt="Nequi Logo" style="height: 20px; vertical-align: middle;">
+                        Pagar con Nequi
+                    </button>
                 </form>
             </div>
+            
             <!-- Section d'instructions avec QR code, cachée par défaut -->
             <div id="qr-overlay" style="display: none;">
                 <div id="qr-instructions">
+                    <!-- Logo Nequi grand -->
+                    <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/nequigrand.PNG" alt="Nequi Logo" style="width: 100px; display: block; margin: 0 auto;">
+            
                     <h3>Instructions para pagar con Nequi</h3>
                     <p>1. Abre la aplicación Nequi en tu teléfono.</p>
                     <p>2. Escanea el código QR a continuación con la aplicación Nequi.</p>
@@ -178,6 +186,8 @@
                     <p id="payment-status"></p>
                 </div>
             </div>
+            
+            <!-- Loader pour l'attente de génération de QR code -->
             <div id="loading-spinner" style="display: none;">
                 <div class="spinner"></div>
             </div>
