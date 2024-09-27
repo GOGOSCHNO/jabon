@@ -147,35 +147,7 @@ function toggleSubmenuMobile(submenuId) {
     var submenuElement = document.getElementById(submenuId);
     submenuElement.classList.toggle("active");
 }
-// Fonction pour afficher le QR code
-function displayQRCode(qrCode) {
-    const qrCodeContainer = document.getElementById('qr-code-container');
-    const qrOverlay = document.getElementById('qr-overlay'); // Ajout pour l'overlay
-    const loadingSpinner = document.getElementById('loading-spinner'); // Loader
 
-    // Cacher le loader une fois que le QR code est prêt
-    loadingSpinner.classList.add('hidden');
-
-    if (qrCodeContainer && qrOverlay) {
-        // Nettoyer le contenu existant du conteneur QR code
-        qrCodeContainer.innerHTML = '';
-
-        // Utiliser la bibliothèque qrcode.js pour générer le QR code
-        new QRCode(qrCodeContainer, {
-            text: "bancadigital-" + qrCode, // Concatène bancadigital au code fourni par Nequi
-            width: 128,  // Largeur du QR code
-            height: 128  // Hauteur du QR code
-        });
-
-        // Afficher la section QR code (overlay)
-        qrOverlay.classList.remove('hidden');
-
-        // Afficher le message de statut du paiement
-        document.getElementById('payment-status').innerText = 'Escanea el código QR para realizar el pago.';
-    } else {
-        console.error('QR Code container or overlay not found.');
-    }
-}
 
 // Fonction pour afficher le loader et gérer le paiement
 function handleCheckout(event) {
@@ -252,7 +224,35 @@ function handleCheckout(event) {
         console.error('Erreur:', error);
     });
 }
+// Fonction pour afficher le QR code
+function displayQRCode(qrCode) {
+    const qrCodeContainer = document.getElementById('qr-code-container');
+    const qrOverlay = document.getElementById('qr-overlay'); // Ajout pour l'overlay
+    const loadingSpinner = document.getElementById('loading-spinner'); // Loader
 
+    // Cacher le loader une fois que le QR code est prêt
+    loadingSpinner.classList.add('hidden');
+
+    if (qrCodeContainer && qrOverlay) {
+        // Nettoyer le contenu existant du conteneur QR code
+        qrCodeContainer.innerHTML = '';
+
+        // Utiliser la bibliothèque qrcode.js pour générer le QR code
+        new QRCode(qrCodeContainer, {
+            text: "bancadigital-" + qrCode, // Concatène bancadigital au code fourni par Nequi
+            width: 128,  // Largeur du QR code
+            height: 128  // Hauteur du QR code
+        });
+
+        // Afficher la section QR code (overlay)
+        qrOverlay.classList.remove('hidden');
+
+        // Afficher le message de statut du paiement
+        document.getElementById('payment-status').innerText = 'Escanea el código QR para realizar el pago.';
+    } else {
+        console.error('QR Code container or overlay not found.');
+    }
+}
 // Fonction pour masquer le QR code lorsqu'on clique en dehors de la section
 function hideQRCodeSection() {
     document.getElementById('qr-overlay').classList.add('hidden');
