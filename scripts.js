@@ -246,8 +246,8 @@ function displayQRCode(qrCode) {
         // Utilise la bibliothèque qrcode.js pour générer le QR code
         new QRCode(qrCodeContainer, {
             text: "bancadigital-" + qrCode, // Concatène bancadigital au code fourni par Nequi
-            width: 128,  // Largeur du QR code
-            height: 128  // Hauteur du QR code
+            width: 200,  // Largeur du QR code
+            height: 200  // Hauteur du QR code
         });
 
         // Affiche l'overlay et la section des instructions
