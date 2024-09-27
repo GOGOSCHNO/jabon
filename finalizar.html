@@ -163,13 +163,19 @@
                     <button type="submit">Realizar el Pago</button>
                 </form>
             </div>
-            <div class="payment-details">
-                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/nequi.PNG" alt="Nequi">
-                <img src="https://raw.githubusercontent.com/GOGOSCHNO/jabon/main/photo/bancolombia.PNG" alt="Bancolombia">
-                <button onclick="redirectToWhatsApp()">Enviar Comprobante</button>
+            <!-- Section d'instructions avec QR code, cachée par défaut -->
+            <div id="qr-instructions" style="display: none;">
+                <h3>Instructions pour payer avec Nequi</h3>
+                <p>1. Ouvre l'application Nequi sur ton téléphone.</p>
+                <p>2. Scanne le code QR ci-dessous avec l'application Nequi.</p>
+                <p>3. Confirme le montant et complète le paiement.</p>
+        
+                <!-- Conteneur pour le QR code -->
+                <div id="qr-code-container"></div>
+        
+                <!-- Message de statut de paiement -->
+                <p id="payment-status"></p>
             </div>
-            <div id="qr-code-container"></div>
-            <p id="payment-status"></p>
         </div>
         <div class="right-section">
             <h3>Tu Carrito</h3>
