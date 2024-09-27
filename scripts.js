@@ -237,9 +237,9 @@ function handleCheckout(event) {
 // Fonction pour afficher le QR code et les instructions de paiement
 function displayQRCode(qrCode) {
     const qrCodeContainer = document.getElementById('qr-code-container');
-    const qrInstructions = document.getElementById('qr-instructions'); // Ajout pour obtenir la section des instructions
+    const qrOverlay = document.getElementById('qr-overlay'); // Utilisation de l'overlay au lieu de qr-instructions
 
-    if (qrCodeContainer && qrInstructions) {
+    if (qrCodeContainer && qrOverlay) {
         // Nettoie le contenu existant du conteneur QR code
         qrCodeContainer.innerHTML = '';
 
@@ -250,14 +250,19 @@ function displayQRCode(qrCode) {
             height: 128  // Hauteur du QR code
         });
 
-        // Affiche les instructions
-        qrInstructions.style.display = 'block';
+        // Affiche l'overlay et la section des instructions
+        qrOverlay.style.display = 'flex';  // Utilise 'flex' pour que l'overlay soit centré
 
         // Affiche le message de statut du paiement
         document.getElementById('payment-status').innerText = 'Escanea el código QR para realizar el pago.';
     } else {
-        console.error('QR Code container or instructions not found.');
+        console.error('QR Code container or overlay not found.');
     }
+}
+
+// Fonction pour masquer le QR code lorsqu'on clique en dehors de la section
+function hideQRCodeSection() {
+    document.getElementById('qr-overlay').style.display = 'none';
 }
 // Fonctions de gestion du panier
 function addToCart(id, name, price, image) {
