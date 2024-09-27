@@ -1292,6 +1292,50 @@ button:hover {
     top: 125px;
     align-self: flex-start; /* Pour s'assurer que la section droite commence en haut */
 }
+/* Overlay sombre pour centrer le QR code et masquer l'arrière-plan */
+#qr-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Priorité d'affichage élevée */
+}
+
+/* QR modal centré */
+.qr-modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+    z-index: 1001; /* Plus haut que l'overlay */
+}
+
+/* Cacher l'overlay et le QR code section par défaut */
+.hidden {
+    display: none;
+}
+
+/* Loader pour montrer l'attente */
+#loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1002;
+}
+
+#loading-spinner img {
+    width: 50px;
+    height: 50px;
+}
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Section pop up*/
 .cart-popup {
     display: none; /* Start hidden */
