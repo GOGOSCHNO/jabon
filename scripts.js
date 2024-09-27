@@ -181,6 +181,9 @@ function handleCheckout(event) {
         return;
     }
 
+    // Affiche le spinner de chargement
+    document.getElementById('loading-spinner').style.display = 'flex';
+
     // Créer l'objet commande
     const order = {
         whatsapp,
@@ -196,8 +199,6 @@ function handleCheckout(event) {
         }))
     };
 
-    console.log('Order object to be sent:', order);
-
     // Envoie de la commande à l'API
     fetch('https://nequi-8730a4c30191.herokuapp.com/api/save-order', {
         method: 'POST',
@@ -206,34 +207,32 @@ function handleCheckout(event) {
         },
         body: JSON.stringify(order)
     })
-    .then(response => {
-        console.log('Raw response:', response); // Log la réponse brute
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
-        console.log('Parsed response data:', data); // Log des données de réponse
-
         if (data.success) {
             // Vérifie que le code QR est valide
-            if (data.qrCodeUrl && typeof data.qrCodeUrl === 'object' && data.qrCodeUrl.generateCodeQRRS && typeof data.qrCodeUrl.generateCodeQRRS.codeQR === 'string') {
+            if (data.qrCodeUrl && data.qrCodeUrl.generateCodeQRRS && data.qrCodeUrl.generateCodeQRRS.codeQR) {
                 let qrCode = data.qrCodeUrl.generateCodeQRRS.codeQR;
-
-                console.log('QR Code:', qrCode); // Log du code QR brut
+                
+                // Cache le spinner
+                document.getElementById('loading-spinner').style.display = 'none';
 
                 // Afficher le QR code avec les instructions
                 displayQRCode(qrCode);
             } else {
-                console.error('QR Code data is not valid or is missing:', data.qrCodeUrl);
+                console.error('QR Code data is missing or invalid:', data.qrCodeUrl);
+                document.getElementById('loading-spinner').style.display = 'none'; // Cache le spinner
             }
         } else {
             alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
+            document.getElementById('loading-spinner').style.display = 'none'; // Cache le spinner
         }
     })
     .catch(error => {
         console.error('Erreur:', error);
+        document.getElementById('loading-spinner').style.display = 'none'; // Cache le spinner en cas d'erreur
     });
 }
-
 // Fonction pour afficher le QR code et les instructions de paiement
 function displayQRCode(qrCode) {
     const qrCodeContainer = document.getElementById('qr-code-container');
