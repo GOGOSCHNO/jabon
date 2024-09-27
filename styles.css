@@ -1292,33 +1292,36 @@ button:hover {
     top: 125px;
     align-self: flex-start; /* Pour s'assurer que la section droite commence en haut */
 }
-/* Overlay sombre pour centrer le QR code et masquer l'arrière-plan */
 #qr-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8); /* Fond foncé avec opacité */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Priorité d'affichage élevée */
+    z-index: 1000;
 }
 
-/* QR modal centré */
-.qr-modal {
-    background-color: white;
+#qr-instructions {
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 80%;
-    max-width: 400px;
+    max-width: 90%;
+    width: 400px;
     position: relative;
-    z-index: 1001; /* Plus haut que l'overlay */
 }
 
-/* Cacher l'overlay et le QR code section par défaut */
+#qr-code-container {
+    margin: 40px auto; /* Centre le QR code horizontalement */
+    width: 200px;  /* Largeur du conteneur pour le QR code */
+    height: 200px; /* Hauteur du conteneur pour le QR code */
+}
+
 .hidden {
     display: none;
 }
