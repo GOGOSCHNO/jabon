@@ -264,6 +264,12 @@ function displayQRCode(qrCode) {
 function hideQRCodeSection() {
     document.getElementById('qr-overlay').style.display = 'none';
 }
+// Permettre de fermer l'overlay en cliquant en dehors de la section
+document.getElementById('qr-overlay').addEventListener('click', function(event) {
+    if (event.target === this) {
+        hideQRCodeSection();
+    }
+});
 // Fonctions de gestion du panier
 function addToCart(id, name, price, image) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
