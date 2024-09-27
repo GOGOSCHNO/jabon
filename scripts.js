@@ -147,7 +147,37 @@ function toggleSubmenuMobile(submenuId) {
     var submenuElement = document.getElementById(submenuId);
     submenuElement.classList.toggle("active");
 }
-// Fonction de gestion du processus de validation de l'achat
+// Fonction pour afficher le QR code
+function displayQRCode(qrCode) {
+    const qrCodeContainer = document.getElementById('qr-code-container');
+    const qrOverlay = document.getElementById('qr-overlay'); // Ajout pour l'overlay
+    const loadingSpinner = document.getElementById('loading-spinner'); // Loader
+
+    // Cacher le loader une fois que le QR code est prêt
+    loadingSpinner.classList.add('hidden');
+
+    if (qrCodeContainer && qrOverlay) {
+        // Nettoyer le contenu existant du conteneur QR code
+        qrCodeContainer.innerHTML = '';
+
+        // Utiliser la bibliothèque qrcode.js pour générer le QR code
+        new QRCode(qrCodeContainer, {
+            text: "bancadigital-" + qrCode, // Concatène bancadigital au code fourni par Nequi
+            width: 128,  // Largeur du QR code
+            height: 128  // Hauteur du QR code
+        });
+
+        // Afficher la section QR code (overlay)
+        qrOverlay.classList.remove('hidden');
+
+        // Afficher le message de statut du paiement
+        document.getElementById('payment-status').innerText = 'Escanea el código QR para realizar el pago.';
+    } else {
+        console.error('QR Code container or overlay not found.');
+    }
+}
+
+// Fonction pour afficher le loader et gérer le paiement
 function handleCheckout(event) {
     event.preventDefault();
 
@@ -159,6 +189,7 @@ function handleCheckout(event) {
     const ciudad = document.getElementById('ciudad').value.trim();
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+    // Validation du panier
     for (let item of cart) {
         if (!item.name || typeof item.name !== 'string' || !item.quantity || typeof item.quantity !== 'number' || !item.price || typeof item.price !== 'number') {
             console.error('Un des articles dans le panier est invalide:', item);
@@ -167,6 +198,7 @@ function handleCheckout(event) {
         }
     }
 
+    // Validation des champs utilisateur
     if (!whatsapp || !nombre || !apellido) {
         alert('Por favor complete todos los campos de contacto antes de continuar.');
         return;
@@ -177,6 +209,10 @@ function handleCheckout(event) {
         return;
     }
 
+    // Afficher le loader pendant la génération du QR code
+    document.getElementById('loading-spinner').classList.remove('hidden');
+
+    // Créer l'objet commande
     const order = {
         whatsapp,
         nombre,
@@ -191,8 +227,7 @@ function handleCheckout(event) {
         }))
     };
 
-    console.log('Order object to be sent:', order);
-
+    // Envoie de la commande à l'API
     fetch('https://nequi-8730a4c30191.herokuapp.com/api/save-order', {
         method: 'POST',
         headers: {
@@ -200,24 +235,14 @@ function handleCheckout(event) {
         },
         body: JSON.stringify(order)
     })
-    .then(response => {
-        console.log('Raw response:', response); // Log the raw response object
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
-        console.log('Parsed response data:', data); // Log the parsed response data
-
         if (data.success) {
-            // Vérifie que le code QR est valide
-            if (data.qrCodeUrl && typeof data.qrCodeUrl === 'object' && data.qrCodeUrl.generateCodeQRRS && typeof data.qrCodeUrl.generateCodeQRRS.codeQR === 'string') {
+            if (data.qrCodeUrl && data.qrCodeUrl.generateCodeQRRS && data.qrCodeUrl.generateCodeQRRS.codeQR) {
                 let qrCode = data.qrCodeUrl.generateCodeQRRS.codeQR;
-
-                console.log('QR Code:', qrCode); // Log le code QR brut
-
-                // Appelle la fonction pour afficher le QR code
                 displayQRCode(qrCode);
             } else {
-                console.error('QR Code data is not valid or is missing:', data.qrCodeUrl);
+                console.error('QR Code data is missing or invalid:', data.qrCodeUrl);
             }
         } else {
             alert('Erreur lors de l\'enregistrement de la commande. Veuillez réessayer.');
@@ -228,30 +253,9 @@ function handleCheckout(event) {
     });
 }
 
-// Fonction pour afficher le QR code et les instructions de paiement
-function displayQRCode(qrCode) {
-    const qrCodeContainer = document.getElementById('qr-code-container');
-    const qrInstructions = document.getElementById('qr-instructions'); // Ajout pour obtenir la section des instructions
-
-    if (qrCodeContainer && qrInstructions) {
-        // Nettoie le contenu existant du conteneur QR code
-        qrCodeContainer.innerHTML = '';
-
-        // Utilise la bibliothèque qrcode.js pour générer le QR code
-        new QRCode(qrCodeContainer, {
-            text: "bancadigital-" + qrCode, // Concatène bancadigital au code fourni par Nequi
-            width: 128,  // Largeur du QR code
-            height: 128  // Hauteur du QR code
-        });
-
-        // Affiche les instructions
-        qrInstructions.style.display = 'block';
-
-        // Affiche le message de statut du paiement
-        document.getElementById('payment-status').innerText = 'Escanea el código QR para realizar el pago.';
-    } else {
-        console.error('QR Code container or instructions not found.');
-    }
+// Fonction pour masquer le QR code lorsqu'on clique en dehors de la section
+function hideQRCodeSection() {
+    document.getElementById('qr-overlay').classList.add('hidden');
 }
 // Fonctions de gestion du panier
 function addToCart(id, name, price, image) {
