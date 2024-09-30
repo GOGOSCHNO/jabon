@@ -22,7 +22,19 @@ function initializePage() {
     // Initialiser les interactions avec les produits
     initializeProductInteractions();
 }
+// Fonction pour gérer l'affichage du bouton du panier par rapport au pied de page
+window.addEventListener('scroll', function() {
+    const carritoButton = document.querySelector('.cart-popup-button');
+    const footer = document.querySelector('footer');
+    const footerTop = footer.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
 
+    if (footerTop <= windowHeight) {
+        carritoButton.classList.add('above-footer');
+    } else {
+        carritoButton.classList.remove('above-footer');
+    }
+});
 // Fonction d'initialisation du panier
 function initializeCart() {
     if (document.getElementById('cartContents')) {
@@ -562,20 +574,6 @@ function syncCartBetweenTabs() {
     displayCart();
     displayCartInPopup();
 }
-
-// Fonction pour gérer l'affichage du bouton du panier par rapport au pied de page
-window.addEventListener('scroll', function() {
-    const carritoButton = document.querySelector('.cart-popup-button');
-    const footer = document.querySelector('footer');
-    const footerTop = footer.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-
-    if (footerTop <= windowHeight) {
-        carritoButton.classList.add('above-footer');
-    } else {
-        carritoButton.classList.remove('above-footer');
-    }
-});
 
 // Gestion du sous-menu
 document.addEventListener("DOMContentLoaded", function () {
