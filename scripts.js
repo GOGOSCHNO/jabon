@@ -21,7 +21,8 @@ function initializePage() {
 
     // Initialiser les interactions avec les produits
     initializeProductInteractions();
-        var chatPopup = document.getElementById('chat-popup');
+    
+    var chatPopup = document.getElementById('chat-popup');
     var chatIcon = document.getElementById('chat-icon');
     var chatIframe = document.getElementById('chat-iframe');
 
