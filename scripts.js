@@ -35,16 +35,18 @@ window.addEventListener('scroll', function() {
         carritoButton.classList.remove('above-footer');
     }
 });
+// Fonction pour ajuster dynamiquement la position de right-section
 window.addEventListener('scroll', function() {
     const rightSection = document.querySelector('.right-section');
     const header = document.querySelector('header');
     const headerHeight = header.offsetHeight;
     const scrollPosition = window.scrollY;
 
-    if (scrollPosition >= headerHeight) {
-        rightSection.style.top = `${scrollPosition - headerHeight + 20}px`; // Ajuste la position si nécessaire
+    // Ajuster la position seulement lorsque l'utilisateur a dépassé la hauteur du header
+    if (scrollPosition > headerHeight) {
+        rightSection.style.top = `${scrollPosition - headerHeight + 50}px`; // Ajuste 50px selon tes préférences
     } else {
-        rightSection.style.top = '150px'; // Valeur par défaut si tu veux qu'elle reste fixe
+        rightSection.style.top = '150px'; // Retour à la position d'origine quand on est en haut de la page
     }
 });
 document.addEventListener('DOMContentLoaded', function() {
