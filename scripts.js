@@ -35,7 +35,18 @@ window.addEventListener('scroll', function() {
         carritoButton.classList.remove('above-footer');
     }
 });
+window.addEventListener('scroll', function() {
+    const rightSection = document.querySelector('.right-section');
+    const header = document.querySelector('header');
+    const headerHeight = header.offsetHeight;
+    const scrollPosition = window.scrollY;
 
+    if (scrollPosition >= headerHeight) {
+        rightSection.style.top = `${scrollPosition - headerHeight + 20}px`; // Ajuste la position si nécessaire
+    } else {
+        rightSection.style.top = '150px'; // Valeur par défaut si tu veux qu'elle reste fixe
+    }
+});
 document.addEventListener('DOMContentLoaded', function() {
     var chatPopup = document.getElementById('chat-popup');
     var chatIcon = document.getElementById('chat-icon');
