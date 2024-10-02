@@ -1291,6 +1291,7 @@ button:hover {
     position: sticky;
     top: 125px;
     align-self: flex-start; /* Pour s'assurer que la section droite commence en haut */
+    transition: top 0.4s ease; /* Transition fluide de la position */
 }
 #qr-overlay {
     position: fixed;
