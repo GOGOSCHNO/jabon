@@ -803,6 +803,8 @@ footer {
 .collection-menu {
     width: 20%;
     padding-right: 20px;
+    transition: top 0.4s ease; /* Transition fluide pour le déplacement */
+    position: sticky;
 }
 
 .collection-menu h3 {
