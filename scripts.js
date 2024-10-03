@@ -22,6 +22,19 @@ function initializePage() {
     // Initialiser les interactions avec les produits
     initializeProductInteractions();
 }
+window.addEventListener('scroll', function() {
+    const collectionMenu = document.querySelector('.collection-menu');
+    const header = document.querySelector('header');
+    const headerHeight = header.offsetHeight;
+    const scrollPosition = window.scrollY;
+
+    // Ajuster la position seulement lorsque l'utilisateur a dépassé la hauteur du header
+    if (scrollPosition > headerHeight) {
+        collectionMenu.style.top = `${scrollPosition - headerHeight + 50}px`; // Ajuste 50px selon tes préférences
+    } else {
+        collectionMenu.style.top = '150px'; // Retour à la position d'origine quand on est en haut de la page
+    }
+});
 // Fonction pour gérer l'affichage du bouton du panier par rapport au pied de page
 window.addEventListener('scroll', function() {
     const carritoButton = document.querySelector('.cart-popup-button');
@@ -70,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
             chatIcon.style.display = 'none';
         }
     });
-
+    
     // Événement pour fermer le pop-up du chatbot lorsque l'utilisateur clique en dehors
     window.addEventListener('click', function(event) {
         var dropdownMenu = document.getElementById('dropdown-menu');
