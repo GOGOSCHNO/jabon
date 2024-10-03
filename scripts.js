@@ -30,7 +30,7 @@ window.addEventListener('scroll', function() {
 
     // Ajuster la position seulement lorsque l'utilisateur a dépassé la hauteur du header
     if (scrollPosition > headerHeight) {
-        collectionMenu.style.top = `${scrollPosition - headerHeight + 50}px`; // Ajuste 50px selon tes préférences
+        collectionMenu.style.top = `${scrollPosition - headerHeight + 180}px`; // Ajuste 50px selon tes préférences
     } else {
         collectionMenu.style.top = '150px'; // Retour à la position d'origine quand on est en haut de la page
     }
