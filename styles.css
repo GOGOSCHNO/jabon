@@ -1488,7 +1488,7 @@ button:hover {
     bottom: 100px; /* Ajustez cette valeur en fonction de la hauteur du footer */
 }
 #chat-icon.above-footer {
-    bottom: 180px; /* Ajuste cette valeur pour placer le chatbot au-dessus du panier */
+    bottom: 150px; /* Ajuste cette valeur pour placer le chatbot au-dessus du panier */
     right: 20px; /* Même alignement que le panier */
     z-index: 20; /* S'assurer que le chatbot reste au-dessus */
 }
@@ -1650,6 +1650,7 @@ button:hover {
     align-items: center;
     cursor: pointer;
     z-index: 1000;
+    transition: bottom 0.5s ease; /* Transition lisse pour la position du bas */
 }
 
 #chat-icon-content {
