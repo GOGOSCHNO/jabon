@@ -38,14 +38,18 @@ window.addEventListener('scroll', function() {
 // Fonction pour gérer l'affichage du bouton du panier par rapport au pied de page
 window.addEventListener('scroll', function() {
     const carritoButton = document.querySelector('.cart-popup-button');
+    const chatIcon = document.querySelector('#chat-icon');
     const footer = document.querySelector('footer');
     const footerTop = footer.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
+    // Vérifie si l'utilisateur est arrivé en bas de la page
     if (footerTop <= windowHeight) {
         carritoButton.classList.add('above-footer');
+        chatIcon.classList.add('above-footer'); // Applique la même classe au chatbot
     } else {
         carritoButton.classList.remove('above-footer');
+        chatIcon.classList.remove('above-footer'); // Retire la classe si on n'est plus au bas de la page
     }
 });
 // Fonction pour ajuster dynamiquement la position de right-section
