@@ -1645,6 +1645,7 @@ button:hover {
     position: fixed;
     bottom: 20px;
     right: 20px;
+    bottom: 80px;
     display: flex;
     align-items: center;
     cursor: pointer;
