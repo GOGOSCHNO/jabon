@@ -108,17 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Fonction pour afficher ou masquer le menu déroulant
-    document.getElementById('menu-button').addEventListener('click', function(event) {
-        var dropdownMenu = document.getElementById('dropdown-menu');
-        if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
-            dropdownMenu.style.display = 'block';
-        } else {
-            dropdownMenu.style.display = 'none';
-        }
-        event.stopPropagation();
-    });
-
     // Fonction pour minimiser le pop-up du chatbot
     document.getElementById('minimize-button').addEventListener('click', function() {
         chatPopup.classList.remove('show');
